@@ -5,8 +5,14 @@ using UnityEngine;
 
 public class SeedManager : MonoBehaviour
 {
-    public static SeedManager Instance;
+    // Singleton
+    public static SeedManager Instance { get; private set; }
+    
+    // Gameplay
     private int _nbSeeds;
+    
+    // Delegates
+    public static event Action<int> OnNbSeedsChanged;
     
     private void Awake()
     {
@@ -41,6 +47,7 @@ public class SeedManager : MonoBehaviour
     public void AddSeeds(int nbAdd)
     {
         _nbSeeds += nbAdd;
+        OnNbSeedsChanged?.Invoke(_nbSeeds);
     }
 
     public bool SpendSeeds(int nbSpend)
@@ -50,6 +57,7 @@ public class SeedManager : MonoBehaviour
             return false;
         }
         _nbSeeds -= nbSpend;
+        OnNbSeedsChanged?.Invoke(_nbSeeds);
         return true;
     }
 }

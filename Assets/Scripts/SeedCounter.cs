@@ -1,23 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class SeedCounter : MonoBehaviour
 {
+    // Display
     [SerializeField] private TextMeshProUGUI _counterText;
-    
-    private SeedManager _seedManager;
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
-        _seedManager = SeedManager.Instance;
+        SeedManager.OnNbSeedsChanged += OnNbSeedsChanged;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        int nbSeeds = _seedManager.GetSeedNb();
+        SeedManager.OnNbSeedsChanged -= OnNbSeedsChanged;
+    }
+
+    private void OnNbSeedsChanged(int nbSeeds)
+    {
         _counterText.text = $"Seeds : {nbSeeds}";
     }
 }
