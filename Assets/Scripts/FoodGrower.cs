@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class _foodGrower : MonoBehaviour
+public class FoodGrower : MonoBehaviour
 {
     // Display
     [SerializeField] private Image _foodImage;
@@ -21,18 +22,14 @@ public class _foodGrower : MonoBehaviour
             SetFood(_food);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetFood(Food newFood)
     {
-        StartCoroutine(GrowFood(newFood));
+        Debug.Log("new food : " + newFood.name);
+        _food = newFood;
+        StartCoroutine(GrowFood());
     }
 
-    private IEnumerator GrowFood(Food newFood)
+    private IEnumerator GrowFood()
     {
         _foodImage.sprite = _food.growingSprite;
         _harvestProgressBar.fillAmount = 0f;
@@ -47,5 +44,18 @@ public class _foodGrower : MonoBehaviour
         }
 
         _foodImage.sprite = _food.ripeSprite;
+    }
+
+    public void OnClick()
+    {
+        if (_isRipe)
+        {
+            FoodManager.Instance.AddFood(_food.foodType, _food.GetYieldAmount());
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Not Ripe");
+        }
     }
 }

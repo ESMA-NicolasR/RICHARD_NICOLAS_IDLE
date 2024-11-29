@@ -10,7 +10,17 @@ public class Food : ScriptableObject
     
     // Gameplay
     public FoodType foodType;
-    public float baseSeedCost;
+    public int baseSeedCost;
     public float baseTimeToGrow;
     public int baseYieldAmount;
+
+    public int GetSeedCost()
+    {
+        return baseSeedCost;
+    }
+
+    public int GetYieldAmount()
+    {
+        return baseYieldAmount;
+    }
 }
