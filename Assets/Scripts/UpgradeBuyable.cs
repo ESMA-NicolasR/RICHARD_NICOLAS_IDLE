@@ -16,8 +16,8 @@ public class UpgradeBuyable : MonoBehaviour
     {
         bool checkSeeds = SeedManager.Instance.SpendSeeds(_seedCost);
         bool checkFood = true;
-        Dictionary<FoodType, int> foodCostAsDict = _foodCost.GetValuesAsDict();
-        foreach (FoodType foodType in foodCostAsDict.Keys)
+        Dictionary<FoodTypeEnum, int> foodCostAsDict = _foodCost.GetValuesAsDict();
+        foreach (FoodTypeEnum foodType in foodCostAsDict.Keys)
         {
             checkFood &= FoodManager.Instance.SpendFood(foodType, foodCostAsDict[foodType]);
         }

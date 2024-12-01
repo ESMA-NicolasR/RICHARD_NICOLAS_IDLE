@@ -65,7 +65,7 @@ public class FieldPlot : MonoBehaviour
 
     private void Harvest()
     {
-        FoodManager.Instance.AddFood(_food.foodType, _food.GetYieldAmount());
+        FoodManager.Instance.AddFood(_food.foodTypeEnum, _food.GetYieldAmount());
         _foodImage.sprite = null;
         _harvestProgressBar.fillAmount = 0f;
         _isRipe = false;

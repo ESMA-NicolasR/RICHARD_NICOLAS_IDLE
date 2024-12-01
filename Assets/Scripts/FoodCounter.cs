@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FoodCounter : MonoBehaviour
 {
-    [SerializeField] private FoodType _foodType;
+    [FormerlySerializedAs("_foodType")] [SerializeField] private FoodTypeEnum foodTypeEnum;
     [SerializeField] private TextMeshProUGUI _foodText;
 
     private void OnEnable()
@@ -14,9 +15,9 @@ public class FoodCounter : MonoBehaviour
         FoodManager.OnFoodAmountChanged += OnFoodAmountChanged;
     }
 
-    private void OnFoodAmountChanged(FoodType foodType, int amount)
+    private void OnFoodAmountChanged(FoodTypeEnum foodTypeEnum, int amount)
     {
-        if (foodType == _foodType)
+        if (foodTypeEnum == this.foodTypeEnum)
         {
             _foodText.text = amount.ToString();
         }

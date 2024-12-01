@@ -9,10 +9,10 @@ public class FoodManager : MonoBehaviour
     public static FoodManager Instance { get; private set; }
     
     // Gameplay
-    private Dictionary<FoodType, int> _foodStorage;
+    private Dictionary<FoodTypeEnum, int> _foodStorage;
     
     // Delegates
-    public static event Action<FoodType, int> OnFoodAmountChanged;
+    public static event Action<FoodTypeEnum, int> OnFoodAmountChanged;
     
     private void Awake()
     {
@@ -30,32 +30,32 @@ public class FoodManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _foodStorage = new Dictionary<FoodType, int>();
-        foreach (FoodType foodType in Enum.GetValues(typeof(FoodType)))
+        _foodStorage = new Dictionary<FoodTypeEnum, int>();
+        foreach (FoodTypeEnum foodType in Enum.GetValues(typeof(FoodTypeEnum)))
         {
             _foodStorage.Add(foodType, 0);
         }
     }
     
-    public int GetFoodAmount(FoodType foodType)
+    public int GetFoodAmount(FoodTypeEnum foodTypeEnum)
     {
-        return _foodStorage[foodType];
+        return _foodStorage[foodTypeEnum];
     }
 
-    public void AddFood(FoodType foodType, int nbAdd)
+    public void AddFood(FoodTypeEnum foodTypeEnum, int nbAdd)
     {
-        _foodStorage[foodType] += nbAdd;
-        OnFoodAmountChanged?.Invoke(foodType, _foodStorage[foodType]);
+        _foodStorage[foodTypeEnum] += nbAdd;
+        OnFoodAmountChanged?.Invoke(foodTypeEnum, _foodStorage[foodTypeEnum]);
     }
 
-    public bool SpendFood(FoodType foodType, int nbSpend)
+    public bool SpendFood(FoodTypeEnum foodTypeEnum, int nbSpend)
     {
-        if (_foodStorage[foodType] < nbSpend)
+        if (_foodStorage[foodTypeEnum] < nbSpend)
         {
             return false;
         }
-        _foodStorage[foodType] -= nbSpend;
-        OnFoodAmountChanged?.Invoke(foodType, _foodStorage[foodType]);
+        _foodStorage[foodTypeEnum] -= nbSpend;
+        OnFoodAmountChanged?.Invoke(foodTypeEnum, _foodStorage[foodTypeEnum]);
         return true;
     }
 }

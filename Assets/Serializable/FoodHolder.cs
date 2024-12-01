@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [Serializable]
 public class FoodQuantity
 {
     public int amount;
-    public FoodType foodType;
+    [FormerlySerializedAs("foodType")] public FoodTypeEnum foodTypeEnum;
 }
 
 [Serializable]
@@ -14,12 +15,12 @@ public class FoodHolder
 {
     [SerializeField] private List<FoodQuantity> _food;
 
-    public Dictionary<FoodType, int> GetValuesAsDict()
+    public Dictionary<FoodTypeEnum, int> GetValuesAsDict()
     {
-        Dictionary<FoodType, int> values = new Dictionary<FoodType, int>();
+        Dictionary<FoodTypeEnum, int> values = new Dictionary<FoodTypeEnum, int>();
         foreach (FoodQuantity food in _food)
         {
-            values.Add(food.foodType, food.amount);
+            values.Add(food.foodTypeEnum, food.amount);
         }
         return values;
     }
