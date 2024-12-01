@@ -579,6 +579,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1806253322}
     m_Modifications:
+    - target: {fileID: 1862524240602861959, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: _food
+      value: 
+      objectReference: {fileID: 11400000, guid: 79046b484b957a14386555a9c951c93e, type: 2}
+    - target: {fileID: 2382751707309580935, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1085334807, guid: 9daf05b415ce50b47b3e28462b55d8a2, type: 3}
     - target: {fileID: 2806007516099060578, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: m_Name
       value: SquashPlanter
@@ -891,6 +899,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1806253322}
     m_Modifications:
+    - target: {fileID: 1862524240602861959, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: _food
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d59c739b50f19c448813a75709b927f, type: 2}
+    - target: {fileID: 2382751707309580935, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1273175802, guid: 9daf05b415ce50b47b3e28462b55d8a2, type: 3}
     - target: {fileID: 2806007516099060578, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: m_Name
       value: RicePlanter
@@ -1295,6 +1311,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1806253322}
     m_Modifications:
+    - target: {fileID: 1862524240602861959, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: _food
+      value: 
+      objectReference: {fileID: 11400000, guid: c7f6d0887ce5090468a730035742b633, type: 2}
+    - target: {fileID: 2382751707309580935, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1852045516, guid: 9daf05b415ce50b47b3e28462b55d8a2, type: 3}
     - target: {fileID: 2806007516099060578, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: m_Name
       value: StrawberryPlanter
@@ -2266,6 +2290,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1806253322}
     m_Modifications:
+    - target: {fileID: 1862524240602861959, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: _food
+      value: 
+      objectReference: {fileID: 11400000, guid: ff1a83150930e014d86f84710faa7caa, type: 2}
+    - target: {fileID: 2382751707309580935, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 257553251, guid: 9daf05b415ce50b47b3e28462b55d8a2, type: 3}
     - target: {fileID: 2806007516099060578, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: m_Name
       value: TomatoPlanter
@@ -2734,7 +2766,7 @@ PrefabInstance:
     - target: {fileID: 1862524240602861959, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: _food
       value: 
-      objectReference: {fileID: 11400000, guid: a6e74621fc3b9ef4da173e26db1d9eaf, type: 2}
+      objectReference: {fileID: 11400000, guid: af04c3c188654a847802b054749c6e6f, type: 2}
     - target: {fileID: 2382751707309580935, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3262,6 +3294,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1806253322}
     m_Modifications:
+    - target: {fileID: 1862524240602861959, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: _food
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f5f6644d8dd58040b308509ca84dc22, type: 2}
+    - target: {fileID: 2382751707309580935, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -491144846, guid: 9daf05b415ce50b47b3e28462b55d8a2, type: 3}
     - target: {fileID: 2806007516099060578, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: m_Name
       value: LeekPlanter
@@ -3364,6 +3404,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1806253322}
     m_Modifications:
+    - target: {fileID: 1862524240602861959, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: _food
+      value: 
+      objectReference: {fileID: 11400000, guid: b5a921835f33b6b4fbda00675d064349, type: 2}
+    - target: {fileID: 2382751707309580935, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1938377447, guid: 9daf05b415ce50b47b3e28462b55d8a2, type: 3}
     - target: {fileID: 2806007516099060578, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: m_Name
       value: BroccoliPlanter
@@ -3466,6 +3514,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1806253322}
     m_Modifications:
+    - target: {fileID: 1862524240602861959, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: _food
+      value: 
+      objectReference: {fileID: 11400000, guid: eb1118fa1397bea45861e8e38d05ec5e, type: 2}
+    - target: {fileID: 2382751707309580935, guid: a466ee06743b9f144a398425af8a91da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -992254231, guid: 9daf05b415ce50b47b3e28462b55d8a2, type: 3}
     - target: {fileID: 2806007516099060578, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: m_Name
       value: CherryPlanter
@@ -3571,7 +3627,7 @@ PrefabInstance:
     - target: {fileID: 1862524240602861959, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: _food
       value: 
-      objectReference: {fileID: 11400000, guid: ff1a83150930e014d86f84710faa7caa, type: 2}
+      objectReference: {fileID: 11400000, guid: a6e74621fc3b9ef4da173e26db1d9eaf, type: 2}
     - target: {fileID: 2806007516099060578, guid: a466ee06743b9f144a398425af8a91da, type: 3}
       propertyPath: m_Name
       value: WheatPlanter

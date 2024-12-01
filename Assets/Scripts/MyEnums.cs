@@ -5,21 +5,3 @@ public enum FoodTypeEnum
     Fruit,
     Vegetable,
 }
-
-public enum IconsEnum
-{
-    Seed,
-    Timer,
-    Fruit,
-    Vegetable,
-    Cereal,
-    Wheat,
-    Oat,
-    Rice,
-    Tomato,
-    Strawberry,
-    Cherry,
-    Squash,
-    Broccoli,
-    Leek
-}

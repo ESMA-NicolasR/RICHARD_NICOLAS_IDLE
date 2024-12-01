@@ -104,7 +104,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.6745283, g: 1, b: 0.7217341, a: 1}
     m_PressedColor: {r: 0.33917767, g: 0.6981132, b: 0.391237, a: 1}
     m_SelectedColor: {r: 0.6745098, g: 1, b: 0.72156864, a: 1}
-    m_DisabledColor: {r: 0.7169812, g: 0.19953722, b: 0.19953722, a: 0.5019608}
+    m_DisabledColor: {r: 0.764151, g: 0.34963512, b: 0.34963512, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -118,7 +118,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 7369120587618937506}
   m_OnClick:
     m_PersistentCalls:
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <sprite=0>x5 <sprite=1>3s <sprite=4>x3
+  m_text: <sprite name=seed>99<sprite name=timer>99.9<sprite name=cereal>99
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: icons_0
+      name: seed
       rect:
         serializedVersion: 2
         x: 0
@@ -118,7 +118,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_1
+      name: timer
       rect:
         serializedVersion: 2
         x: 128
@@ -139,7 +139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_2
+      name: fruit
       rect:
         serializedVersion: 2
         x: 256
@@ -160,7 +160,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_3
+      name: vegetable
       rect:
         serializedVersion: 2
         x: 384
@@ -181,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_4
+      name: cereal
       rect:
         serializedVersion: 2
         x: 512
@@ -202,7 +202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_5
+      name: wheat
       rect:
         serializedVersion: 2
         x: 640
@@ -223,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_6
+      name: oat
       rect:
         serializedVersion: 2
         x: 768
@@ -244,7 +244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_7
+      name: rice
       rect:
         serializedVersion: 2
         x: 896
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d418bfcf69f02b941a77b43205054118
+      spriteID: 9dd3ca769442c1a41b0bd3c36e56f10f
       internalID: 1273175802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_8
+      name: tomato
       rect:
         serializedVersion: 2
         x: 1024
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72db59c795025134abe22aa236c74ce0
+      spriteID: 408d820cbb593c445821df7ec41fd78c
       internalID: 257553251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_9
+      name: strawberry
       rect:
         serializedVersion: 2
         x: 1152
@@ -300,8 +300,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca369660b93301a4280c4b6e9e83ec82
+      spriteID: 9624b31b806a4a74886037963e10d91c
       internalID: 1852045516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cherry
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3b95e6fd497bd42a5315a265adbe47
+      internalID: -992254231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squash
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b2e5f26a55c494a814aa957d849fa9
+      internalID: -1085334807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95461746f6c52b4cbb489ca1f68fd4b
+      internalID: 1938377447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leek
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3504c0813acc2864eb802bba00e02abe
+      internalID: -491144846
       vertices: []
       indices: 
       edges: []
@@ -317,16 +401,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      icons_0: 1967798891
-      icons_1: -1813061705
-      icons_2: -1266847551
-      icons_3: 806182040
-      icons_4: -361338863
-      icons_5: -1928972703
-      icons_6: -2035096251
-      icons_7: 1273175802
-      icons_8: 257553251
-      icons_9: 1852045516
+      broccoli: 1938377447
+      cereal: -361338863
+      cherry: -992254231
+      fruit: -1266847551
+      leek: -491144846
+      oat: -2035096251
+      rice: 1273175802
+      seed: 1967798891
+      squash: -1085334807
+      strawberry: 1852045516
+      timer: -1813061705
+      tomato: 257553251
+      vegetable: 806182040
+      wheat: -1928972703
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

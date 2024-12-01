@@ -28,24 +28,24 @@ public class Food : ScriptableObject
 
     public string GetIconRepresentation()
     {
-        IconsEnum foodCategoryIcon = 0;
+        string foodCategorySprite = "";
         switch (foodTypeEnum)
         {
             case FoodTypeEnum.Cereal:
-                foodCategoryIcon = IconsEnum.Cereal;
+                foodCategorySprite = "cereal";
                 break;
             case FoodTypeEnum.Fruit:
-                foodCategoryIcon = IconsEnum.Fruit;
+                foodCategorySprite = "fruit";
                 break;
             case FoodTypeEnum.Vegetable:
-                foodCategoryIcon = IconsEnum.Vegetable;
+                foodCategorySprite = "vegetable";
                 break;
             default:
                 Debug.Log("Unknown Food Type");
                 break;
         }
-        return $"<sprite={(int)IconsEnum.Seed}>x{GetSeedCost()}" +
-               $"<sprite={(int)IconsEnum.Timer}>{baseTimeToGrow}s" +
-               $"<sprite={(int)foodCategoryIcon}>x{GetYieldAmount()}";
+        return $"<sprite name=seed>{GetSeedCost()}" +
+               $"<sprite name=timer>{baseTimeToGrow:F1}" +
+               $"<sprite name={foodCategorySprite}>{GetYieldAmount()}";
     }
 }
