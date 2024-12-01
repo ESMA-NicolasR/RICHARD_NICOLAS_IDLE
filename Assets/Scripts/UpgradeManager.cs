@@ -29,6 +29,15 @@ public class UpgradeManager : MonoBehaviour
         _seedGatherer = FindFirstObjectByType<SeedGatherer>();
     }
 
+    public void BuyFieldPlot()
+    {
+        if (!FieldPlotManager.Instance.ActivateFieldPlot())
+        {
+            Debug.Log("No more field plot to buy");
+        }
+        
+    }
+
     public void UpgradeGatheringPower()
     {
         _seedGatherer.IncreaseGatherPower();

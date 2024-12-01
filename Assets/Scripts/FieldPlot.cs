@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FoodGrower : MonoBehaviour
+public class FieldPlot : MonoBehaviour
 {
     // Display
     [SerializeField] private Image _foodImage;
@@ -12,12 +12,15 @@ public class FoodGrower : MonoBehaviour
     
     // Gameplay
     [SerializeField] private Food _food;
+    private bool _isIdle;
     private bool _isRipe;
     private float _growthTime;
     
     // Start is called before the first frame update
     void Start()
     {
+        _isIdle = true;
+        _isRipe = false;
         if(_food != null)
             SetFood(_food);
     }
@@ -34,6 +37,8 @@ public class FoodGrower : MonoBehaviour
         _foodImage.sprite = _food.growingSprite;
         _harvestProgressBar.fillAmount = 0f;
         _isRipe = false;
+        _isIdle = false;
+        _growthTime = 0f;
 
         while (!_isRipe)
         {
@@ -50,12 +55,25 @@ public class FoodGrower : MonoBehaviour
     {
         if (_isRipe)
         {
-            FoodManager.Instance.AddFood(_food.foodType, _food.GetYieldAmount());
-            Destroy(gameObject);
+            Harvest();
         }
         else
         {
             Debug.Log("Not Ripe");
         }
+    }
+
+    private void Harvest()
+    {
+        FoodManager.Instance.AddFood(_food.foodType, _food.GetYieldAmount());
+        _foodImage.sprite = null;
+        _harvestProgressBar.fillAmount = 0f;
+        _isRipe = false;
+        _isIdle = true;
+    }
+
+    public bool IsIdle()
+    {
+        return _isIdle;
     }
 }
