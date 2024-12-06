@@ -9,21 +9,18 @@ public class UpgradeBuyable : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _upgradeText;
     [SerializeField] private int _seedCost;
-    [SerializeField] private FoodHolder _foodCost;
+    [SerializeField] private MyDictionary<FoodTypeEnum, int> _foodCost;
     [SerializeField] private UnityEvent _onUpgrade;
 
     public void BuyUpgrade()
     {
-        bool checkSeeds = SeedManager.Instance.SpendSeeds(_seedCost);
-        bool checkFood = true;
-        Dictionary<FoodTypeEnum, int> foodCostAsDict = _foodCost.GetValuesAsDict();
-        foreach (FoodTypeEnum foodType in foodCostAsDict.Keys)
-        {
-            checkFood &= FoodManager.Instance.SpendFood(foodType, foodCostAsDict[foodType]);
-        }
+        bool checkSeeds = SeedManager.Instance.CheckCanSpendSeed(_seedCost);
+        bool checkFood = FoodManager.Instance.CheckCanSpendFood(_foodCost);
 
         if (checkFood && checkSeeds)
         {
+            SeedManager.Instance.SpendSeeds(_seedCost);
+            FoodManager.Instance.SpendFood(_foodCost);
             _onUpgrade.Invoke();
         }
         else

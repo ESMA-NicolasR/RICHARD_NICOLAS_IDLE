@@ -9,6 +9,7 @@ public class FieldPlot : MonoBehaviour
     // Display
     [SerializeField] private Image _foodImage;
     [SerializeField] private Image _harvestProgressBar;
+    [SerializeField] private Image _harvestBackgroundBar;
     
     // Gameplay
     [SerializeField] private Food _food;
@@ -19,6 +20,9 @@ public class FieldPlot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _foodImage.enabled = false;
+        _harvestProgressBar.enabled = false;
+        _harvestBackgroundBar.enabled = false;
         _isIdle = true;
         _isRipe = false;
         if(_food != null)
@@ -28,6 +32,9 @@ public class FieldPlot : MonoBehaviour
     public void SetFood(Food newFood)
     {
         Debug.Log("new food : " + newFood.name);
+        _foodImage.enabled = true;
+        _harvestBackgroundBar.enabled = true;
+        _harvestProgressBar.enabled = true;
         _food = newFood;
         _foodImage.sprite = _food.growingSprite;
         _harvestProgressBar.fillAmount = 0f;
@@ -65,10 +72,11 @@ public class FieldPlot : MonoBehaviour
     private void Harvest()
     {
         FoodManager.Instance.AddFood(_food.foodTypeEnum, _food.GetYieldAmount());
-        _foodImage.sprite = null;
-        _harvestProgressBar.fillAmount = 0f;
         _isRipe = false;
         _isIdle = true;
+        _foodImage.enabled = false;
+        _harvestBackgroundBar.enabled = false;
+        _harvestProgressBar.enabled = false;
     }
 
     public bool IsIdle()

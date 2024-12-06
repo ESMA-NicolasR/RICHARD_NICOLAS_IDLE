@@ -71,12 +71,16 @@ public class MyDictionary<Tk, Tv> : BaseDictionary
 {
     [SerializeField]
     private List<DictionaryEntry<Tk, Tv>> _dictionaryEntries;
-
+    public int Count => _dictionaryEntries.Count;
     public Tv this[Tk key]
     {
         get
         {
             return GetValue(key);
+        }
+        set
+        {
+            SetValue(key, value);   
         }
     }
 
@@ -306,6 +310,15 @@ public class MyDictionary<Tk, Tv> : BaseDictionary
 
         isValid = false;
         return default;
+    }
+
+    public void SetValue(Tk key, Tv value)
+    {
+        var _index = GetIndex(key);
+        if( _index >= 0)
+        {
+            _dictionaryEntries[_index] = new DictionaryEntry<Tk, Tv>(key,value);
+        }
     }
 
 }

@@ -18,6 +18,6 @@ public class SeedCounter : MonoBehaviour
 
     private void OnNbSeedsChanged(int nbSeeds)
     {
-        _counterText.text = $"Seeds : {nbSeeds}";
+        _counterText.text = nbSeeds.ToString();
     }
 }

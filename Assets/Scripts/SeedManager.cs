@@ -27,6 +27,11 @@ public class SeedManager : MonoBehaviour
         } 
     }
 
+    private void Start()
+    {
+        OnNbSeedsChanged?.Invoke(_nbSeeds);
+    }
+
     public int GetSeedNb()
     {
         return _nbSeeds;
@@ -38,9 +43,14 @@ public class SeedManager : MonoBehaviour
         OnNbSeedsChanged?.Invoke(_nbSeeds);
     }
 
+    public bool CheckCanSpendSeed(int nbSpend)
+    {
+        return _nbSeeds >= nbSpend;
+    }
+
     public bool SpendSeeds(int nbSpend)
     {
-        if (_nbSeeds < nbSpend)
+        if (!CheckCanSpendSeed(nbSpend))
         {
             return false;
         }

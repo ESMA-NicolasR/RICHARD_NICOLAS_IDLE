@@ -316,6 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _foodImage: {fileID: 2380746324384575956}
   _harvestProgressBar: {fileID: 5609874294310088502}
+  _harvestBackgroundBar: {fileID: 1221948769602187759}
   _food: {fileID: 0}
 --- !u!114 &5412023879693185688
 MonoBehaviour:
