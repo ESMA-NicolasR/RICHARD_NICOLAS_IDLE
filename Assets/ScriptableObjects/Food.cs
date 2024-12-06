@@ -26,7 +26,7 @@ public class Food : ScriptableObject
         return baseYieldAmount;
     }
 
-    public string GetIconRepresentation()
+    public string GetYieldIconRepresentation()
     {
         string foodCategorySprite = "";
         switch (foodTypeEnum)
@@ -44,8 +44,6 @@ public class Food : ScriptableObject
                 Debug.Log("Unknown Food Type");
                 break;
         }
-        return $"<sprite name=seed>{GetSeedCost()}" +
-               $"<sprite name=timer>{baseTimeToGrow:F1}" +
-               $"<sprite name={foodCategorySprite}>{GetYieldAmount()}";
+        return $"<sprite name={foodCategorySprite}>{GetYieldAmount()}";
     }
 }

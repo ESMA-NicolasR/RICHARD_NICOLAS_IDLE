@@ -29,17 +29,16 @@ public class FieldPlot : MonoBehaviour
     {
         Debug.Log("new food : " + newFood.name);
         _food = newFood;
-        StartCoroutine(GrowFood());
-    }
-
-    private IEnumerator GrowFood()
-    {
         _foodImage.sprite = _food.growingSprite;
         _harvestProgressBar.fillAmount = 0f;
         _isRipe = false;
         _isIdle = false;
         _growthTime = 0f;
+        StartCoroutine(GrowFood());
+    }
 
+    private IEnumerator GrowFood()
+    {
         while (!_isRipe)
         {
             yield return new WaitForEndOfFrame();

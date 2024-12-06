@@ -9,7 +9,8 @@ public class FoodPlanter : MonoBehaviour
 {
     [SerializeField] private Food _food;
     [SerializeField] private TextMeshProUGUI _priceText;
-    [SerializeField] private TextMeshProUGUI _actionText;
+    [SerializeField] private TextMeshProUGUI _timeText;
+    [SerializeField] private TextMeshProUGUI _yieldText;
     [SerializeField] private Button _button;
 
     private void OnEnable()
@@ -53,7 +54,9 @@ public class FoodPlanter : MonoBehaviour
 
     private void UpdateDisplay(int nbSeeds)
     {
-        _priceText.text = _food.GetIconRepresentation();
+        _priceText.text = $"<sprite name=seed>{_food.GetSeedCost()}";
+        _timeText.text = $"<sprite name=timer>{_food.baseTimeToGrow}";
+        _yieldText.text = _food.GetYieldIconRepresentation();
         if(nbSeeds < _food.GetSeedCost())
         {
             // _actionText.color = Color.red;
