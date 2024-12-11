@@ -16,7 +16,7 @@ public class SeedGatherer : MonoBehaviour
 
     public void GatherSeed()
     {
-        GameManager.Instance.seedManager.AddSeeds(_gatherPower);
+        GameManager.Instance.resourceManager.AddResource(ResourceTypeEnum.Seed, _gatherPower);
     }
 
     public void IncreaseGatherPower()

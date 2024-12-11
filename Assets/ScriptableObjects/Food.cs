@@ -11,7 +11,7 @@ public class Food : ScriptableObject
     public Sprite ripeSprite;
     
     // Gameplay
-    [FormerlySerializedAs("foodType")] public FoodTypeEnum foodTypeEnum;
+    [FormerlySerializedAs("ressourceTypeEnum")] [FormerlySerializedAs("foodTypeEnum")] [FormerlySerializedAs("foodType")] public ResourceTypeEnum resourceTypeEnum;
     public int baseSeedCost;
     public float baseTimeToGrow;
     public int baseYieldAmount;
@@ -29,15 +29,15 @@ public class Food : ScriptableObject
     public string GetYieldIconRepresentation()
     {
         string foodCategorySprite = "";
-        switch (foodTypeEnum)
+        switch (resourceTypeEnum)
         {
-            case FoodTypeEnum.Cereal:
+            case ResourceTypeEnum.Cereal:
                 foodCategorySprite = "cereal";
                 break;
-            case FoodTypeEnum.Fruit:
+            case ResourceTypeEnum.Fruit:
                 foodCategorySprite = "fruit";
                 break;
-            case FoodTypeEnum.Vegetable:
+            case ResourceTypeEnum.Vegetable:
                 foodCategorySprite = "vegetable";
                 break;
             default:

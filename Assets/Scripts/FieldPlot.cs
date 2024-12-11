@@ -71,7 +71,7 @@ public class FieldPlot : MonoBehaviour
 
     private void Harvest()
     {
-        GameManager.Instance.foodManager.AddFood(_food.foodTypeEnum, _food.GetYieldAmount());
+        GameManager.Instance.resourceManager.AddResource(_food.resourceTypeEnum, _food.GetYieldAmount());
         _isRipe = false;
         _isIdle = true;
         _foodImage.enabled = false;

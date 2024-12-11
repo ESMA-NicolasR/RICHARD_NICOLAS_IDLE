@@ -9,9 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     
     // Dependencies
-    [NonSerialized] public SeedManager seedManager;
     [NonSerialized] public UpgradeManager upgradeManager;
-    [NonSerialized] public FoodManager foodManager;
+    [NonSerialized] public ResourceManager resourceManager;
     [NonSerialized] public FieldPlotManager fieldPlotManager;
     
     private void Awake()
@@ -27,9 +26,8 @@ public class GameManager : MonoBehaviour
         }
         
         // Search dependencies on gameObject
-        seedManager = GetComponent<SeedManager>();
         upgradeManager = GetComponent<UpgradeManager>();
-        foodManager = GetComponent<FoodManager>();
+        resourceManager = GetComponent<ResourceManager>();
         fieldPlotManager = GetComponent<FieldPlotManager>();
     }
 }

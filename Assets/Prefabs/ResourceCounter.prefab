@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 459361645252162126}
   - component: {fileID: 1194920118081585549}
   m_Layer: 5
-  m_Name: FoodImage
+  m_Name: ResourceImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 326845571127973330}
   - component: {fileID: 4367469399506899276}
   m_Layer: 5
-  m_Name: FoodText
+  m_Name: ResourceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 6358318187340197287}
   - component: {fileID: 6818615184006211377}
   m_Layer: 5
-  m_Name: FoodCounter
+  m_Name: ResourceCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,5 +259,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b813771efb48bbe46a6bd7bf848ec855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _foodType: 0
-  _foodText: {fileID: 4367469399506899276}
+  _resourceType: 0
+  _resourceText: {fileID: 4367469399506899276}

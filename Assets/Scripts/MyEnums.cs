@@ -1,6 +1,6 @@
-public enum FoodTypeEnum
+public enum ResourceTypeEnum
 {
-    None,
+    Seed,
     Cereal,
     Fruit,
     Vegetable,

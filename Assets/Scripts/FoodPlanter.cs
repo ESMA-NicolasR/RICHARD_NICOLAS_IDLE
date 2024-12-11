@@ -15,17 +15,17 @@ public class FoodPlanter : MonoBehaviour
 
     private void OnEnable()
     {
-        SeedManager.OnNbSeedsChanged += OnNbSeedsChanged;
+        ResourceManager.OnResourceAmountChanged += OnResourceAmountChanged;
     }
 
     private void OnDisable()
     {
-        SeedManager.OnNbSeedsChanged -= OnNbSeedsChanged;
+        ResourceManager.OnResourceAmountChanged -= OnResourceAmountChanged;
     }
 
     private void Start()
     {
-        UpdateDisplay(GameManager.Instance.seedManager.GetSeedNb());
+        UpdateDisplay(GameManager.Instance.resourceManager.GetResourceAmount(ResourceTypeEnum.Seed));
     }
 
     public void PlantFood()
@@ -38,7 +38,7 @@ public class FoodPlanter : MonoBehaviour
             return;
         }
         // Pay for the food
-        if (!GameManager.Instance.seedManager.SpendSeeds(_food.GetSeedCost()))
+        if (!GameManager.Instance.resourceManager.SpendResource(ResourceTypeEnum.Seed, _food.GetSeedCost()))
         {
             Debug.LogError("Not enough seed");
             return;
@@ -47,9 +47,10 @@ public class FoodPlanter : MonoBehaviour
         fieldPlot.GetComponent<FieldPlot>().SetFood(_food);
     }
 
-    private void OnNbSeedsChanged(int nbSeeds)
+    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, int nbResource)
     {
-        UpdateDisplay(nbSeeds);
+        if(resourceType == ResourceTypeEnum.Seed)
+            UpdateDisplay(nbResource);
     }
 
     private void UpdateDisplay(int nbSeeds)

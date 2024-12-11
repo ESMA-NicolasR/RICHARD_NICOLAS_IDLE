@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _food: {fileID: 0}
-  _priceText: {fileID: 8799543841920374231}
+  _priceText: {fileID: 2858163528204166304}
   _timeText: {fileID: 8799543841920374231}
   _yieldText: {fileID: 2571746808890504623}
   _button: {fileID: 41944130794616790}
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 2164492276894450986}
   - component: {fileID: 2858163528204166304}
   m_Layer: 5
-  m_Name: ActionText
+  m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
