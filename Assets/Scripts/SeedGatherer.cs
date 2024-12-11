@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,11 +8,10 @@ public class SeedGatherer : MonoBehaviour
 {
     [SerializeField] private int _gatherPower = 1;
     [SerializeField] private TextMeshProUGUI _gatherText;
-    
-    // Update is called once per frame
-    void Update()
+
+    private void Start()
     {
-        
+        UpdateDisplay();
     }
 
     public void GatherSeed()
@@ -22,6 +22,11 @@ public class SeedGatherer : MonoBehaviour
     public void IncreaseGatherPower()
     {
         _gatherPower++;
-        _gatherText.text = $"Gather seeds ({_gatherPower})";
+        UpdateDisplay();
+    }
+
+    private void UpdateDisplay()
+    {
+        _gatherText.text = $"Gather <sprite name=seed>({_gatherPower})";
     }
 }
