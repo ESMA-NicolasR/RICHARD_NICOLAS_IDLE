@@ -71,7 +71,7 @@ public class MyDictionary<Tk, Tv> : BaseDictionary
 {
     [SerializeField]
     private List<DictionaryEntry<Tk, Tv>> _dictionaryEntries;
-    public int Count => _dictionaryEntries.Count;
+
     public Tv this[Tk key]
     {
         get
@@ -321,4 +321,22 @@ public class MyDictionary<Tk, Tv> : BaseDictionary
         }
     }
 
+    public List<Tk> GetKeys()
+    {
+        var list = new List<Tk>();
+        foreach (var entry in _dictionaryEntries)
+        {
+            list.Add(entry.key);
+        }
+        return list;
+    }
+    public List<Tv> GetValues()
+    {
+        var list = new List<Tv>();
+        foreach (var entry in _dictionaryEntries)
+        {
+            list.Add(entry.value );
+        }
+        return list;
+    }
 }

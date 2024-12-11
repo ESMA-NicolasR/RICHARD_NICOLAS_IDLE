@@ -13,9 +13,14 @@ public class AutoGatherer : MonoBehaviour
     private float _harvestSpeed = 0f;
     [SerializeField] private int _harvestPower = 1;
 
+    public bool isActive;
+
     // Update is called once per frame
     void Update()
     {
+        if (!isActive)
+            return;
+        
         _progression += Time.deltaTime * _harvestSpeed;
         if (_progression >= 1f)
         {

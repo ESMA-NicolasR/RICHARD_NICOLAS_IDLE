@@ -361,7 +361,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gather <sprite name=seed> (1)
+  m_text: Gather <sprite name=seed> (99)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.95
+  m_fontSize: 30
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -599,6 +599,10 @@ PrefabInstance:
     - target: {fileID: 1288064236772753810, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
       propertyPath: m_fontSize
       value: 26.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655495568935799327, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FoodPlanter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1808131231040701398, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
       propertyPath: _resourceCost._dictionaryEntries.Array.size
@@ -2953,6 +2957,7 @@ MonoBehaviour:
   _progressionBar: {fileID: 895887086}
   _harvestSpeed: 1
   _harvestPower: 1
+  isActive: 0
 --- !u!1 &1965233508
 GameObject:
   m_ObjectHideFlags: 0

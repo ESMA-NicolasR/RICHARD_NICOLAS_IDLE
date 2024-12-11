@@ -4,12 +4,25 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class UpgradeBuyable : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _upgradeText;
+    [SerializeField] private TextMeshProUGUI _costText;
+    [SerializeField] private Button _button;
     [SerializeField] private ResourceDict _resourceCost;
     [SerializeField] private UnityEvent _onUpgrade;
+
+    private void OnEnable()
+    {
+        ResourceManager.OnResourceAmountChanged += OnResourceAmountChanged;
+    }
+
+    private void Start()
+    {
+        _costText.text = _resourceCost.GetStringWithSprites();
+    }
 
     public void BuyUpgrade()
     {
@@ -17,9 +30,17 @@ public class UpgradeBuyable : MonoBehaviour
         {
             _onUpgrade.Invoke();
         }
-        else
-        {
-            Debug.Log("Not enough resource");
-        }
+    }
+
+    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, int amount)
+    {
+        if(_resourceCost.CheckKey(resourceType))
+            UpdateDisplay();
+    }
+    
+    public void UpdateDisplay()
+    {
+        _button.interactable = GameManager.Instance.resourceManager.CheckCanSpendResource(_resourceCost);
+
     }
 }
