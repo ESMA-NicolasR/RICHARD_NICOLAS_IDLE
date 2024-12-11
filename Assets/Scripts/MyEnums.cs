@@ -5,3 +5,9 @@ public enum ResourceTypeEnum
     Fruit,
     Vegetable,
 }
+
+public enum UpgradeEnum
+{
+    UnlockFieldPlot,
+    UnlockAutoHarvest,
+}

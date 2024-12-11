@@ -41,6 +41,5 @@ public class UpgradeBuyable : MonoBehaviour
     public void UpdateDisplay()
     {
         _button.interactable = GameManager.Instance.resourceManager.CheckCanSpendResource(_resourceCost);
-
     }
 }

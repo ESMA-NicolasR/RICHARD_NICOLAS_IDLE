@@ -26,4 +26,16 @@ public class UpgradeManager : MonoBehaviour
     {
         _seedGatherer.IncreaseGatherPower();
     }
+
+    public void UnlockUpgrade(UpgradeEnum upgrade)
+    {
+        switch (upgrade)
+        {
+            case UpgradeEnum.UnlockFieldPlot:
+                BuyFieldPlot();
+                break;
+            case UpgradeEnum.UnlockAutoHarvest:
+                break;
+        }
+    }
 }

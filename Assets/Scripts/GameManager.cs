@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public UpgradeManager upgradeManager;
     [NonSerialized] public ResourceManager resourceManager;
     [NonSerialized] public FieldPlotManager fieldPlotManager;
+    [NonSerialized] public TaskManager taskManager;
     
     private void Awake()
     {
@@ -29,5 +30,6 @@ public class GameManager : MonoBehaviour
         upgradeManager = GetComponent<UpgradeManager>();
         resourceManager = GetComponent<ResourceManager>();
         fieldPlotManager = GetComponent<FieldPlotManager>();
+        taskManager = GetComponent<TaskManager>();
     }
 }

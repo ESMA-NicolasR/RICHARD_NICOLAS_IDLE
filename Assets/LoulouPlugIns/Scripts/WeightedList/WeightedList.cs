@@ -49,6 +49,17 @@ public class WeightedList<T> : SerializedWeightedListParent
         _weightedElementsList.Add(new WeightedElement<T>(element, weight));
     }
 
+    public void Remove(T element)
+    {
+        var _tempIndex = _weightedElementsList.FindIndex((_weightedElement) => _weightedElement.Element.Equals(element));
+        if( _tempIndex < 0 ) 
+        { 
+            Debug.LogError("Please make sure that your list have the element : " + element.ToString());
+            return;
+        }
+        RemoveElementAt(_tempIndex);
+    }
+
     public T this[int index]
     {
         get

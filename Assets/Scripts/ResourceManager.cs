@@ -34,6 +34,11 @@ public class ResourceManager : MonoBehaviour
         OnResourceAmountChanged?.Invoke(resourceTypeEnum, _resourceStorage[resourceTypeEnum]);
     }
     
+    public void AddResource(ResourceDict resources)
+    {
+        resources.ForEach(AddResource);
+    }
+    
 
     public bool CheckCanSpendResource(ResourceTypeEnum resourceTypeEnum, int nbSpend)
     {
