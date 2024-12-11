@@ -25,20 +25,20 @@ public class FoodPlanter : MonoBehaviour
 
     private void Start()
     {
-        UpdateDisplay(SeedManager.Instance.GetSeedNb());
+        UpdateDisplay(GameManager.Instance.seedManager.GetSeedNb());
     }
 
     public void PlantFood()
     {
         // Find an available field plot
-        GameObject fieldPlot = FieldPlotManager.Instance.GetIdleFieldPlot();
+        GameObject fieldPlot = GameManager.Instance.fieldPlotManager.GetIdleFieldPlot();
         if (fieldPlot == null)
         {
             Debug.Log("No field plot available");
             return;
         }
         // Pay for the food
-        if (!SeedManager.Instance.SpendSeeds(_food.GetSeedCost()))
+        if (!GameManager.Instance.seedManager.SpendSeeds(_food.GetSeedCost()))
         {
             Debug.LogError("Not enough seed");
             return;
@@ -57,15 +57,6 @@ public class FoodPlanter : MonoBehaviour
         _priceText.text = $"<sprite name=seed>{_food.GetSeedCost()}";
         _timeText.text = $"<sprite name=timer>{_food.baseTimeToGrow}";
         _yieldText.text = _food.GetYieldIconRepresentation();
-        if(nbSeeds < _food.GetSeedCost())
-        {
-            // _actionText.color = Color.red;
-            _button.interactable = false;
-        }
-        else
-        {
-            // _actionText.color = Color.white;
-            _button.interactable = true;
-        }
+        _button.interactable = nbSeeds >= _food.GetSeedCost();
     }
 }

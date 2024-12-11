@@ -4,26 +4,11 @@ using UnityEngine;
 
 public class FieldPlotManager : MonoBehaviour
 {
-    // Singleton
-    public static FieldPlotManager Instance { get; private set; }
-    
     private List<GameObject> pooledObjects;
     [SerializeField] private GameObject objectToPool;
     [SerializeField] private int amountToPool;
     [SerializeField] private Transform poolParent;
     
-    private void Awake()
-    {
-        // If there is an instance, and it's not me, delete myself
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(this); 
-        } 
-        else // I am the instance now
-        { 
-            Instance = this; 
-        } 
-    }
     // Start is called before the first frame update
     void Start()
     {

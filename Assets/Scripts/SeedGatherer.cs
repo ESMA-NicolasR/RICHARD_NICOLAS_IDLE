@@ -7,14 +7,7 @@ public class SeedGatherer : MonoBehaviour
 {
     [SerializeField] private int _gatherPower = 1;
     [SerializeField] private TextMeshProUGUI _gatherText;
-    private SeedManager _seedManager;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        _seedManager = SeedManager.Instance;
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +16,7 @@ public class SeedGatherer : MonoBehaviour
 
     public void GatherSeed()
     {
-        _seedManager.AddSeeds(_gatherPower);
+        GameManager.Instance.seedManager.AddSeeds(_gatherPower);
     }
 
     public void IncreaseGatherPower()

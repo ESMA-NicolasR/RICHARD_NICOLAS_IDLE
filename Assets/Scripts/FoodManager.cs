@@ -5,27 +5,12 @@ using UnityEngine;
 
 public class FoodManager : MonoBehaviour
 {
-    // Singleton
-    public static FoodManager Instance { get; private set; }
-    
     // Gameplay
     [SerializeField] private MyDictionary<FoodTypeEnum, int> _foodStorage;
     
     // Delegates
     public static event Action<FoodTypeEnum, int> OnFoodAmountChanged;
     
-    private void Awake()
-    {
-        // If there is an instance, and it's not me, delete myself
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(this); 
-        } 
-        else // I am the instance now
-        { 
-            Instance = this; 
-        } 
-    }
 
     // Start is called before the first frame update
     void Start()

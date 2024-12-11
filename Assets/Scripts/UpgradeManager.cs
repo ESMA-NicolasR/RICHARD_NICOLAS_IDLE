@@ -5,25 +5,9 @@ using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
-    // Singleton
-    public static UpgradeManager Instance { get; private set; }
-    
     // Dependencies
-    private SeedGatherer _seedGatherer;
+    [SerializeField] private SeedGatherer _seedGatherer;
     
-    private void Awake()
-    {
-        // If there is an instance, and it's not me, delete myself
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(this); 
-        } 
-        else // I am the instance now
-        { 
-            Instance = this; 
-        } 
-    }
-
     private void Start()
     {
         _seedGatherer = FindFirstObjectByType<SeedGatherer>();
@@ -31,7 +15,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void BuyFieldPlot()
     {
-        if (!FieldPlotManager.Instance.ActivateFieldPlot())
+        if (!GameManager.Instance.fieldPlotManager.ActivateFieldPlot())
         {
             Debug.Log("No more field plot to buy");
         }

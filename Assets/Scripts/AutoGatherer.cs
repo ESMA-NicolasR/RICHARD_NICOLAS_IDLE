@@ -28,7 +28,7 @@ public class AutoGatherer : MonoBehaviour
 
     private void AutoHarvest()
     {
-        SeedManager.Instance.AddSeeds(_harvestPower);
+        GameManager.Instance.seedManager.AddSeeds(_harvestPower);
     }
 
     public void UpgradeAutoHarvestPower()

@@ -14,13 +14,13 @@ public class UpgradeBuyable : MonoBehaviour
 
     public void BuyUpgrade()
     {
-        bool checkSeeds = SeedManager.Instance.CheckCanSpendSeed(_seedCost);
-        bool checkFood = FoodManager.Instance.CheckCanSpendFood(_foodCost);
+        bool checkSeeds = GameManager.Instance.seedManager.CheckCanSpendSeed(_seedCost);
+        bool checkFood = GameManager.Instance.foodManager.CheckCanSpendFood(_foodCost);
 
         if (checkFood && checkSeeds)
         {
-            SeedManager.Instance.SpendSeeds(_seedCost);
-            FoodManager.Instance.SpendFood(_foodCost);
+            GameManager.Instance.seedManager.SpendSeeds(_seedCost);
+            GameManager.Instance.foodManager.SpendFood(_foodCost);
             _onUpgrade.Invoke();
         }
         else
