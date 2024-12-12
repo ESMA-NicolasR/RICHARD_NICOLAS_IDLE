@@ -18,4 +18,4 @@ MonoBehaviour:
     _dictionaryEntries:
     - key: 1
       value: 10
-  upgradeReward: 0
+  upgradeReward: 1

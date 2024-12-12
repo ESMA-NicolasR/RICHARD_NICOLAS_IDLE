@@ -9,11 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 799656456992073083}
+  - component: {fileID: 2467161631690976131}
   - component: {fileID: 7423910520754233810}
   - component: {fileID: 3826220392529980169}
   - component: {fileID: 2195655614055822025}
-  - component: {fileID: 2467161631690976131}
   - component: {fileID: 1662520732534248626}
+  - component: {fileID: 2177027160910221795}
+  - component: {fileID: 6355535760109508364}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -36,6 +38,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2467161631690976131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088704960667636830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecc470e117331a4e898a0499538c32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7423910520754233810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af185f90c56f3804e818d5d38c9366d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _seedGatherer: {fileID: 0}
 --- !u!114 &2195655614055822025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,18 +91,6 @@ MonoBehaviour:
   objectToPool: {fileID: 7784120153699916650, guid: d7e2780302c3fe54385a35ade360fd0b, type: 3}
   amountToPool: 12
   poolParent: {fileID: 0}
---- !u!114 &2467161631690976131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9088704960667636830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecc470e117331a4e898a0499538c32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1662520732534248626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,3 +103,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376e8e1feb92c53438e845a2bb9135bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minorTaskCompleter1: {fileID: 0}
+  _minorTaskCompleter2: {fileID: 0}
+  _majorTaskCompleter: {fileID: 0}
+  _majorTaskProgression: []
+  _minorTasksAvailable:
+    _weightedElementsList: []
+--- !u!114 &2177027160910221795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088704960667636830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc5c67250f529264fac7a7a6898e47cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _progressionBar: {fileID: 0}
+  _harvestSpeed: 1
+  _harvestPower: 1
+  isActive: 0
+--- !u!114 &6355535760109508364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088704960667636830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a9d45c060a9334b8bdfe243a235f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gatherPower: 1
+  _gatherText: {fileID: 0}
