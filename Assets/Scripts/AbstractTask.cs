@@ -12,7 +12,7 @@ public abstract class AbstractTask
 
 public class MinorTask : AbstractTask
 {
-    private int _reward;
+    private double _reward;
 
     public MinorTask(MinorTaskTemplate template)
     {
@@ -25,8 +25,7 @@ public class MinorTask : AbstractTask
     
     public override void ClaimReward()
     {
-        //TODO replace with world hunger
-        GameManager.Instance.resourceManager.AddResource(ResourceTypeEnum.Seed, _reward);
+        GameManager.Instance.worldHungerManager.FeedPeople(_reward);
     }
 }
 

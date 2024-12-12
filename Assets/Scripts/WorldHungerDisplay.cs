@@ -35,7 +35,7 @@ public class WorldHungerDisplay : MonoBehaviour
         WorldHungerManager.OnPeopleFedNbChanged += OnPeopleFedNbChanged;
     }
 
-    private void OnPeopleFedNbChanged(int peopleFedNb)
+    private void OnPeopleFedNbChanged(double peopleFedNb)
     {
         progressBar.fillAmount = worldHungerScalings.Sum(scaling => scaling.GetFilledFraction(peopleFedNb));
     }

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public TaskManager taskManager;
     [NonSerialized] public SeedGatherer seedGatherer;
     [NonSerialized] public AutoGatherer autoGatherer;
+    [NonSerialized] public WorldHungerManager worldHungerManager;
     
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         fieldPlotManager = GetComponent<FieldPlotManager>();
         taskManager = GetComponent<TaskManager>();
         seedGatherer = GetComponent<SeedGatherer>();
-        seedGatherer = GetComponent<SeedGatherer>();
+        autoGatherer = GetComponent<AutoGatherer>();
+        worldHungerManager = GetComponent<WorldHungerManager>();
     }
 }

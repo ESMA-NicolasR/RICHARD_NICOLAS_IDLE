@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class WorldHungerManager : MonoBehaviour
 {
-    private int _peopleFedNb;
+    private double _peopleFedNb;
 
-    public static Action<int> OnPeopleFedNbChanged;
+    public static Action<double> OnPeopleFedNbChanged;
 
     [SerializeField] private int _totalPeopleToFeed;
     // Start is called before the first frame update
@@ -23,13 +23,13 @@ public class WorldHungerManager : MonoBehaviour
         
     }
 
-    public void feedPeople(int nbPeople)
+    public void FeedPeople(double nbPeople)
     {
         _peopleFedNb += nbPeople;
         OnPeopleFedNbChanged?.Invoke(_peopleFedNb);
     }
 
-    public int GetPeopleFedNb()
+    public double GetPeopleFedNb()
     {
         return _peopleFedNb;
     }
