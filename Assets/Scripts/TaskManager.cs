@@ -14,8 +14,9 @@ public class TaskManager : MonoBehaviour
 
     [SerializeField] private List<MajorTaskMilestone> _majorTaskProgression;
     private Queue<MajorTaskMilestone> _majorTaskQueue;
-    [SerializeField] private List<MinorTaskMilestone> _minorTaskProgression;
-    private Queue<MinorTaskMilestone> _minorTaskQueue;
+    // TODO : waiting for a fix to not crash editor
+    // [SerializeField] private List<MinorTaskMilestone> _minorTaskProgression;
+    // private Queue<MinorTaskMilestone> _minorTaskQueue;
 
     [SerializeField] private WeightedList<MinorTaskTemplate> _minorTasksAvailable;
     
@@ -23,7 +24,8 @@ public class TaskManager : MonoBehaviour
     void Start()
     {
         _majorTaskQueue = new Queue<MajorTaskMilestone>(_majorTaskProgression);
-        _minorTaskQueue = new Queue<MinorTaskMilestone>(_minorTaskProgression);
+        // TODO : waiting for a fix to not crash editor
+        // _minorTaskQueue = new Queue<MinorTaskMilestone>(_minorTaskProgression);
         NextTask();
     }
 
@@ -54,13 +56,14 @@ public class TaskManager : MonoBehaviour
         else 
         {
             // Check if we've unlocked the next set of minor tasks
-            if (_minorTaskQueue.Count != 0 &&
-                _minorTaskQueue.Peek().milestone
-                <=
-                GameManager.Instance.worldHungerManager.GetPeopleFedNb())
-            {
-                _minorTasksAvailable = _minorTaskQueue.Dequeue().minorTaskTemplates;
-            }
+            // TODO : waiting for a fix to not crash editor
+            // if (_minorTaskQueue.Count != 0 &&
+            //     _minorTaskQueue.Peek().milestone
+            //     <=
+            //     GameManager.Instance.worldHungerManager.GetPeopleFedNb())
+            // {
+            //     _minorTasksAvailable = _minorTaskQueue.Dequeue().minorTaskTemplates;
+            // }
             // Create minor tasks
             _minorTaskCompleter1.gameObject.SetActive(true);
             _minorTaskCompleter2.gameObject.SetActive(true);

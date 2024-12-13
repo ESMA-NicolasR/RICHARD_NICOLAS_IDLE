@@ -30,7 +30,7 @@ public class TaskCompleter : MonoBehaviour
     
     private void OnResourceAmountChanged(ResourceTypeEnum resourceType, int amount)
     {
-        if(_task.goalResourceDict.CheckKey(resourceType))
+        if(_task != null && _task.goalResourceDict.CheckKey(resourceType))
             UpdateDisplay();
     }
     
