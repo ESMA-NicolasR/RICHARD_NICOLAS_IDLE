@@ -9,8 +9,8 @@ using UnityEngine.UI;
 [Serializable]
 public class WorldHungerScaling
 {
-    public double lowerBound;
-    public double upperBound;
+    public long lowerBound;
+    public long upperBound;
     public float ratio;
 
     public float GetFilledFraction(double amount)
@@ -19,7 +19,7 @@ public class WorldHungerScaling
         {
             return 0f;
         }
-        
+
         return Mathf.Lerp(0f, ratio, (float)(amount/upperBound));
     }
 }
@@ -35,8 +35,9 @@ public class WorldHungerDisplay : MonoBehaviour
         WorldHungerManager.OnPeopleFedNbChanged += OnPeopleFedNbChanged;
     }
 
-    private void OnPeopleFedNbChanged(double peopleFedNb)
+    private void OnPeopleFedNbChanged(long peopleFedNb)
     {
         progressBar.fillAmount = worldHungerScalings.Sum(scaling => scaling.GetFilledFraction(peopleFedNb));
+        progressText.text = GameManager.Instance.worldHungerManager.GetProgressAsTextWithIcons();
     }
 }

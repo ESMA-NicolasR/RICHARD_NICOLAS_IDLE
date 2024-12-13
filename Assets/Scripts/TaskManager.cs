@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable] class MajorTaskMilestone { public int milestone; public MajorTaskTemplate majorTaskTemplate; }
+[Serializable] class MinorTaskMilestone { public int milestone; public WeightedList<MinorTaskTemplate> minorTaskTemplates; }
 
 public class TaskManager : MonoBehaviour
 {
@@ -13,12 +14,16 @@ public class TaskManager : MonoBehaviour
 
     [SerializeField] private List<MajorTaskMilestone> _majorTaskProgression;
     private Queue<MajorTaskMilestone> _majorTaskQueue;
+    [SerializeField] private List<MinorTaskMilestone> _minorTaskProgression;
+    private Queue<MinorTaskMilestone> _minorTaskQueue;
+
     [SerializeField] private WeightedList<MinorTaskTemplate> _minorTasksAvailable;
     
     // Start is called before the first frame update
     void Start()
     {
         _majorTaskQueue = new Queue<MajorTaskMilestone>(_majorTaskProgression);
+        _minorTaskQueue = new Queue<MinorTaskMilestone>(_minorTaskProgression);
         NextTask();
     }
 
@@ -32,11 +37,13 @@ public class TaskManager : MonoBehaviour
     {
         // Check if we've unlocked the next major task
         if (
+            _majorTaskQueue.Count != 0 &&
             _majorTaskQueue.Peek().milestone
             <=
-            GameManager.Instance.resourceManager.GetResourceAmount(ResourceTypeEnum.Seed)
+            GameManager.Instance.worldHungerManager.GetPeopleFedNb()
             )
         {
+            // Create major task
             _minorTaskCompleter1.gameObject.SetActive(false);
             _minorTaskCompleter2.gameObject.SetActive(false);
             _majorTaskCompleter.gameObject.SetActive(true);
@@ -44,8 +51,17 @@ public class TaskManager : MonoBehaviour
             MajorTask newTask = new MajorTask(_majorTaskQueue.Dequeue().majorTaskTemplate);
             _majorTaskCompleter.AssignTask(newTask);
         }
-        else
+        else 
         {
+            // Check if we've unlocked the next set of minor tasks
+            if (_minorTaskQueue.Count != 0 &&
+                _minorTaskQueue.Peek().milestone
+                <=
+                GameManager.Instance.worldHungerManager.GetPeopleFedNb())
+            {
+                _minorTasksAvailable = _minorTaskQueue.Dequeue().minorTaskTemplates;
+            }
+            // Create minor tasks
             _minorTaskCompleter1.gameObject.SetActive(true);
             _minorTaskCompleter2.gameObject.SetActive(true);
             _majorTaskCompleter.gameObject.SetActive(false);
@@ -54,7 +70,6 @@ public class TaskManager : MonoBehaviour
             MinorTask newTask2 = new MinorTask(_minorTasksAvailable.GetRandomElement());
             _minorTaskCompleter1.AssignTask(newTask1);
             _minorTaskCompleter2.AssignTask(newTask2);
-
         }
     }
 

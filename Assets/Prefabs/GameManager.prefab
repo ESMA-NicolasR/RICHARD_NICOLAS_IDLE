@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 1662520732534248626}
   - component: {fileID: 2177027160910221795}
   - component: {fileID: 6355535760109508364}
+  - component: {fileID: 7652395507004952145}
+  - component: {fileID: 900894267713369926}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -107,8 +109,7 @@ MonoBehaviour:
   _minorTaskCompleter2: {fileID: 0}
   _majorTaskCompleter: {fileID: 0}
   _majorTaskProgression: []
-  _minorTasksAvailable:
-    _weightedElementsList: []
+  _minorTaskProgression: []
 --- !u!114 &2177027160910221795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +140,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gatherPower: 1
   _gatherText: {fileID: 0}
+--- !u!114 &7652395507004952145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088704960667636830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2075028c7aa10594cb1a998764c35417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _totalPeopleToFeed: 8193544800
+--- !u!114 &900894267713369926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088704960667636830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ccb45c3cf996d40a3240e2e4a4fe14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _citiesFile: {fileID: 4900000, guid: 887418940cfc65f408bd175cb1e5e206, type: 3}
+  _countriesFile: {fileID: 4900000, guid: 6f90b4400b4b98c4cb5c35d79b5a1954, type: 3}

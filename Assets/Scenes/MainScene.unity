@@ -1400,7 +1400,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1358628476}
         m_TargetAssemblyTypeName: SeedGatherer, Assembly-CSharp
         m_MethodName: GatherSeed
         m_Mode: 1
@@ -3055,6 +3055,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af185f90c56f3804e818d5d38c9366d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1358628476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6355535760109508364, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+  m_PrefabInstance: {fileID: 2502356195800829386}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a9d45c060a9334b8bdfe243a235f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1526823896
 GameObject:
   m_ObjectHideFlags: 0
@@ -4147,15 +4158,15 @@ MonoBehaviour:
   flavorText: {fileID: 635648877}
   worldHungerScalings:
   - lowerBound: 0
-    upperBound: 10
+    upperBound: 5
     ratio: 0.1
-  - lowerBound: 10
-    upperBound: 1000000
+  - lowerBound: 5
+    upperBound: 10
     ratio: 0.15
-  - lowerBound: 1000000
-    upperBound: 1000000000
-    ratio: 0.35
-  - lowerBound: 1000000000
+  - lowerBound: 10
+    upperBound: 100
+    ratio: 0.25
+  - lowerBound: 100
     upperBound: 8193544800
     ratio: 0.5
 --- !u!114 &1978420151
@@ -5047,6 +5058,10 @@ PrefabInstance:
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[0]

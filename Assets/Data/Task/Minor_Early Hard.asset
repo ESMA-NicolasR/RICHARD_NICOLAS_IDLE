@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availableResources: 0100000000000000
   nbResourcesToDraw: 2
-  minResourceGoal: 4
-  maxResourceGoal: 6
-  minReward: 6
-  maxReward: 10
+  minResourceGoal: 2
+  maxResourceGoal: 4
+  minReward: 4
+  maxReward: 6

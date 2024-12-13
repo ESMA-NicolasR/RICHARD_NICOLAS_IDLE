@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class WorldHungerManager : MonoBehaviour
 {
-    private double _peopleFedNb;
+    private long _peopleFedNb;
 
-    public static Action<double> OnPeopleFedNbChanged;
+    public static Action<long> OnPeopleFedNbChanged;
 
-    [SerializeField] private int _totalPeopleToFeed;
+    [SerializeField] private long _totalPeopleToFeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +23,20 @@ public class WorldHungerManager : MonoBehaviour
         
     }
 
-    public void FeedPeople(double nbPeople)
+    public void FeedPeople(long nbPeople)
     {
         _peopleFedNb += nbPeople;
         OnPeopleFedNbChanged?.Invoke(_peopleFedNb);
     }
 
-    public double GetPeopleFedNb()
+    public long GetPeopleFedNb()
     {
         return _peopleFedNb;
+    }
+    
+    public string GetProgressAsTextWithIcons()
+    {
+        // TODO change sprite
+        return $"<sprite name=seed>{_peopleFedNb:N0} / {_totalPeopleToFeed:N0}";
     }
 }

@@ -12,7 +12,7 @@ public abstract class AbstractTask
 
 public class MinorTask : AbstractTask
 {
-    private double _reward;
+    private long _reward;
 
     public MinorTask(MinorTaskTemplate template)
     {

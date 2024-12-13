@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Save : MonoBehaviour
+public class SaveSystem : MonoBehaviour
 {
     public void MakeSave()
     {
@@ -11,6 +11,6 @@ public class Save : MonoBehaviour
 
     public void LoadSave()
     {
-        GameManager.Instance.worldHungerManager.FeedPeople(PlayerPrefs.GetFloat("WorldHunger"));
+        GameManager.Instance.worldHungerManager.FeedPeople((long)PlayerPrefs.GetFloat("WorldHunger"));
     }
 }
