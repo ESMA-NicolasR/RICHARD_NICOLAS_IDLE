@@ -44,6 +44,6 @@ public class Food : ScriptableObject
                 Debug.Log("Unknown Food Type");
                 break;
         }
-        return $"<sprite name={foodCategorySprite}>{GetYieldAmount()}";
+        return $"<sprite name={foodCategorySprite}>\n{GetYieldAmount()}";
     }
 }
