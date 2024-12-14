@@ -36,7 +36,6 @@ public class WorldHungerManager : MonoBehaviour
     
     public string GetProgressAsTextWithIcons()
     {
-        // TODO change sprite
-        return $"<sprite name=seed>{_peopleFedNb:N0} / {_totalPeopleToFeed:N0}";
+        return $"<sprite name=hunger>{_peopleFedNb:N0} / {_totalPeopleToFeed:N0}";
     }
 }

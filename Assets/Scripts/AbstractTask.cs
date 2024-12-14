@@ -19,8 +19,7 @@ public class MinorTask : AbstractTask
         goalResourceDict = template.GetGoalResourceDict();
         goalFlavorText = template.GetGoalFlavorText();
         _reward = Random.Range(template.minReward, template.maxReward);
-        //TODO replace with world hunger
-        rewardFlavorText = $"Feed <sprite name=seed>{_reward} people";
+        rewardFlavorText = $"Feed <sprite name=hunger>{_reward} people";
     }
     
     public override void ClaimReward()
