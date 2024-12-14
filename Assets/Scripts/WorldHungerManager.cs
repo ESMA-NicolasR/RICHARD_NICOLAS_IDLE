@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WorldHungerManager : MonoBehaviour
 {
-    private long _peopleFedNb;
+    [SerializeField] private long _peopleFedNb;
 
     public static Action<long> OnPeopleFedNbChanged;
 
@@ -13,7 +13,6 @@ public class WorldHungerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _peopleFedNb = 0;
         OnPeopleFedNbChanged?.Invoke(_peopleFedNb);
     }
 
@@ -32,6 +31,11 @@ public class WorldHungerManager : MonoBehaviour
     public long GetPeopleFedNb()
     {
         return _peopleFedNb;
+    }
+    
+    public long GetTotalPeopleToFeed()
+    {
+        return _totalPeopleToFeed;
     }
     
     public string GetProgressAsTextWithIcons()

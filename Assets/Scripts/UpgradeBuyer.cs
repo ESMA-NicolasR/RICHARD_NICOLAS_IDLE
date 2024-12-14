@@ -27,7 +27,7 @@ public class UpgradeBuyer : MonoBehaviour
         ResourceManager.OnResourceAmountChanged -= OnResourceAmountChanged;
     }
 
-    private void Start()
+    private void Awake()
     {
         _currentRank = 0;
         _maxRank = _upgradeTemplate.GetMaxRank();

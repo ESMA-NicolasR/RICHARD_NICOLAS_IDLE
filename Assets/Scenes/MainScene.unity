@@ -6660,19 +6660,6 @@ MonoBehaviour:
   progressBar: {fileID: 611986943}
   progressText: {fileID: 1526823898}
   flavorText: {fileID: 635648877}
-  worldHungerScalings:
-  - lowerBound: 0
-    upperBound: 5
-    ratio: 0.1
-  - lowerBound: 5
-    upperBound: 10
-    ratio: 0.15
-  - lowerBound: 10
-    upperBound: 100
-    ratio: 0.25
-  - lowerBound: 100
-    upperBound: 8193544800
-    ratio: 0.5
 --- !u!114 &1978420151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8497,6 +8484,10 @@ PrefabInstance:
       propertyPath: _gatherText
       value: 
       objectReference: {fileID: 207685541}
+    - target: {fileID: 7652395507004952145, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _peopleFedNb
+      value: 1000000000
+      objectReference: {fileID: 0}
     - target: {fileID: 9088704960667636830, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: m_Name
       value: GameManager
