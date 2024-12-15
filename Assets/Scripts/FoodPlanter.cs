@@ -16,16 +16,22 @@ public class FoodPlanter : MonoBehaviour
     private void OnEnable()
     {
         ResourceManager.OnResourceAmountChanged += OnResourceAmountChanged;
+        UpgradeManager.OnUpgradeScalingChanged += OnUpgradeScalingChanged;
+
     }
 
     private void OnDisable()
     {
         ResourceManager.OnResourceAmountChanged -= OnResourceAmountChanged;
+        UpgradeManager.OnUpgradeScalingChanged -= OnUpgradeScalingChanged;
     }
 
     private void Start()
     {
-        UpdateDisplay(GameManager.Instance.resourceManager.GetResourceAmount(ResourceTypeEnum.Seed));
+        _priceText.text = $"<sprite name=seed>{_food.GetSeedCost()}";
+        OnResourceAmountChanged(ResourceTypeEnum.Seed,
+            GameManager.Instance.resourceManager.GetResourceAmount(ResourceTypeEnum.Seed));
+        OnUpgradeScalingChanged();
     }
 
     public void PlantFood()
@@ -50,14 +56,13 @@ public class FoodPlanter : MonoBehaviour
     private void OnResourceAmountChanged(ResourceTypeEnum resourceType, int nbResource)
     {
         if(resourceType == ResourceTypeEnum.Seed)
-            UpdateDisplay(nbResource);
+            _button.interactable = nbResource >= _food.GetSeedCost();
+    }
+    
+    private void OnUpgradeScalingChanged()
+    {
+        _timeText.text = $"<sprite name=timer>\n{_food.GetTimeToGrow():F2}";
+        _yieldText.text = $"{_food.GetYieldSprite()}\n{_food.GetYieldAmount()}";
     }
 
-    private void UpdateDisplay(int nbSeeds)
-    {
-        _priceText.text = $"<sprite name=seed>{_food.GetSeedCost()}";
-        _timeText.text = $"<sprite name=timer>\n{_food.baseTimeToGrow}";
-        _yieldText.text = $"{_food.GetYieldSprite()}\n{_food.GetYieldAmount()}";
-        _button.interactable = nbSeeds >= _food.GetSeedCost();
-    }
 }

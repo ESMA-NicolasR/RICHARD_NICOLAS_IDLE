@@ -24,7 +24,7 @@ public class WorldHungerManager : MonoBehaviour
 
     public void FeedPeople(long nbPeople)
     {
-        _peopleFedNb += nbPeople;
+        _peopleFedNb += (int)(nbPeople * GameManager.Instance.upgradeManager.GetScalingValue(UpgradeScalingEnum.MultWorldHungerReward));
         OnPeopleFedNbChanged?.Invoke(_peopleFedNb);
     }
 

@@ -18,7 +18,8 @@ public class FieldPlot : MonoBehaviour
     [SerializeField] private Food _food;
     private bool _isIdle;
     private bool _isRipe;
-    private float _growthTime;
+    private float _growTime;
+    public bool isAutomated;
     
     // Start is called before the first frame update
     void Start()
@@ -44,22 +45,30 @@ public class FieldPlot : MonoBehaviour
         _harvestProgressBar.fillAmount = 0f;
         _isRipe = false;
         _isIdle = false;
-        _growthTime = 0f;
+        _growTime = 0f;
         StartCoroutine(GrowFood());
     }
 
     private IEnumerator GrowFood()
     {
+        float timeToGrow = _food.GetTimeToGrow();
         while (!_isRipe)
         {
             yield return new WaitForEndOfFrame();
-            _growthTime += Time.deltaTime;
-            _isRipe = _growthTime >= _food.baseTimeToGrow;
-            _harvestProgressBar.fillAmount = _growthTime / _food.baseTimeToGrow;
+            _growTime += Time.deltaTime;
+            _harvestProgressBar.fillAmount = _growTime / timeToGrow;
+            _isRipe = _growTime >= timeToGrow;
         }
 
-        _foodImage.sprite = _food.ripeSprite;
-        DisplayFloatingText("Ripe !");
+        if (isAutomated)
+        {
+            Harvest();
+        }
+        else
+        {
+            _foodImage.sprite = _food.ripeSprite;
+            DisplayFloatingText("Ripe !");
+        }
     }
 
     public void OnClick()
@@ -96,4 +105,5 @@ public class FieldPlot : MonoBehaviour
     {
         return _isIdle;
     }
+    
 }

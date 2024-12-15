@@ -6,8 +6,10 @@ using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
+    public static Action OnUpgradeScalingChanged;
     private Dictionary<UpgradeEnum, Action> _upgradeEnumToAction;
     [SerializeField] private UpgradeReferences _upgradeReferences;
+    private Dictionary<UpgradeScalingEnum, float> _upgradeScalings;
 
     private void Awake()
     {
@@ -23,8 +25,44 @@ public class UpgradeManager : MonoBehaviour
             { UpgradeEnum.GatherPowerOne, UpgradeGatherPowerOne },
             { UpgradeEnum.GatherPowerTen, UpgradeGatherPowerTen },
             { UpgradeEnum.AutoGatherSpeed, UpgradeAutoGatherSpeed },
-            
+            { UpgradeEnum.AddCerealYield, AddCerealYield },
+            { UpgradeEnum.ScaleGlobalYield, ScaleGLobalYield },
+            { UpgradeEnum.AddFruitGrowSpeed, AddFruitSpeed },
+            { UpgradeEnum.ScaleGlobalGrowSpeed, ScaleGlobalSpeed },
+            { UpgradeEnum.AutomateHarvest, AutomateHarvest },
+            { UpgradeEnum.ScaleWorldHungerReward, ScaleWorldHungerReward },
         };
+        _upgradeScalings = new Dictionary<UpgradeScalingEnum, float>()
+        {
+            { UpgradeScalingEnum.AddCerealYield, 0f },
+            { UpgradeScalingEnum.AddFruitGrowSpeed, 0f },
+            { UpgradeScalingEnum.ExpGlobalYield, 0f },
+            { UpgradeScalingEnum.ExpGlobalGrowSpeed, 0f },
+            { UpgradeScalingEnum.MultWorldHungerReward, 1f },
+        };
+    }
+    
+    public void UnlockUpgrade(UpgradeEnum upgrade)
+    {
+        if (_upgradeEnumToAction.ContainsKey(upgrade))
+        {
+            _upgradeEnumToAction[upgrade].Invoke();
+        }
+        else
+        {
+            Debug.Log("Upgrade not found");
+        }
+    }
+    
+    public float GetScalingValue(UpgradeScalingEnum scaling)
+    {
+        if (_upgradeScalings.ContainsKey(scaling))
+        {
+            return _upgradeScalings[scaling];
+        }
+        
+        Debug.Log("Scaling not initialized");
+        return 0f;
     }
 
     private void AddFieldPlot()
@@ -106,15 +144,41 @@ public class UpgradeManager : MonoBehaviour
         GameManager.Instance.autoGatherer.UpgradeAutoHarvestRate();
     }
 
-    public void UnlockUpgrade(UpgradeEnum upgrade)
+    private void AddCerealYield()
     {
-        if (_upgradeEnumToAction.ContainsKey(upgrade))
+        _upgradeScalings[UpgradeScalingEnum.AddCerealYield] += 1f;
+        OnUpgradeScalingChanged?.Invoke();
+    }
+
+    private void ScaleGLobalYield()
+    {
+        _upgradeScalings[UpgradeScalingEnum.ExpGlobalYield] += 0.2f;
+        OnUpgradeScalingChanged?.Invoke();
+    }
+    
+    private void AddFruitSpeed()
+    {
+        _upgradeScalings[UpgradeScalingEnum.AddFruitGrowSpeed] += 1f;
+        OnUpgradeScalingChanged?.Invoke();
+    }
+    
+    private void ScaleGlobalSpeed()
+    {
+        _upgradeScalings[UpgradeScalingEnum.ExpGlobalGrowSpeed] += 0.2f;
+        OnUpgradeScalingChanged?.Invoke();
+    }
+
+    private void AutomateHarvest()
+    {
+        if (!GameManager.Instance.fieldPlotManager.AutomateFieldPlot())
         {
-            _upgradeEnumToAction[upgrade].Invoke();
+            Debug.Log("No more field plot to automate");
         }
-        else
-        {
-            Debug.Log("Upgrade not found");
-        }
+    }
+    
+    private void ScaleWorldHungerReward()
+    {
+        _upgradeScalings[UpgradeScalingEnum.MultWorldHungerReward] += 0.5f;
+        OnUpgradeScalingChanged?.Invoke();
     }
 }

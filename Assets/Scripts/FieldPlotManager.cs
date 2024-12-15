@@ -67,4 +67,17 @@ public class FieldPlotManager : MonoBehaviour
         }
         return null;
     }
+    
+    public bool AutomateFieldPlot()
+    {
+        for(int i = 0; i < amountToPool; i++)
+        {
+            if(_pooledObjects[i].activeInHierarchy && !_pooledObjects[i].GetComponent<FieldPlot>().isAutomated)
+            {
+                _pooledObjects[i].GetComponent<FieldPlot>().isAutomated = true;
+                return true;
+            }
+        }
+        return false;
+    }
 }

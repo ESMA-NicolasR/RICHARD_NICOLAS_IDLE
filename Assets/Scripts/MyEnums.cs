@@ -20,13 +20,19 @@ public enum UpgradeEnum
     GatherPowerOne,
     GatherPowerTen,
     AutoGatherSpeed,
-    NewCereal,
     AddCerealYield,
-    ScaleCerealSpeed,
-    NewFruit,
-    AddFruitSpeed,
-    ScaleFruitYield,
-    NewVegetable,
-    ScaleVegetableSpeedYield,
-    ScaleHungerReward,
+    ScaleGlobalYield,
+    AddFruitGrowSpeed,
+    ScaleGlobalGrowSpeed,
+    AutomateHarvest,
+    ScaleWorldHungerReward,
+}
+
+public enum UpgradeScalingEnum
+{
+    AddCerealYield,
+    AddFruitGrowSpeed,
+    ExpGlobalYield,
+    ExpGlobalGrowSpeed,
+    MultWorldHungerReward,
 }
