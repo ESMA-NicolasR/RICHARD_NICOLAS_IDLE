@@ -10,7 +10,8 @@ public enum UpgradeEnum
 {
     // One time upgrades (main tasks)
     UnlockFieldPlot,
-    UnlockAutoHarvest,
+    UnlockShop,
+    UnlockAutoGather,
     UnlockCereal,
     UnlockFruit,
     UnlockVegetable,

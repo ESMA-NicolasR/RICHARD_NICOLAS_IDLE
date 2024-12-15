@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5eb83f645fe0c74fbd84fe2f33f88ae, type: 3}
-  m_Name: Main_1
+  m_Name: Main_3
   m_EditorClassIdentifier: 
-  goalFlavorText: Make friends with your neighbour by sending him seeds
-  rewardFlavorText: Unlock you first field plot
+  goalFlavorText: Grow some food and send it to the local town
+  rewardFlavorText: Unlock the shop
   goalResourceDict:
     _dictionaryEntries:
-    - key: 0
+    - key: 1
       value: 5
-  upgradeReward: 0
+  upgradeReward: 1

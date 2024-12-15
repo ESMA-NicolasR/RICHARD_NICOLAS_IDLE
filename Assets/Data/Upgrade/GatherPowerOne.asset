@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8d6d4369aa4338944d53b2bc32521a, type: 3}
   m_Name: GatherPowerOne
   m_EditorClassIdentifier: 
-  upgrade: 6
+  upgrade: 7
   description: Increase gather power (+1)
   maxRank: 0
   baseCost:

@@ -20,6 +20,12 @@ public class ResourceCounter : MonoBehaviour
         ResourceManager.OnResourceAmountChanged -= OnResourceAmountChanged;
     }
 
+    private void Start()
+    {
+        // Fail-safe display of the starting amount of resources
+        OnResourceAmountChanged(_resourceType, GameManager.Instance.resourceManager.GetResourceAmount(_resourceType));
+    }
+
     private void OnResourceAmountChanged(ResourceTypeEnum resourceTypeEnumChanged, int amount)
     {
         if (resourceTypeEnumChanged == _resourceType)

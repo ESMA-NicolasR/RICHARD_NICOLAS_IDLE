@@ -9,13 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5eb83f645fe0c74fbd84fe2f33f88ae, type: 3}
-  m_Name: Main_1
+  m_Script: {fileID: 11500000, guid: 3d8d6d4369aa4338944d53b2bc32521a, type: 3}
+  m_Name: AutoGatherSpeed
   m_EditorClassIdentifier: 
-  goalFlavorText: Make friends with your neighbour by sending him seeds
-  rewardFlavorText: Unlock you first field plot
-  goalResourceDict:
+  upgrade: 9
+  description: Increase auto gather speed
+  maxRank: 10
+  baseCost:
     _dictionaryEntries:
     - key: 0
-      value: 5
-  upgradeReward: 0
+      value: 20
+    - key: 1
+      value: 10
+  exponent: 0

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5eb83f645fe0c74fbd84fe2f33f88ae, type: 3}
   m_Name: Main_2
   m_EditorClassIdentifier: 
-  goalFlavorText: Grow wheat and send it to the local school
-  rewardFlavorText: Unlock the shop
+  goalFlavorText: Gather some seeds to plant food
+  rewardFlavorText: Unlock you first food to grow
   goalResourceDict:
     _dictionaryEntries:
-    - key: 1
-      value: 4
-  upgradeReward: 1
+    - key: 0
+      value: 10
+  upgradeReward: 3

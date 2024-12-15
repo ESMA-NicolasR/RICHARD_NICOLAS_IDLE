@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8d6d4369aa4338944d53b2bc32521a, type: 3}
   m_Name: AddFieldPlot
   m_EditorClassIdentifier: 
-  upgrade: 5
+  upgrade: 6
   description: Add a new field plot
   maxRank: 12
   baseCost:
     _dictionaryEntries:
     - key: 0
-      value: 10
+      value: 1
   exponent: 1.5
