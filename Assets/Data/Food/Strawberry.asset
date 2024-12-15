@@ -15,7 +15,7 @@ MonoBehaviour:
   foodName: Strawberry
   growingSprite: {fileID: 0}
   ripeSprite: {fileID: 0}
-  foodTypeEnum: 2
+  resourceTypeEnum: 2
   baseSeedCost: 5
   baseTimeToGrow: 10
   baseYieldAmount: 20

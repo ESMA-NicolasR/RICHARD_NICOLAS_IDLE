@@ -15,7 +15,7 @@ MonoBehaviour:
   foodName: Leek
   growingSprite: {fileID: 0}
   ripeSprite: {fileID: 0}
-  foodTypeEnum: 3
+  resourceTypeEnum: 3
   baseSeedCost: 2
   baseTimeToGrow: 4
   baseYieldAmount: 2

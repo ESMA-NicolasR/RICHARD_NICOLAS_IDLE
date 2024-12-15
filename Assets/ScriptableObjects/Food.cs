@@ -11,7 +11,7 @@ public class Food : ScriptableObject
     public Sprite ripeSprite;
     
     // Gameplay
-    [FormerlySerializedAs("ressourceTypeEnum")] [FormerlySerializedAs("foodTypeEnum")] [FormerlySerializedAs("foodType")] public ResourceTypeEnum resourceTypeEnum;
+    public ResourceTypeEnum resourceTypeEnum;
     public int baseSeedCost;
     public float baseTimeToGrow;
     public int baseYieldAmount;
@@ -26,7 +26,7 @@ public class Food : ScriptableObject
         return baseYieldAmount;
     }
 
-    public string GetYieldIconRepresentation()
+    public string GetYieldSprite()
     {
         string foodCategorySprite = "";
         switch (resourceTypeEnum)
@@ -44,6 +44,6 @@ public class Food : ScriptableObject
                 Debug.Log("Unknown Food Type");
                 break;
         }
-        return $"<sprite name={foodCategorySprite}>\n{GetYieldAmount()}";
+        return $"<sprite name={foodCategorySprite}>";
     }
 }

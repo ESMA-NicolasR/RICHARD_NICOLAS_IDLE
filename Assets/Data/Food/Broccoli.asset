@@ -15,7 +15,7 @@ MonoBehaviour:
   foodName: Broccoli
   growingSprite: {fileID: 0}
   ripeSprite: {fileID: 0}
-  foodTypeEnum: 3
+  resourceTypeEnum: 3
   baseSeedCost: 5
   baseTimeToGrow: 5
   baseYieldAmount: 8

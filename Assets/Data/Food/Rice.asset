@@ -15,7 +15,7 @@ MonoBehaviour:
   foodName: Rice
   growingSprite: {fileID: 0}
   ripeSprite: {fileID: 0}
-  foodTypeEnum: 1
+  resourceTypeEnum: 1
   baseSeedCost: 1
   baseTimeToGrow: 2
   baseYieldAmount: 1

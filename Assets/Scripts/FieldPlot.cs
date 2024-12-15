@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class FieldPlot : MonoBehaviour
     [SerializeField] private Image _foodImage;
     [SerializeField] private Image _harvestProgressBar;
     [SerializeField] private Image _harvestBackgroundBar;
+    [SerializeField] private TextMeshProUGUI _floatingText;
+    [SerializeField] private Animator _textAnimator;
     
     // Gameplay
     [SerializeField] private Food _food;
@@ -20,6 +23,7 @@ public class FieldPlot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _floatingText.text = "";
         _foodImage.enabled = false;
         _harvestProgressBar.enabled = false;
         _harvestBackgroundBar.enabled = false;
@@ -31,7 +35,7 @@ public class FieldPlot : MonoBehaviour
 
     public void SetFood(Food newFood)
     {
-        Debug.Log("new food : " + newFood.name);
+        DisplayFloatingText("Growing...");
         _foodImage.enabled = true;
         _harvestBackgroundBar.enabled = true;
         _harvestProgressBar.enabled = true;
@@ -55,6 +59,7 @@ public class FieldPlot : MonoBehaviour
         }
 
         _foodImage.sprite = _food.ripeSprite;
+        DisplayFloatingText("Ripe !");
     }
 
     public void OnClick()
@@ -71,12 +76,20 @@ public class FieldPlot : MonoBehaviour
 
     private void Harvest()
     {
-        GameManager.Instance.resourceManager.AddResource(_food.resourceTypeEnum, _food.GetYieldAmount());
+        int yield = _food.GetYieldAmount();
+        GameManager.Instance.resourceManager.AddResource(_food.resourceTypeEnum, yield);
+        DisplayFloatingText($"+{_food.GetYieldSprite()}{yield}");
         _isRipe = false;
         _isIdle = true;
         _foodImage.enabled = false;
         _harvestBackgroundBar.enabled = false;
         _harvestProgressBar.enabled = false;
+    }
+
+    private void DisplayFloatingText(string text)
+    {
+        _floatingText.text = text;
+        _textAnimator.SetTrigger("PopUp");
     }
 
     public bool IsIdle()

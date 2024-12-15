@@ -57,7 +57,7 @@ public class FoodPlanter : MonoBehaviour
     {
         _priceText.text = $"<sprite name=seed>{_food.GetSeedCost()}";
         _timeText.text = $"<sprite name=timer>\n{_food.baseTimeToGrow}";
-        _yieldText.text = _food.GetYieldIconRepresentation();
+        _yieldText.text = $"{_food.GetYieldSprite()}\n{_food.GetYieldAmount()}";
         _button.interactable = nbSeeds >= _food.GetSeedCost();
     }
 }

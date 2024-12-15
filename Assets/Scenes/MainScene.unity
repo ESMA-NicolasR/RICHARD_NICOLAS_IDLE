@@ -8278,6 +8278,10 @@ PrefabInstance:
       propertyPath: _gatherText
       value: 
       objectReference: {fileID: 207685541}
+    - target: {fileID: 6355535760109508364, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _gatherPower
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7652395507004952145, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _peopleFedNb
       value: 0

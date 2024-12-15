@@ -15,7 +15,7 @@ MonoBehaviour:
   foodName: Oat
   growingSprite: {fileID: 0}
   ripeSprite: {fileID: 0}
-  foodTypeEnum: 1
+  resourceTypeEnum: 1
   baseSeedCost: 4
   baseTimeToGrow: 8
   baseYieldAmount: 6

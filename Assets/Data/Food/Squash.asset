@@ -15,7 +15,7 @@ MonoBehaviour:
   foodName: Squash
   growingSprite: {fileID: 0}
   ripeSprite: {fileID: 0}
-  foodTypeEnum: 3
+  resourceTypeEnum: 3
   baseSeedCost: 3
   baseTimeToGrow: 3
   baseYieldAmount: 3
