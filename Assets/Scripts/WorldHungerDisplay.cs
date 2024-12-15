@@ -11,6 +11,7 @@ public class WorldHungerDisplay : MonoBehaviour
     [SerializeField] private Image progressBar;
     [SerializeField] private TextMeshProUGUI progressText;
     [SerializeField] private TextMeshProUGUI flavorText;
+    [SerializeField] private Animator textAnimator;
     private void OnEnable()
     {
         WorldHungerManager.OnPeopleFedNbChanged += OnPeopleFedNbChanged;
@@ -20,6 +21,7 @@ public class WorldHungerDisplay : MonoBehaviour
     {
         progressBar.fillAmount = GetFilledFraction(peopleFedNb);
         progressText.text = GameManager.Instance.worldHungerManager.GetProgressAsTextWithIcons();
+        textAnimator.SetTrigger("Wiggle");
     }
     
     private float GetFilledFraction(long amount)

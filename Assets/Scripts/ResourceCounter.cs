@@ -9,6 +9,7 @@ public class ResourceCounter : MonoBehaviour
 {
     [SerializeField] private ResourceTypeEnum _resourceType;
     [SerializeField] private TextMeshProUGUI _resourceText;
+    [SerializeField] private Animator _textAnimator;
 
     private void OnEnable()
     {
@@ -31,6 +32,7 @@ public class ResourceCounter : MonoBehaviour
         if (resourceTypeEnumChanged == _resourceType)
         {
             _resourceText.text = amount.ToString();
+            _textAnimator.SetTrigger("Wiggle");
         }
     }
 }

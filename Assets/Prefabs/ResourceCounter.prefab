@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 326845571127973330}
   - component: {fileID: 4367469399506899276}
   - component: {fileID: 7248345553831001269}
+  - component: {fileID: 570797058159027034}
   m_Layer: 5
   m_Name: ResourceText
   m_TagString: Untagged
@@ -133,7 +134,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &326845571127973330
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -251,6 +252,27 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!95 &570797058159027034
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533004140142118374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e0af1afc695fb045ae7b79cf46e4816, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6387056609205683291
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceType: 0
   _resourceText: {fileID: 4367469399506899276}
+  _textAnimator: {fileID: 570797058159027034}
 --- !u!114 &6691753662228345244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +344,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
