@@ -69,7 +69,7 @@ public class UpgradeBuyer : MonoBehaviour
         }
     }
     
-    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, int amount)
+    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, long amount)
     {
         if(_resourceCost.CheckKey(resourceType))
             UpdateDisplay();

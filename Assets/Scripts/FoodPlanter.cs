@@ -53,7 +53,7 @@ public class FoodPlanter : MonoBehaviour
         fieldPlot.GetComponent<FieldPlot>().SetFood(_food);
     }
 
-    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, int nbResource)
+    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, long nbResource)
     {
         if(resourceType == ResourceTypeEnum.Seed)
             _button.interactable = nbResource >= _food.GetSeedCost();

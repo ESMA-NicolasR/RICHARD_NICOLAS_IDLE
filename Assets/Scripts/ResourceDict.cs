@@ -1,7 +1,7 @@
 using System;
 
 [Serializable]
-public class ResourceDict : MyDictionary<ResourceTypeEnum, int>
+public class ResourceDict : MyDictionary<ResourceTypeEnum, long>
 {
     public string GetStringWithSprites()
     {

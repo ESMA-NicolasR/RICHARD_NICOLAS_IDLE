@@ -28,7 +28,7 @@ public class TaskCompleter : MonoBehaviour
         ResourceManager.OnResourceAmountChanged += OnResourceAmountChanged;
     }
     
-    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, int amount)
+    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, long amount)
     {
         if(_task != null && _task.goalResourceDict.CheckKey(resourceType))
             UpdateDisplay();

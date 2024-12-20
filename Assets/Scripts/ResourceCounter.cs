@@ -27,7 +27,7 @@ public class ResourceCounter : MonoBehaviour
         OnResourceAmountChanged(_resourceType, GameManager.Instance.resourceManager.GetResourceAmount(_resourceType));
     }
 
-    private void OnResourceAmountChanged(ResourceTypeEnum resourceTypeEnumChanged, int amount)
+    private void OnResourceAmountChanged(ResourceTypeEnum resourceTypeEnumChanged, long amount)
     {
         if (resourceTypeEnumChanged == _resourceType)
         {

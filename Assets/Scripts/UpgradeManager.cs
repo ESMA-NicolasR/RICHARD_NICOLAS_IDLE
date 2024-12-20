@@ -11,11 +11,19 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private UpgradeReferences _upgradeReferences;
     private Dictionary<UpgradeScalingEnum, float> _upgradeScalings;
 
+    private const float BONUS_CEREAL_YIELD = 1f;
+    private const float BONUS_GLOBAL_YIELD = 0.2f;
+    private const float BONUS_FRUIT_SPEED = 1f;
+    private const float BONUS_GLOBAL_SPEED = 0.2f;
+    private const float BONUS_WORLD_HUNGER = 0.5f;
+    private const long BONUS_GATHER_POWER_ONE = 1;
+    private const long BONUS_GATHER_POWER_TEN = 10;
+
     private void Awake()
     {
         _upgradeEnumToAction = new Dictionary<UpgradeEnum, Action>()
         {
-            { UpgradeEnum.UnlockFieldPlot, AddFieldPlot },
+            { UpgradeEnum.UnlockFieldPlot, UnlockFieldPlot },
             { UpgradeEnum.UnlockShop, UnlockShop },
             { UpgradeEnum.UnlockCereal, UnlockCereal },
             { UpgradeEnum.UnlockFruit, UnlockFruit },
@@ -26,7 +34,7 @@ public class UpgradeManager : MonoBehaviour
             { UpgradeEnum.GatherPowerTen, UpgradeGatherPowerTen },
             { UpgradeEnum.AutoGatherSpeed, UpgradeAutoGatherSpeed },
             { UpgradeEnum.AddCerealYield, AddCerealYield },
-            { UpgradeEnum.ScaleGlobalYield, ScaleGLobalYield },
+            { UpgradeEnum.ScaleGlobalYield, ScaleGlobalYield },
             { UpgradeEnum.AddFruitGrowSpeed, AddFruitSpeed },
             { UpgradeEnum.ScaleGlobalGrowSpeed, ScaleGlobalSpeed },
             { UpgradeEnum.AutomateHarvest, AutomateHarvest },
@@ -40,6 +48,12 @@ public class UpgradeManager : MonoBehaviour
             { UpgradeScalingEnum.ExpGlobalGrowSpeed, 0f },
             { UpgradeScalingEnum.MultWorldHungerReward, 1f },
         };
+    }
+
+    public void UnlockFieldPlot()
+    {
+        _upgradeReferences.fieldPlotBuyer.SetActive(true);
+        AddFieldPlot();
     }
     
     public void UnlockUpgrade(UpgradeEnum upgrade)
@@ -78,14 +92,15 @@ public class UpgradeManager : MonoBehaviour
     {
         _upgradeReferences.fieldPlotBuyer.SetActive(true);
         _upgradeReferences.firstShopUnlockBuyers.ForEach(value => value.SetActive(true));
+        _upgradeReferences.cerealUpgrades.ForEach(value => value.SetActive(true));
     }
 
     private void UnlockCereal()
     {
         _upgradeReferences.cerealCounter.SetActive(true);
-        if (_upgradeReferences.cerealUnlockedNb < _upgradeReferences.cerealUnlockers.Count)
+        if (_upgradeReferences.cerealUnlockedNb < _upgradeReferences.cerealPlanters.Count)
         {
-            _upgradeReferences.cerealUnlockers[_upgradeReferences.cerealUnlockedNb].SetActive(true);
+            _upgradeReferences.cerealPlanters[_upgradeReferences.cerealUnlockedNb].SetActive(true);
             _upgradeReferences.cerealUnlockedNb++;
         }
         else
@@ -97,9 +112,10 @@ public class UpgradeManager : MonoBehaviour
     private void UnlockFruit()
     {
         _upgradeReferences.fruitCounter.SetActive(true);
-        if (_upgradeReferences.fruitUnlockedNb < _upgradeReferences.fruitUnlockers.Count)
+        _upgradeReferences.fruitUpgrades.ForEach(value => value.SetActive(true));
+        if (_upgradeReferences.fruitUnlockedNb < _upgradeReferences.fruitPlanters.Count)
         {
-            _upgradeReferences.fruitUnlockers[_upgradeReferences.fruitUnlockedNb].SetActive(true);
+            _upgradeReferences.fruitPlanters[_upgradeReferences.fruitUnlockedNb].SetActive(true);
             _upgradeReferences.fruitUnlockedNb++;
         }
         else
@@ -111,9 +127,11 @@ public class UpgradeManager : MonoBehaviour
     private void UnlockVegetable()
     {
         _upgradeReferences.vegetableCounter.SetActive(true);
-        if (_upgradeReferences.vegetableUnlockedNb < _upgradeReferences.vegetableUnlockers.Count)
+        _upgradeReferences.vegetableUpgrades.ForEach(value => value.SetActive(true));
+
+        if (_upgradeReferences.vegetableUnlockedNb < _upgradeReferences.vegetablePlanters.Count)
         {
-            _upgradeReferences.vegetableUnlockers[_upgradeReferences.vegetableUnlockedNb].SetActive(true);
+            _upgradeReferences.vegetablePlanters[_upgradeReferences.vegetableUnlockedNb].SetActive(true);
             _upgradeReferences.vegetableUnlockedNb++;
         }
         else
@@ -131,12 +149,12 @@ public class UpgradeManager : MonoBehaviour
 
     private void UpgradeGatherPowerOne()
     {
-        GameManager.Instance.seedGatherer.IncreaseGatherPower(1);
+        GameManager.Instance.seedGatherer.IncreaseGatherPower(BONUS_GATHER_POWER_ONE);
     }
     
     private void UpgradeGatherPowerTen()
     {
-        GameManager.Instance.seedGatherer.IncreaseGatherPower(10);
+        GameManager.Instance.seedGatherer.IncreaseGatherPower(BONUS_GATHER_POWER_TEN);
     }
 
     private void UpgradeAutoGatherSpeed()
@@ -146,25 +164,25 @@ public class UpgradeManager : MonoBehaviour
 
     private void AddCerealYield()
     {
-        _upgradeScalings[UpgradeScalingEnum.AddCerealYield] += 1f;
+        _upgradeScalings[UpgradeScalingEnum.AddCerealYield] += BONUS_CEREAL_YIELD;
         OnUpgradeScalingChanged?.Invoke();
     }
 
-    private void ScaleGLobalYield()
+    private void ScaleGlobalYield()
     {
-        _upgradeScalings[UpgradeScalingEnum.ExpGlobalYield] += 0.2f;
+        _upgradeScalings[UpgradeScalingEnum.ExpGlobalYield] += BONUS_GLOBAL_YIELD;
         OnUpgradeScalingChanged?.Invoke();
     }
     
     private void AddFruitSpeed()
     {
-        _upgradeScalings[UpgradeScalingEnum.AddFruitGrowSpeed] += 1f;
+        _upgradeScalings[UpgradeScalingEnum.AddFruitGrowSpeed] += BONUS_FRUIT_SPEED;
         OnUpgradeScalingChanged?.Invoke();
     }
     
     private void ScaleGlobalSpeed()
     {
-        _upgradeScalings[UpgradeScalingEnum.ExpGlobalGrowSpeed] += 0.2f;
+        _upgradeScalings[UpgradeScalingEnum.ExpGlobalGrowSpeed] += BONUS_GLOBAL_SPEED;
         OnUpgradeScalingChanged?.Invoke();
     }
 
@@ -178,7 +196,7 @@ public class UpgradeManager : MonoBehaviour
     
     private void ScaleWorldHungerReward()
     {
-        _upgradeScalings[UpgradeScalingEnum.MultWorldHungerReward] += 0.5f;
+        _upgradeScalings[UpgradeScalingEnum.MultWorldHungerReward] += BONUS_WORLD_HUNGER;
         OnUpgradeScalingChanged?.Invoke();
     }
 }

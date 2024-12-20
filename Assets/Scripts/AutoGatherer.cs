@@ -15,6 +15,9 @@ public class AutoGatherer : MonoBehaviour
     [SerializeField]
     private float _gatherRatePerSecond;
 
+    private const float MAX_RATE = 5f;
+    private const float UPGRADE_RATE = .5f;
+
     public bool isActive;
 
     private void Start()
@@ -51,9 +54,9 @@ public class AutoGatherer : MonoBehaviour
 
     public void UpgradeAutoHarvestRate()
     {
-        if (_gatherRatePerSecond < 5f)
+        if (_gatherRatePerSecond < MAX_RATE)
         {
-            _gatherRatePerSecond += 0.5f;
+            _gatherRatePerSecond += UPGRADE_RATE;
             _autoGatherText.text = $"Auto gathering\n({(_gatherRatePerSecond):F2}/s)";
         }
     }

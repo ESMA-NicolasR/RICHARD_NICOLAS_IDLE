@@ -9,7 +9,7 @@ public class ResourceManager : MonoBehaviour
     [SerializeField] private ResourceDict _resourceStorage;
     
     // Delegates
-    public static event Action<ResourceTypeEnum, int> OnResourceAmountChanged;
+    public static event Action<ResourceTypeEnum, long> OnResourceAmountChanged;
     
 
     // Start is called before the first frame update
@@ -23,12 +23,12 @@ public class ResourceManager : MonoBehaviour
         }
     }
     
-    public int GetResourceAmount(ResourceTypeEnum resourceTypeEnum)
+    public long GetResourceAmount(ResourceTypeEnum resourceTypeEnum)
     {
         return _resourceStorage[resourceTypeEnum];
     }
 
-    public void AddResource(ResourceTypeEnum resourceTypeEnum, int nbAdd)
+    public void AddResource(ResourceTypeEnum resourceTypeEnum, long nbAdd)
     {
         _resourceStorage[resourceTypeEnum] += nbAdd;
         OnResourceAmountChanged?.Invoke(resourceTypeEnum, _resourceStorage[resourceTypeEnum]);
@@ -40,7 +40,7 @@ public class ResourceManager : MonoBehaviour
     }
     
 
-    public bool CheckCanSpendResource(ResourceTypeEnum resourceTypeEnum, int nbSpend)
+    public bool CheckCanSpendResource(ResourceTypeEnum resourceTypeEnum, long nbSpend)
     {
         return _resourceStorage[resourceTypeEnum] >= nbSpend;
     }
@@ -55,7 +55,7 @@ public class ResourceManager : MonoBehaviour
         return canSpend;
     }
     
-    public bool SpendResource(ResourceTypeEnum resourceType, int nbSpend)
+    public bool SpendResource(ResourceTypeEnum resourceType, long nbSpend)
     {
         if (!CheckCanSpendResource(resourceType, nbSpend))
         {

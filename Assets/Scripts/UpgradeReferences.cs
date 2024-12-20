@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UpgradeReferences : MonoBehaviour
 {
-    public List<GameObject> cerealUnlockers;
-    public List<GameObject> fruitUnlockers;
-    public List<GameObject> vegetableUnlockers;
+    public GameObject cerealUnlocker;
+    public List<GameObject> cerealPlanters;
+    public List<GameObject> fruitPlanters;
+    public List<GameObject> vegetablePlanters;
     public int cerealUnlockedNb;
     public int fruitUnlockedNb;
     public int vegetableUnlockedNb;
@@ -18,34 +20,49 @@ public class UpgradeReferences : MonoBehaviour
     public List<GameObject> firstShopUnlockBuyers;
     public GameObject autoGatherSpeedBuyer;
     public GameObject autoGatherDisplay;
+    public List<GameObject> cerealUpgrades;
+    public List<GameObject> fruitUpgrades;
+    public List<GameObject> vegetableUpgrades;
 
     private void Start()
     {
         // Hide the food not yet unlocked 
-        for(int i=0; i<cerealUnlockers.Count; i++)
+        for(int i=0; i<cerealPlanters.Count; i++)
         {
-            cerealUnlockers[i].SetActive(i<cerealUnlockedNb);
+            cerealPlanters[i].SetActive(i<cerealUnlockedNb);
         }
-        for(int i=0; i<fruitUnlockers.Count; i++)
+        for(int i=0; i<fruitPlanters.Count; i++)
         {
-            fruitUnlockers[i].SetActive(i<fruitUnlockedNb);
+            fruitPlanters[i].SetActive(i<fruitUnlockedNb);
         }
-        for(int i=0; i<vegetableUnlockers.Count; i++)
+        for(int i=0; i<vegetablePlanters.Count; i++)
         {
-            vegetableUnlockers[i].SetActive(i<vegetableUnlockedNb);
+            vegetablePlanters[i].SetActive(i<vegetableUnlockedNb);
         }
-        // Hide counters for food not unlocked
+        // Hide elements for food not unlocked
         if (cerealUnlockedNb == 0)
         {
             cerealCounter.SetActive(false);
+            foreach (GameObject go in cerealUpgrades)
+            {
+                go.SetActive(false);
+            }
         }
         if (fruitUnlockedNb == 0)
         {
             fruitCounter.SetActive(false);
+            foreach (GameObject go in fruitUpgrades)
+            {
+                go.SetActive(false);
+            }
         }
         if (vegetableUnlockedNb == 0)
         {
             vegetableCounter.SetActive(false);
+            foreach (GameObject go in vegetableUpgrades)
+            {
+                go.SetActive(false);
+            }
         }
         // Hide field plot buyer
         fieldPlotBuyer.SetActive(GameManager.Instance.fieldPlotManager.GetIdleFieldPlot()!=null);

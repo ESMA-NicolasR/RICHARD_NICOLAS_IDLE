@@ -2057,6 +2057,11 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &488790749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+  m_PrefabInstance: {fileID: 1311111422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &490077173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2786,6 +2791,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519553636}
   m_CullTransparentMesh: 1
+--- !u!1 &552958417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+  m_PrefabInstance: {fileID: 1004988793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &571987352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3558,7 +3568,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.6
+  m_fontSize: 59.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4525,6 +4535,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2806007516099060578, guid: a466ee06743b9f144a398425af8a91da, type: 3}
   m_PrefabInstance: {fileID: 1982154736}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &884190526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+  m_PrefabInstance: {fileID: 1929887830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &895887084
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,6 +4615,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895887084}
   m_CullTransparentMesh: 1
+--- !u!1 &914139589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+  m_PrefabInstance: {fileID: 595506082}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &987528885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+  m_PrefabInstance: {fileID: 433861052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1004988793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7145,6 +7170,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6358318187340197287, guid: ad45210672cef174e9688fed6e992c2d, type: 3}
   m_PrefabInstance: {fileID: 1646701695}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1714981450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+  m_PrefabInstance: {fileID: 1123893515}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1723845893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7477,7 +7507,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.3
+  m_fontSize: 66.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8788,15 +8818,30 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2961799858819743303, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
   m_PrefabInstance: {fileID: 1349989481}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2022746583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+  m_PrefabInstance: {fileID: 1314706584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2038993411 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6358318187340197287, guid: ad45210672cef174e9688fed6e992c2d, type: 3}
   m_PrefabInstance: {fileID: 2060097063}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2039627794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+  m_PrefabInstance: {fileID: 1540827040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2041686221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
   m_PrefabInstance: {fileID: 332787260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2054372634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2587112636593592004, guid: 0c702b2d79e9b704cab5d999ffa0c7a1, type: 3}
+  m_PrefabInstance: {fileID: 22725038}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2060097063
 PrefabInstance:
@@ -9874,6 +9919,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 652356800}
     - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: cerealUnlocker
+      value: 
+      objectReference: {fileID: 884190526}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: fieldPlotBuyer
       value: 
       objectReference: {fileID: 2041686221}
@@ -9906,6 +9955,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1923040673}
     - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: fruitPlanters.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: fruitUpgrades.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: cerealPlanters.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: cerealUpgrades.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: fruitUnlockers.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -9913,6 +9978,58 @@ PrefabInstance:
       propertyPath: cerealUnlockers.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: fruitPlanters.Array.data[0]
+      value: 
+      objectReference: {fileID: 1576611450}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: fruitPlanters.Array.data[1]
+      value: 
+      objectReference: {fileID: 1825136266}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: fruitPlanters.Array.data[2]
+      value: 
+      objectReference: {fileID: 1969149565}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: fruitPlanters.Array.data[3]
+      value: 
+      objectReference: {fileID: 1969149565}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: fruitUpgrades.Array.data[0]
+      value: 
+      objectReference: {fileID: 1714981450}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: fruitUpgrades.Array.data[1]
+      value: 
+      objectReference: {fileID: 2022746583}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: fruitUpgrades.Array.data[2]
+      value: 
+      objectReference: {fileID: 987528885}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: cerealPlanters.Array.data[0]
+      value: 
+      objectReference: {fileID: 2134678573}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: cerealPlanters.Array.data[1]
+      value: 
+      objectReference: {fileID: 367497817}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: cerealPlanters.Array.data[2]
+      value: 
+      objectReference: {fileID: 1565254049}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: cerealUpgrades.Array.data[0]
+      value: 
+      objectReference: {fileID: 884190526}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: cerealUpgrades.Array.data[1]
+      value: 
+      objectReference: {fileID: 2039627794}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: cerealUpgrades.Array.data[2]
+      value: 
+      objectReference: {fileID: 914139589}
     - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: fruitUnlockers.Array.data[0]
       value: 
@@ -9925,6 +10042,14 @@ PrefabInstance:
       propertyPath: fruitUnlockers.Array.data[2]
       value: 
       objectReference: {fileID: 1969149565}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: vegetablePlanters.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: vegetableUpgrades.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: cerealUnlockers.Array.data[0]
       value: 
@@ -9945,6 +10070,30 @@ PrefabInstance:
       propertyPath: vegetableUnlockers.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: vegetablePlanters.Array.data[0]
+      value: 
+      objectReference: {fileID: 1841940162}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: vegetablePlanters.Array.data[1]
+      value: 
+      objectReference: {fileID: 1587324946}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: vegetablePlanters.Array.data[2]
+      value: 
+      objectReference: {fileID: 870178535}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: vegetableUpgrades.Array.data[0]
+      value: 
+      objectReference: {fileID: 488790749}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: vegetableUpgrades.Array.data[1]
+      value: 
+      objectReference: {fileID: 552958417}
+    - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: vegetableUpgrades.Array.data[2]
+      value: 
+      objectReference: {fileID: 2054372634}
     - target: {fileID: 455240702732422736, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: firstShopUnlockBuyers.Array.size
       value: 2

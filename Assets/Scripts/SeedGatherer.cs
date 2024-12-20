@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SeedGatherer : MonoBehaviour
 {
-    [SerializeField] private int _gatherPower = 1;
+    [SerializeField] private long _gatherPower = 1;
     [SerializeField] private TextMeshProUGUI _gatherText;
 
     private void Start()
@@ -19,7 +19,7 @@ public class SeedGatherer : MonoBehaviour
         GameManager.Instance.resourceManager.AddResource(ResourceTypeEnum.Seed, _gatherPower);
     }
 
-    public void IncreaseGatherPower(int nb)
+    public void IncreaseGatherPower(long nb)
     {
         _gatherPower += nb;
         UpdateDisplay();
