@@ -9,6 +9,7 @@ public class FieldPlot : MonoBehaviour
 {
     // Display
     [SerializeField] private Image _foodImage;
+    [SerializeField] private GameObject _rotatingImage;
     [SerializeField] private Image _harvestProgressBar;
     [SerializeField] private Image _harvestBackgroundBar;
     [SerializeField] private TextMeshProUGUI _floatingText;
@@ -19,7 +20,7 @@ public class FieldPlot : MonoBehaviour
     private bool _isIdle;
     private bool _isRipe;
     private float _growTime;
-    public bool isAutomated;
+    private bool _isAutomated;
     
     // Start is called before the first frame update
     void Start()
@@ -60,7 +61,7 @@ public class FieldPlot : MonoBehaviour
             _isRipe = _growTime >= timeToGrow;
         }
 
-        if (isAutomated)
+        if (_isAutomated)
         {
             Harvest();
         }
@@ -104,6 +105,17 @@ public class FieldPlot : MonoBehaviour
     public bool IsIdle()
     {
         return _isIdle;
+    }
+
+    public void Automate()
+    {
+        _isAutomated = true;
+        _rotatingImage.SetActive(true);
+    }
+
+    public bool GetIsAutomated()
+    {
+        return _isAutomated;
     }
     
 }

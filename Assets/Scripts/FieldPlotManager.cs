@@ -72,9 +72,9 @@ public class FieldPlotManager : MonoBehaviour
     {
         for(int i = 0; i < amountToPool; i++)
         {
-            if(_pooledObjects[i].activeInHierarchy && !_pooledObjects[i].GetComponent<FieldPlot>().isAutomated)
+            if(_pooledObjects[i].activeInHierarchy && !_pooledObjects[i].GetComponent<FieldPlot>().GetIsAutomated())
             {
-                _pooledObjects[i].GetComponent<FieldPlot>().isAutomated = true;
+                _pooledObjects[i].GetComponent<FieldPlot>().Automate();
                 return true;
             }
         }
