@@ -6,8 +6,8 @@ using UnityEngine.Serialization;
 
 public class UpgradeReferences : MonoBehaviour
 {
-    public GameObject cerealUnlocker;
-    public List<GameObject> cerealPlanters;
+    public GameObject newCerealBuyer;
+    public List<Locker> cerealPlanters;
     public List<GameObject> fruitPlanters;
     public List<GameObject> vegetablePlanters;
     public int cerealUnlockedNb;
@@ -20,7 +20,7 @@ public class UpgradeReferences : MonoBehaviour
     public List<GameObject> firstShopUnlockBuyers;
     public GameObject autoGatherSpeedBuyer;
     public GameObject autoGatherDisplay;
-    public List<GameObject> cerealUpgrades;
+    public List<Locker> cerealUpgrades;
     public List<GameObject> fruitUpgrades;
     public List<GameObject> vegetableUpgrades;
 
@@ -29,7 +29,8 @@ public class UpgradeReferences : MonoBehaviour
         // Hide the food not yet unlocked 
         for(int i=0; i<cerealPlanters.Count; i++)
         {
-            cerealPlanters[i].SetActive(i<cerealUnlockedNb);
+            if (i < cerealUnlockedNb) cerealPlanters[i].Unlock();
+            else cerealPlanters[i].Lock();
         }
         for(int i=0; i<fruitPlanters.Count; i++)
         {
@@ -43,9 +44,9 @@ public class UpgradeReferences : MonoBehaviour
         if (cerealUnlockedNb == 0)
         {
             cerealCounter.SetActive(false);
-            foreach (GameObject go in cerealUpgrades)
+            foreach (Locker locker in cerealUpgrades)
             {
-                go.SetActive(false);
+                locker.Lock();
             }
         }
         if (fruitUnlockedNb == 0)

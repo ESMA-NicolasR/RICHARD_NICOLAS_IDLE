@@ -92,7 +92,7 @@ public class UpgradeManager : MonoBehaviour
     {
         _upgradeReferences.fieldPlotBuyer.SetActive(true);
         _upgradeReferences.firstShopUnlockBuyers.ForEach(value => value.SetActive(true));
-        _upgradeReferences.cerealUpgrades.ForEach(value => value.SetActive(true));
+        _upgradeReferences.cerealUpgrades.ForEach(value => value.Unlock());
     }
 
     private void UnlockCereal()
@@ -100,7 +100,7 @@ public class UpgradeManager : MonoBehaviour
         _upgradeReferences.cerealCounter.SetActive(true);
         if (_upgradeReferences.cerealUnlockedNb < _upgradeReferences.cerealPlanters.Count)
         {
-            _upgradeReferences.cerealPlanters[_upgradeReferences.cerealUnlockedNb].SetActive(true);
+            _upgradeReferences.cerealPlanters[_upgradeReferences.cerealUnlockedNb].Unlock();
             _upgradeReferences.cerealUnlockedNb++;
         }
         else
