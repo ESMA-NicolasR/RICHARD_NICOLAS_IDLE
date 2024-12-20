@@ -91,7 +91,7 @@ public class UpgradeManager : MonoBehaviour
     private void UnlockShop()
     {
         _upgradeReferences.fieldPlotBuyer.SetActive(true);
-        _upgradeReferences.firstShopUnlockBuyers.ForEach(value => value.SetActive(true));
+        _upgradeReferences.firstShopUnlockBuyers.ForEach(value => value.Unlock());
         _upgradeReferences.cerealUpgrades.ForEach(value => value.Unlock());
     }
 
@@ -112,10 +112,10 @@ public class UpgradeManager : MonoBehaviour
     private void UnlockFruit()
     {
         _upgradeReferences.fruitCounter.SetActive(true);
-        _upgradeReferences.fruitUpgrades.ForEach(value => value.SetActive(true));
+        _upgradeReferences.fruitUpgrades.ForEach(value => value.Unlock());
         if (_upgradeReferences.fruitUnlockedNb < _upgradeReferences.fruitPlanters.Count)
         {
-            _upgradeReferences.fruitPlanters[_upgradeReferences.fruitUnlockedNb].SetActive(true);
+            _upgradeReferences.fruitPlanters[_upgradeReferences.fruitUnlockedNb].Unlock();
             _upgradeReferences.fruitUnlockedNb++;
         }
         else
@@ -127,11 +127,11 @@ public class UpgradeManager : MonoBehaviour
     private void UnlockVegetable()
     {
         _upgradeReferences.vegetableCounter.SetActive(true);
-        _upgradeReferences.vegetableUpgrades.ForEach(value => value.SetActive(true));
+        _upgradeReferences.vegetableUpgrades.ForEach(value => value.Unlock());
 
         if (_upgradeReferences.vegetableUnlockedNb < _upgradeReferences.vegetablePlanters.Count)
         {
-            _upgradeReferences.vegetablePlanters[_upgradeReferences.vegetableUnlockedNb].SetActive(true);
+            _upgradeReferences.vegetablePlanters[_upgradeReferences.vegetableUnlockedNb].Unlock();
             _upgradeReferences.vegetableUnlockedNb++;
         }
         else

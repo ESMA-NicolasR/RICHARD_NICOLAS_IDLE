@@ -8,8 +8,8 @@ public class UpgradeReferences : MonoBehaviour
 {
     public GameObject newCerealBuyer;
     public List<Locker> cerealPlanters;
-    public List<GameObject> fruitPlanters;
-    public List<GameObject> vegetablePlanters;
+    public List<Locker> fruitPlanters;
+    public List<Locker> vegetablePlanters;
     public int cerealUnlockedNb;
     public int fruitUnlockedNb;
     public int vegetableUnlockedNb;
@@ -17,12 +17,12 @@ public class UpgradeReferences : MonoBehaviour
     public GameObject fruitCounter;
     public GameObject vegetableCounter;
     public GameObject fieldPlotBuyer;
-    public List<GameObject> firstShopUnlockBuyers;
+    public List<Locker> firstShopUnlockBuyers;
     public GameObject autoGatherSpeedBuyer;
     public GameObject autoGatherDisplay;
     public List<Locker> cerealUpgrades;
-    public List<GameObject> fruitUpgrades;
-    public List<GameObject> vegetableUpgrades;
+    public List<Locker> fruitUpgrades;
+    public List<Locker> vegetableUpgrades;
 
     private void Start()
     {
@@ -34,11 +34,13 @@ public class UpgradeReferences : MonoBehaviour
         }
         for(int i=0; i<fruitPlanters.Count; i++)
         {
-            fruitPlanters[i].SetActive(i<fruitUnlockedNb);
+            if (i < fruitUnlockedNb) fruitPlanters[i].Unlock();
+            else fruitPlanters[i].Lock();
         }
         for(int i=0; i<vegetablePlanters.Count; i++)
         {
-            vegetablePlanters[i].SetActive(i<vegetableUnlockedNb);
+            if (i < vegetableUnlockedNb) vegetablePlanters[i].Unlock();
+            else vegetablePlanters[i].Lock();
         }
         // Hide elements for food not unlocked
         if (cerealUnlockedNb == 0)
@@ -52,17 +54,17 @@ public class UpgradeReferences : MonoBehaviour
         if (fruitUnlockedNb == 0)
         {
             fruitCounter.SetActive(false);
-            foreach (GameObject go in fruitUpgrades)
+            foreach (Locker locker in fruitUpgrades)
             {
-                go.SetActive(false);
+                locker.Lock();
             }
         }
         if (vegetableUnlockedNb == 0)
         {
             vegetableCounter.SetActive(false);
-            foreach (GameObject go in vegetableUpgrades)
+            foreach (Locker locker in vegetableUpgrades)
             {
-                go.SetActive(false);
+                locker.Lock();
             }
         }
         // Hide field plot buyer
@@ -71,6 +73,6 @@ public class UpgradeReferences : MonoBehaviour
         autoGatherDisplay.SetActive(false);
         autoGatherSpeedBuyer.SetActive(false);
         // Hide first shop upgrades
-        firstShopUnlockBuyers.ForEach(value => value.SetActive(false));
+        firstShopUnlockBuyers.ForEach(value => value.Lock());
     }
 }
