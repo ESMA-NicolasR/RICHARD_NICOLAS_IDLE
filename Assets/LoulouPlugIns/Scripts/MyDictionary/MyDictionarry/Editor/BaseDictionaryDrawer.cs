@@ -11,14 +11,14 @@ namespace LouLouStarterContent.Editor
     [CustomPropertyDrawer(typeof(BaseDictionary),true)]
     public class BaseDictionaryDrawer : BasePropertyDrawer
     {
-        private ReorderableList _reorderableDictionary;
+        private Dictionary<string, ReorderableList> _reorderableDictionary;
         private BaseDictionary _dictionaryTarget;
         private SerializedProperty _p_dictionaryEntries;
         private const int _warningLine = 2;
         private bool _isFoldout,_isWarning;
         private GUIStyle _style;
 
-        private float DictionaryHeight => (_isFoldout ? _reorderableDictionary.GetHeight() + 10 : 0);
+        private float DictionaryHeight => (_isFoldout ? _reorderableDictionary[_p_dictionaryEntries.propertyPath].GetHeight() + 10 : 0);
 
         internal override void AtStartOfGUI(SerializedProperty property)
         {
@@ -42,15 +42,19 @@ namespace LouLouStarterContent.Editor
         {
             if (_reorderableDictionary == null)
             {
-                _reorderableDictionary = new ReorderableList(property.serializedObject, _p_dictionaryEntries, true, false, true, true);
-                _reorderableDictionary.drawElementCallback = DrawElement;
+                _reorderableDictionary = new Dictionary<string, ReorderableList>();
+            }
+            if (_reorderableDictionary.GetValueOrDefault(_p_dictionaryEntries.propertyPath, null) == null)
+            {
+                _reorderableDictionary[_p_dictionaryEntries.propertyPath] = new ReorderableList(property.serializedObject, _p_dictionaryEntries, true, false, true, true);
+                _reorderableDictionary[_p_dictionaryEntries.propertyPath].drawElementCallback = DrawElement;
             }
         }
 
         private void DrawElement(Rect rect, int index, bool isActive, bool isFocused)
         {
-            var currentSerializedKey = _reorderableDictionary.serializedProperty.GetArrayElementAtIndex(index).FindPropertyRelative("key");
-            var currentSerializedValue = _reorderableDictionary.serializedProperty.GetArrayElementAtIndex(index).FindPropertyRelative("value");
+            var currentSerializedKey = _reorderableDictionary[_p_dictionaryEntries.propertyPath].serializedProperty.GetArrayElementAtIndex(index).FindPropertyRelative("key");
+            var currentSerializedValue = _reorderableDictionary[_p_dictionaryEntries.propertyPath].serializedProperty.GetArrayElementAtIndex(index).FindPropertyRelative("value");
 
             var keyRect = new Rect(rect.x, rect.y, rect.width * 7 / 10, rect.height);
             var valueLabelRect = new Rect(rect.x + rect.width * 7 / 10, rect.y, rect.width * 1 / 10, rect.height);
@@ -64,8 +68,8 @@ namespace LouLouStarterContent.Editor
         }
         private void DrawList(SerializedProperty property, Rect rectFoldout)
         {
-            var _rect = new Rect(rectFoldout.x, rectFoldout.y + rectFoldout.height + 5, usableSpace, _reorderableDictionary.GetHeight());
-            _reorderableDictionary.DoList(_rect);
+            var _rect = new Rect(rectFoldout.x, rectFoldout.y + rectFoldout.height + 5, usableSpace, _reorderableDictionary[_p_dictionaryEntries.propertyPath].GetHeight());
+            _reorderableDictionary[_p_dictionaryEntries.propertyPath].DoList(_rect);
             property.serializedObject.ApplyModifiedProperties();
         }
 

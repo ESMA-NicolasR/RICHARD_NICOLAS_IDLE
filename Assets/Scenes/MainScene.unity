@@ -7518,61 +7518,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6387056609205683291, guid: ad45210672cef174e9688fed6e992c2d, type: 3}
   m_PrefabInstance: {fileID: 1646701695}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1428510073
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1428510075}
-  - component: {fileID: 1428510074}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1428510074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428510073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc71857c7ddcb44fa44559f816ee007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maList:
-  - leScore: 0
-    laWeightedList:
-      _weightedElementsList: []
-  maDicList:
-  - _dictionaryEntries:
-    - key: 43
-      value: hr
-  - _dictionaryEntries:
-    - key: 45
-      value: hr
---- !u!4 &1428510075
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428510073}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1433976866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12839,7 +12784,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f77b85369e81f9f4f9e1e2a50476c44c, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[0].minorTaskTemplates._weightedElementsList.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[1].minorTaskTemplates._weightedElementsList.Array.size
@@ -12864,7 +12809,7 @@ PrefabInstance:
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[0].minorTaskTemplates._weightedElementsList.Array.data[0].Element
       value: 
-      objectReference: {fileID: 11400000, guid: f77b85369e81f9f4f9e1e2a50476c44c, type: 2}
+      objectReference: {fileID: 11400000, guid: 91a234dd9331be046abc86cca300175f, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[0].minorTaskTemplates._weightedElementsList.Array.data[1].Element
       value: 
@@ -13202,5 +13147,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 713575738}
   - {fileID: 1344218909}
-  - {fileID: 1428510075}
   - {fileID: 2502356195800829386}
