@@ -167,7 +167,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weightedStrings:
+    _weightedElementsList:
+    - Element: 
+      Weight: 0
+  WeightedListInt:
     _weightedElementsList: []
+  prout221:
+    _weightedElementsList:
+    - Element: {fileID: 0}
+      Weight: 0
 --- !u!1 &1292898589
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +222,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myIntStringDictionary:
     _dictionaryEntries: []
+  myIntStringDictionry:
+    _dictionaryEntries:
+    - key: 
+      value:
+        i: 0
+        j: 62
+        k: 10
 --- !u!1 &1830173860
 GameObject:
   m_ObjectHideFlags: 0

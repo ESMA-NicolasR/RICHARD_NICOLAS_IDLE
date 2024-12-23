@@ -42,23 +42,22 @@ public class WeightedList<T> : SerializedWeightedListParent
 {
 
     public List<WeightedElement<T>> _weightedElementsList;
-    public float TotalWeight => _weightedElementsList.Sum((_weightedElement)=> _weightedElement.Weight);
+
+    public WeightedList()
+    {
+        _weightedElementsList = new List<WeightedElement<T>>();
+    }
+
+    public int Count => _weightedElementsList.Count;
+
+    public float TotalWeight => _weightedElementsList.Sum((_weightedElement)=> MathF.Max(_weightedElement.Weight,0));
 
     public void Add(T element, float weight)
     {
         _weightedElementsList.Add(new WeightedElement<T>(element, weight));
     }
 
-    public void Remove(T element)
-    {
-        var _tempIndex = _weightedElementsList.FindIndex((_weightedElement) => _weightedElement.Element.Equals(element));
-        if( _tempIndex < 0 ) 
-        { 
-            Debug.LogError("Please make sure that your list have the element : " + element.ToString());
-            return;
-        }
-        RemoveElementAt(_tempIndex);
-    }
+    
 
     public T this[int index]
     {
@@ -111,11 +110,11 @@ public class WeightedList<T> : SerializedWeightedListParent
             Debug.LogError("The list has a count of 0");
             return default;
         }
-        if(_weightedElementsList.FindIndex((_weightedElement) => _weightedElement.Weight <=0)>=0)
-        {
-            Debug.LogError("An element of the weighted list has a non-positive weight, first element of the list returned");
-            return this[0];
-        }
+        //if(_weightedElementsList.FindIndex((_weightedElement) => _weightedElement.Weight <=0)>=0)
+        //{
+        //    Debug.LogError("An element of the weighted list has a non-positive weight, first element of the list returned");
+        //    return this[0];
+        //}
         #endregion
 
         var _totalWeight = this.TotalWeight;
@@ -124,6 +123,10 @@ public class WeightedList<T> : SerializedWeightedListParent
 
         foreach (var item in _weightedElementsList)
         {
+            if (item.Weight <= 0)
+            {
+                continue;
+            }
             _currentWeight += item.Weight;
             if(_indexByWheight<=_currentWeight)
             {

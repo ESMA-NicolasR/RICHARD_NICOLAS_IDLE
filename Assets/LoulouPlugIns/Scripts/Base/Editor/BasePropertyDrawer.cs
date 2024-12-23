@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Reflection;
 
 //Write here the type of the class or struct affected by the property Drawer
 //[CustomPropertyDrawer(typeof(TYPE))]
@@ -40,7 +41,9 @@ namespace LouLouStarterContent.Editor
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
 
-            target = fieldInfo.GetValue(property.serializedObject.targetObject); //Put this on constructor pls futur louis
+            var masterObject = property.serializedObject.targetObject;
+
+            target = EditorExtention.GetValueFromObject(masterObject,property.propertyPath);
 
             AtStartOfGUI(property);
 
@@ -62,7 +65,7 @@ namespace LouLouStarterContent.Editor
 
             EditorGUI.indentLevel = currentIndentation;
 
-            property.serializedObject.ApplyModifiedProperties();
+            //property.serializedObject.ApplyModifiedProperties();
         }
 
         /// <summary>

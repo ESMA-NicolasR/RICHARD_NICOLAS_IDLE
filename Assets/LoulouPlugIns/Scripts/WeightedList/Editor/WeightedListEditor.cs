@@ -33,7 +33,6 @@ namespace LouLouStarterContent.Editor
         internal override void AtStartOfGUI(SerializedProperty property)
         {
             numberOfLine = 1;
-
             _targetWeightedList = target as SerializedWeightedListParent;
             _targetWeightedList.InitializeIfNull();
 
@@ -79,7 +78,7 @@ namespace LouLouStarterContent.Editor
             var _WeightLabelRect = new Rect(rect.x + rect.width * 7 / 10, rect.y, rect.width * 1 / 10, rect.height);
             var _WeightRect = new Rect(rect.x + rect.width * 8 / 10, rect.y, rect.width * 2 / 10, rect.height);
 
-            CustomEditorGUILayout.PropertyDrawerWithEditButton(_ElementRect, _currentSerializedElement, new GUIContent("Element n°" + index));
+            CustomEditorGUILayout.PropertyDrawerWithEditButton(_ElementRect, _currentSerializedElement, new GUIContent("Element nï¿½" + index));
             EditorGUI.LabelField(_WeightLabelRect, "Weight", _style);
             EditorGUI.PropertyField(_WeightRect, _currentSerializedWeight, GUIContent.none);
 

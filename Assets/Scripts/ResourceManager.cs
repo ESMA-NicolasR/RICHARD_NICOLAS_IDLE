@@ -6,20 +6,19 @@ using UnityEngine;
 public class ResourceManager : MonoBehaviour
 {
     // Gameplay
-    [SerializeField] private ResourceDict _resourceStorage;
+    private ResourceDict _resourceStorage;
     
     // Delegates
     public static event Action<ResourceTypeEnum, long> OnResourceAmountChanged;
     
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _resourceStorage = new ResourceDict();
         foreach (ResourceTypeEnum resourceType in Enum.GetValues(typeof(ResourceTypeEnum)))
         {
             _resourceStorage.Add(resourceType, 0);
-            OnResourceAmountChanged?.Invoke(resourceType, _resourceStorage[resourceType]);
         }
     }
     

@@ -19,7 +19,6 @@ public class MinorTaskTemplate : TaskTemplate
     {
         ResourceDict goalResourceDict = new ResourceDict();
         WeightedList<ResourceTypeEnum> drawList = new WeightedList<ResourceTypeEnum>();
-        drawList.InitializeIfNull(); // TODO ask for bugfix
         availableResources.ForEach(value => drawList.Add(value, 1));
         
         for (int i = 0; i < nbResourcesToDraw; i++)
@@ -28,7 +27,7 @@ public class MinorTaskTemplate : TaskTemplate
             ResourceTypeEnum drawnElement = drawList.GetRandomElement();
             goalResourceDict.Add(drawnElement, Random.Range(minResourceGoal, maxResourceGoal));
             // Ignore for future draws
-            drawList.Remove(drawnElement); // TODO ask for removal method
+            drawList.SetWeightOfObject(drawnElement, 0);
         }
 
         return goalResourceDict;

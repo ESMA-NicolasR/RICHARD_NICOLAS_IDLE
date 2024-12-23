@@ -30,7 +30,6 @@ namespace LouLouStarterContent.Editor
             numberOfLine = _isWarning ? _warningLine+1: 1 ;
 
             InitializeReordarableList(property);
-
         }
 
 
@@ -62,7 +61,6 @@ namespace LouLouStarterContent.Editor
             EditorGUI.PropertyField(keyRect, currentSerializedKey, GUIContent.none);
             EditorGUI.LabelField(valueLabelRect, "Value", _style);
             CustomEditorGUILayout.PropertyDrawerWithEditButton(valueRect, currentSerializedValue,new GUIContent( "Value n°" + index));
-            //EditorGUI.PropertyField(valueRect, currentSerializedValue, GUIContent.none);
         }
         private void DrawList(SerializedProperty property, Rect rectFoldout)
         {
