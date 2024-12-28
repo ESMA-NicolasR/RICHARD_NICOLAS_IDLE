@@ -1,60 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.UIElements;
+
+//LCeleyron with help of W4ldschr31n 
 
 namespace LouLouStarterContent.Editor
 {
 
-    [CustomPropertyDrawer(typeof(BaseDictionary),true)]
-    public class BaseDictionaryDrawer : BasePropertyDrawer
+    [CustomPropertyDrawer(typeof(BaseDictionary), true)]
+    public class BaseDictionaryDrawer : BasePropertyDrawerForReorderableList
     {
-        private Dictionary<string, ReorderableList> _reorderableDictionary;
         private BaseDictionary _dictionaryTarget;
-        private SerializedProperty _p_dictionaryEntries;
         private const int _warningLine = 2;
-        private bool _isFoldout,_isWarning;
-        private GUIStyle _style;
+        private float DictionaryHeight(SerializedProperty property) => (GetReorderableListProperty(property).foldout? GetReorderableListProperty(property).list.GetHeight() + 10 : 0);
 
-        private float DictionaryHeight => (_isFoldout ? _reorderableDictionary[_p_dictionaryEntries.propertyPath].GetHeight() + 10 : 0);
-
-        internal override void AtStartOfGUI(SerializedProperty property)
+        protected override void AtStartOfGUIReorderableDrawer(SerializedProperty property)
         {
-            _dictionaryTarget = target as BaseDictionary;
+            _dictionaryTarget = GetTargetAs<BaseDictionary>();
             _dictionaryTarget.InititializeIfNull();
-            _p_dictionaryEntries = property.FindPropertyRelative("_dictionaryEntries");
-            _style = new GUIStyle(EditorStyles.label);
-            _style.alignment = TextAnchor.MiddleCenter;
-            numberOfLine = _isWarning ? _warningLine+1: 1 ;
 
-            InitializeReordarableList(property);
+            //Aucune idée on verra demain je vais me coucher 
+            //Essaye d'ajouter un bonus d'override dans le initialize list ???? ou alors jsp directement dans la classe d'ajouter un bonus ptetre ? A voir aller zoubi
         }
 
 
-        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        protected override float GetOverridenPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return base.GetPropertyHeight(property, label) + DictionaryHeight; ;
+            return DictionaryHeight(property) ;
         }
 
-        private void InitializeReordarableList(SerializedProperty property)
+        protected override SerializedProperty GetListProperty(SerializedProperty property)
         {
-            if (_reorderableDictionary == null)
-            {
-                _reorderableDictionary = new Dictionary<string, ReorderableList>();
-            }
-            if (_reorderableDictionary.GetValueOrDefault(_p_dictionaryEntries.propertyPath, null) == null)
-            {
-                _reorderableDictionary[_p_dictionaryEntries.propertyPath] = new ReorderableList(property.serializedObject, _p_dictionaryEntries, true, false, true, true);
-                _reorderableDictionary[_p_dictionaryEntries.propertyPath].drawElementCallback = DrawElement;
-            }
+            return property.FindPropertyRelative("_dictionaryEntries");
         }
 
-        private void DrawElement(Rect rect, int index, bool isActive, bool isFocused)
+
+        protected override void DrawElement(SerializedProperty property, Rect rect, int index, bool isActive, bool isFocused)
         {
-            var currentSerializedKey = _reorderableDictionary[_p_dictionaryEntries.propertyPath].serializedProperty.GetArrayElementAtIndex(index).FindPropertyRelative("key");
-            var currentSerializedValue = _reorderableDictionary[_p_dictionaryEntries.propertyPath].serializedProperty.GetArrayElementAtIndex(index).FindPropertyRelative("value");
+            var currentSerializedKey = GetReorderableListProperty(property).list.serializedProperty.GetArrayElementAtIndex(index).FindPropertyRelative("key");
+            var currentSerializedValue = GetReorderableListProperty(property).list.serializedProperty.GetArrayElementAtIndex(index).FindPropertyRelative("value");
 
             var keyRect = new Rect(rect.x, rect.y, rect.width * 7 / 10, rect.height);
             var valueLabelRect = new Rect(rect.x + rect.width * 7 / 10, rect.y, rect.width * 1 / 10, rect.height);
@@ -64,45 +51,22 @@ namespace LouLouStarterContent.Editor
 
             EditorGUI.PropertyField(keyRect, currentSerializedKey, GUIContent.none);
             EditorGUI.LabelField(valueLabelRect, "Value", _style);
-            CustomEditorGUILayout.PropertyDrawerWithEditButton(valueRect, currentSerializedValue,new GUIContent( "Value n°" + index));
-        }
-        private void DrawList(SerializedProperty property, Rect rectFoldout)
-        {
-            var _rect = new Rect(rectFoldout.x, rectFoldout.y + rectFoldout.height + 5, usableSpace, _reorderableDictionary[_p_dictionaryEntries.propertyPath].GetHeight());
-            _reorderableDictionary[_p_dictionaryEntries.propertyPath].DoList(_rect);
-            property.serializedObject.ApplyModifiedProperties();
+            CustomEditorGUILayout.PropertyDrawerWithEditButton(valueRect, currentSerializedValue, new GUIContent("Value n°" + index));
         }
 
-
-        internal override void OnGUIEffect(Rect position, SerializedProperty property)
+        protected override void OnGUIEffectReorderableDrawer(Rect position, SerializedProperty property)
         {
-            //set rects
-            var rectLabel = MakeRectForDrawer(0, 1, 1, 0);
-        
-            //Get keys and values properties
             
-            //Draw the foldout
-            var tempFoldout = EditorGUI.Foldout(rectLabel,_isFoldout, property.name,true);
-           
-            if(tempFoldout)
-            {
-                DrawList(property, rectLabel);
-            }
-            //Warning stuffs
-            _isWarning = GetTargetAs<BaseDictionary>().HasTheSameKeyTwice;
+            GetReorderableListProperty(property).numberOfLine = _dictionaryTarget.HasTheSameKeyTwice?_warningLine+1:1;
 
-            if(_isWarning)
+            if (_dictionaryTarget.HasTheSameKeyTwice)
             {
-                var _rectWarning = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight+DictionaryHeight, usableSpace, EditorGUIUtility.singleLineHeight * _warningLine);
+                var _rectWarning = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight + DictionaryHeight(property), usableSpace, EditorGUIUtility.singleLineHeight * _warningLine);
                 EditorGUI.HelpBox(_rectWarning, "You have more than one key with the same value, you might have some trouble for calling this key.", MessageType.Warning);
             }
-
-
-            //End of GUI stuffs
-
-            _isFoldout = tempFoldout;
         }
-       
+
+        
     }
 
 }

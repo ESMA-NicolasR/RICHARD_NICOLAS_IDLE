@@ -7,7 +7,6 @@ public class D_Test : MonoBehaviour
     //Use the MyDictionary Class as you would have used the Classic C# Dictionary class
     public MyDictionary<string, int> myIntStringDictionary;
     public MyDictionary<string, MaClass> myIntStringDictionry;
-
     // Start is called before the first frame update
     void Start()
     {

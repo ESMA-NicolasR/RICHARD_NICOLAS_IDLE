@@ -7,8 +7,8 @@ public class WL_Test : MonoBehaviour
     //You can use WeightedList<T> as the List<T> Class but with extra features !
     
     public WeightedList<string> weightedStrings;
+    [SerializeField]
     public WeightedList<int> WeightedListInt;
-
     // Start is called before the first frame update
     void Start()
     {

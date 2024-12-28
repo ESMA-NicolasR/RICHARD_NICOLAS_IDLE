@@ -167,14 +167,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weightedStrings:
+    _weightedElementsList: []
+  gigaProut:
     _weightedElementsList:
-    - Element: 
+    - Element: 0
+      Weight: 0
+    - Element: 0
       Weight: 0
   WeightedListInt:
     _weightedElementsList: []
-  prout221:
-    _weightedElementsList:
-    - Element: {fileID: 0}
+  Banana:
+  - _weightedElementsList:
+    - Element: 0
+      Weight: 0
+    - Element: 0
+      Weight: 0
+    - Element: 0
+      Weight: 0
+  - _weightedElementsList:
+    - Element: 0
+      Weight: 0
+    - Element: 0
       Weight: 0
 --- !u!1 &1292898589
 GameObject:
@@ -229,6 +242,40 @@ MonoBehaviour:
         i: 0
         j: 62
         k: 10
+  top:
+  - _dictionaryEntries:
+    - key: 
+      value:
+        i: 0
+        j: 0
+        k: 0
+    - key: fd
+      value:
+        i: 0
+        j: 0
+        k: 0
+    - key: fd
+      value:
+        i: 0
+        j: 0
+        k: 0
+    - key: fd
+      value:
+        i: 0
+        j: 0
+        k: 0
+  - _dictionaryEntries:
+    - key: fff
+      value:
+        i: 0
+        j: 0
+        k: 0
+    - key: 
+      value:
+        i: 0
+        j: 0
+        k: 0
+  - _dictionaryEntries: []
 --- !u!1 &1830173860
 GameObject:
   m_ObjectHideFlags: 0

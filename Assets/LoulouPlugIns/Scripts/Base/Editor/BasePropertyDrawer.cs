@@ -24,7 +24,7 @@ namespace LouLouStarterContent.Editor
 
         protected float _baseLineHeight = EditorGUIUtility.singleLineHeight + 1;
 
-        public BasePropertyDrawer()
+        public BasePropertyDrawer() : base()
         {
         }
 

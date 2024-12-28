@@ -23,4 +23,7 @@ MonoBehaviour:
       value: 10
   - _dictionaryEntries:
     - key: 0
-      value: 10
+      value: 15
+  - _dictionaryEntries:
+    - key: 0
+      value: 25

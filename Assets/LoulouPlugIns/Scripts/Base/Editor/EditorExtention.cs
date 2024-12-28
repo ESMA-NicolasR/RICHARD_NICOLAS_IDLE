@@ -15,13 +15,15 @@ public static class EditorExtention
         Type type = obj.GetType();
         FieldInfo field = null;
 
+        BindingFlags flags = BindingFlags.Default | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.GetField | BindingFlags.Default | BindingFlags.SetField | BindingFlags.DeclaredOnly |BindingFlags.Instance;
+
         string[] parts = propertyPath.Split('.');
         object value = obj;
 
         for (int i = 0; i < parts.Length; i++)
         {
             var part = parts[i];
-            field = type.GetField(part);
+            field = type.GetField(part,flags);
             var x = field.GetValue(value);
 
             if(x is IList) //Not really clean
