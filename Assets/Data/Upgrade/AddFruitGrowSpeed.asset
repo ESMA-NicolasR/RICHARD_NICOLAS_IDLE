@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8d6d4369aa4338944d53b2bc32521a, type: 3}
   m_Name: AddFruitGrowSpeed
   m_EditorClassIdentifier: 
-  upgrade: 12
+  upgrade: 15
   description: Fruits grow faster
   maxRank: 0
   baseCost:

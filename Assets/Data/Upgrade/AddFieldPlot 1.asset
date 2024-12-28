@@ -17,13 +17,34 @@ MonoBehaviour:
   allCosts:
   - _dictionaryEntries:
     - key: 0
-      value: 8
+      value: 100
   - _dictionaryEntries:
     - key: 0
-      value: 10
+      value: 200
   - _dictionaryEntries:
     - key: 0
-      value: 15
+      value: 300
   - _dictionaryEntries:
     - key: 0
-      value: 25
+      value: 1000
+  - _dictionaryEntries:
+    - key: 0
+      value: 2000
+  - _dictionaryEntries:
+    - key: 0
+      value: 3000
+  - _dictionaryEntries:
+    - key: 0
+      value: 5000
+  - _dictionaryEntries:
+    - key: 0
+      value: 10000
+  - _dictionaryEntries:
+    - key: 0
+      value: 12500
+  - _dictionaryEntries:
+    - key: 0
+      value: 15000
+  - _dictionaryEntries:
+    - key: 0
+      value: 20000

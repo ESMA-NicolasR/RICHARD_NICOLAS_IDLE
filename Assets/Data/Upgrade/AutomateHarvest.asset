@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8d6d4369aa4338944d53b2bc32521a, type: 3}
   m_Name: AutomateHarvest
   m_EditorClassIdentifier: 
-  upgrade: 14
+  upgrade: 17
   description: Automate harvesting of a field plot
   maxRank: 15
   baseCost:

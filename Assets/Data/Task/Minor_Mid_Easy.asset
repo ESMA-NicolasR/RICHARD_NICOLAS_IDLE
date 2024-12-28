@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f0e7e7a7203514d903525cb6f86b18, type: 3}
   m_Name: Minor_Mid_Easy
   m_EditorClassIdentifier: 
-  availableResources: 000000000200000001000000
+  availableResources:
+  - resourceType: 0
+    min: 20
+    max: 30
+  - resourceType: 1
+    min: 10
+    max: 20
+  - resourceType: 2
+    min: 5
+    max: 10
   nbResourcesToDraw: 1
-  minResourceGoal: 10
-  maxResourceGoal: 20
-  minReward: 4
-  maxReward: 10
+  minReward: 10
+  maxReward: 20

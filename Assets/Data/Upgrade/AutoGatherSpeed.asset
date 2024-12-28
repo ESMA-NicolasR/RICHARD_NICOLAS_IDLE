@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8d6d4369aa4338944d53b2bc32521a, type: 3}
   m_Name: AutoGatherSpeed
   m_EditorClassIdentifier: 
-  upgrade: 9
+  upgrade: 12
   description: Increase auto gather speed
   maxRank: 10
   baseCost:

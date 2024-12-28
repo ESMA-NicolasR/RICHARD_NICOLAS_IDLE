@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "NewMajorTask", menuName = "Data/Task/Major Task")]
-public class MajorTaskTemplate : TaskTemplate
+public class MajorTaskTemplate : AbstractTaskTemplate
 {
     public string goalFlavorText;
     public string rewardFlavorText;
