@@ -28,6 +28,9 @@ public class UpgradeManager : MonoBehaviour
             { UpgradeEnum.UnlockCereal, UnlockCereal },
             { UpgradeEnum.UnlockFruit, UnlockFruit },
             { UpgradeEnum.UnlockVegetable, UnlockVegetable },
+            { UpgradeEnum.UnlockCerealUpgrades, UnlockCerealUpgrades },
+            { UpgradeEnum.UnlockFruitUpgrades, UnlockFruitUpgrades },
+            { UpgradeEnum.UnlockVegetableUpgrades, UnlockVegetableUpgrades },
             { UpgradeEnum.UnlockAutoGather, UnlockAutoGather },
             { UpgradeEnum.AddFieldPlot, AddFieldPlot },
             { UpgradeEnum.GatherPowerOne, UpgradeGatherPowerOne },
@@ -90,9 +93,7 @@ public class UpgradeManager : MonoBehaviour
 
     private void UnlockShop()
     {
-        _upgradeReferences.fieldPlotBuyer.SetActive(true);
         _upgradeReferences.firstShopUnlockBuyers.ForEach(value => value.Unlock());
-        _upgradeReferences.cerealUpgrades.ForEach(value => value.Unlock());
     }
 
     private void UnlockCereal()
@@ -112,7 +113,6 @@ public class UpgradeManager : MonoBehaviour
     private void UnlockFruit()
     {
         _upgradeReferences.fruitCounter.SetActive(true);
-        _upgradeReferences.fruitUpgrades.ForEach(value => value.Unlock());
         if (_upgradeReferences.fruitUnlockedNb < _upgradeReferences.fruitPlanters.Count)
         {
             _upgradeReferences.fruitPlanters[_upgradeReferences.fruitUnlockedNb].Unlock();
@@ -127,8 +127,6 @@ public class UpgradeManager : MonoBehaviour
     private void UnlockVegetable()
     {
         _upgradeReferences.vegetableCounter.SetActive(true);
-        _upgradeReferences.vegetableUpgrades.ForEach(value => value.Unlock());
-
         if (_upgradeReferences.vegetableUnlockedNb < _upgradeReferences.vegetablePlanters.Count)
         {
             _upgradeReferences.vegetablePlanters[_upgradeReferences.vegetableUnlockedNb].Unlock();
@@ -138,6 +136,21 @@ public class UpgradeManager : MonoBehaviour
         {
             Debug.Log("No more vegetable to unlock");
         }
+    }
+
+    private void UnlockCerealUpgrades()
+    {
+        _upgradeReferences.cerealUpgrades.ForEach(value => value.Unlock());
+    }
+    
+    private void UnlockFruitUpgrades()
+    {
+        _upgradeReferences.fruitUpgrades.ForEach(value => value.Unlock());
+    }
+    
+    private void UnlockVegetableUpgrades()
+    {
+        _upgradeReferences.vegetableUpgrades.ForEach(value => value.Unlock());
     }
 
     private void UnlockAutoGather()

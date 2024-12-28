@@ -15,6 +15,9 @@ public enum UpgradeEnum
     UnlockCereal,
     UnlockFruit,
     UnlockVegetable,
+    UnlockCerealUpgrades,
+    UnlockFruitUpgrades,
+    UnlockVegetableUpgrades,
     // Multiple buy upgrades (shop)
     AddFieldPlot,
     GatherPowerOne,

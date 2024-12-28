@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5eb83f645fe0c74fbd84fe2f33f88ae, type: 3}
-  m_Name: Main_5_Fruit
+  m_Name: Main_7_Fruit_Upgrades
   m_EditorClassIdentifier: 
-  goalFlavorText: Associate with farmers in the nearby towns
-  rewardFlavorText: Unlock fruits
+  goalFlavorText: Send fruits to cure scurvy
+  rewardFlavorText: Unlock new upgrades for fruits
   goalResourceDict:
     _dictionaryEntries:
-    - key: 0
-      value: 200
-    - key: 1
-      value: 50
-  upgradeReward: 4
+    - key: 2
+      value: 20
+  upgradeReward: 6

@@ -12704,11 +12704,11 @@ PrefabInstance:
       objectReference: {fileID: 1235541451}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[0]
@@ -12728,7 +12728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[3].milestone
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[4].milestone
@@ -12736,7 +12736,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[5].milestone
-      value: 300
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _majorTaskProgression.Array.data[6].milestone
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _majorTaskProgression.Array.data[7].milestone
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _majorTaskProgression.Array.data[8].milestone
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[1].milestone
@@ -12744,7 +12756,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[2].milestone
-      value: 100
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[3].milestone
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[0].majorTaskTemplate
@@ -12761,15 +12777,27 @@ PrefabInstance:
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[3].majorTaskTemplate
       value: 
-      objectReference: {fileID: 11400000, guid: 66dcc56cca9d3454a85dfd0cf20eb4cc, type: 2}
+      objectReference: {fileID: 11400000, guid: 704f8baeeb3d9b04fb01ed1e66194d99, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[4].majorTaskTemplate
       value: 
-      objectReference: {fileID: 11400000, guid: e4db276438fb4234f97800d85906ecf7, type: 2}
+      objectReference: {fileID: 11400000, guid: 66dcc56cca9d3454a85dfd0cf20eb4cc, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[5].majorTaskTemplate
       value: 
+      objectReference: {fileID: 11400000, guid: e4db276438fb4234f97800d85906ecf7, type: 2}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _majorTaskProgression.Array.data[6].majorTaskTemplate
+      value: 
+      objectReference: {fileID: 11400000, guid: b82837a75efc056408054c2c3a04add8, type: 2}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _majorTaskProgression.Array.data[7].majorTaskTemplate
+      value: 
       objectReference: {fileID: 11400000, guid: 07ac7050b7fd4df4aa33f4cde49fc1fd, type: 2}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _majorTaskProgression.Array.data[8].majorTaskTemplate
+      value: 
+      objectReference: {fileID: 11400000, guid: caa84428d8ec325418865d469228d3d3, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTasksAvailable._weightedElementsList.Array.size
       value: 2
@@ -12800,7 +12828,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[2].minorTaskTemplates._weightedElementsList.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[3].minorTaskTemplates._weightedElementsList.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[0].minorTaskTemplates._weightedElementsList.Array.data[0].Weight
@@ -12827,6 +12859,22 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[2].minorTaskTemplates._weightedElementsList.Array.data[2].Weight
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[3].minorTaskTemplates._weightedElementsList.Array.data[0].Weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[3].minorTaskTemplates._weightedElementsList.Array.data[1].Weight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[3].minorTaskTemplates._weightedElementsList.Array.data[2].Weight
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[0].minorTaskTemplates._weightedElementsList.Array.data[0].Element
       value: 
       objectReference: {fileID: 11400000, guid: 91a234dd9331be046abc86cca300175f, type: 2}
@@ -12845,11 +12893,27 @@ PrefabInstance:
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[2].minorTaskTemplates._weightedElementsList.Array.data[0].Element
       value: 
-      objectReference: {fileID: 11400000, guid: f77b85369e81f9f4f9e1e2a50476c44c, type: 2}
+      objectReference: {fileID: 11400000, guid: 6d2576481e85366459d8547c0431a02a, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[2].minorTaskTemplates._weightedElementsList.Array.data[1].Element
       value: 
-      objectReference: {fileID: 11400000, guid: fe50626992ed5614ba4367e90bd7ad31, type: 2}
+      objectReference: {fileID: 11400000, guid: 15d488105d34d304d8a867f15f1e176b, type: 2}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[2].minorTaskTemplates._weightedElementsList.Array.data[2].Element
+      value: 
+      objectReference: {fileID: 11400000, guid: 257b2f6c6bec7824fa17a1b5b889007b, type: 2}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[3].minorTaskTemplates._weightedElementsList.Array.data[0].Element
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c4a87290e84cde4a9eb5135bce9c0ff, type: 2}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[3].minorTaskTemplates._weightedElementsList.Array.data[1].Element
+      value: 
+      objectReference: {fileID: 11400000, guid: 90dd7350e0c240d489ccb79da55db7f0, type: 2}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _minorTaskProgression.Array.data[3].minorTaskTemplates._weightedElementsList.Array.data[2].Element
+      value: 
+      objectReference: {fileID: 11400000, guid: 67db384c6d042d846a2363c88de5e601, type: 2}
     - target: {fileID: 2177027160910221795, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _autoGatherText
       value: 
