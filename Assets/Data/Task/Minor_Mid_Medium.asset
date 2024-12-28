@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdebb862b5cdf64492794ff4903b0f2, type: 3}
-  m_Name: Rice
+  m_Script: {fileID: 11500000, guid: f2f0e7e7a7203514d903525cb6f86b18, type: 3}
+  m_Name: Minor_Mid_Medium
   m_EditorClassIdentifier: 
-  foodName: Rice
-  growingSprite: {fileID: 0}
-  ripeSprite: {fileID: 0}
-  resourceTypeEnum: 1
-  baseSeedCost: 100
-  baseTimeToGrow: 10
-  baseYieldAmount: 10
+  availableResources: 000000000200000001000000
+  nbResourcesToDraw: 2
+  minResourceGoal: 10
+  maxResourceGoal: 20
+  minReward: 10
+  maxReward: 20

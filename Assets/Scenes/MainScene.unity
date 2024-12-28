@@ -12720,19 +12720,23 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 2756af677d8fee04b9240524cee91723, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[1].milestone
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
-      propertyPath: _majorTaskProgression.Array.data[3].milestone
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
-      propertyPath: _majorTaskProgression.Array.data[4].milestone
+      propertyPath: _majorTaskProgression.Array.data[2].milestone
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _majorTaskProgression.Array.data[3].milestone
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
-      propertyPath: _majorTaskProgression.Array.data[5].milestone
+      propertyPath: _majorTaskProgression.Array.data[4].milestone
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _majorTaskProgression.Array.data[5].milestone
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _minorTaskProgression.Array.data[1].milestone
@@ -12745,15 +12749,15 @@ PrefabInstance:
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[0].majorTaskTemplate
       value: 
-      objectReference: {fileID: 11400000, guid: bc179233bcdddb94d90cf8b3b46e032b, type: 2}
+      objectReference: {fileID: 11400000, guid: 2756af677d8fee04b9240524cee91723, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[1].majorTaskTemplate
       value: 
-      objectReference: {fileID: 11400000, guid: b62da131f9b481248b232d9f5354cb0a, type: 2}
+      objectReference: {fileID: 11400000, guid: bc179233bcdddb94d90cf8b3b46e032b, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[2].majorTaskTemplate
       value: 
-      objectReference: {fileID: 11400000, guid: 2756af677d8fee04b9240524cee91723, type: 2}
+      objectReference: {fileID: 11400000, guid: b62da131f9b481248b232d9f5354cb0a, type: 2}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[3].majorTaskTemplate
       value: 

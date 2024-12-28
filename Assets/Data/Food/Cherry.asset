@@ -16,6 +16,6 @@ MonoBehaviour:
   growingSprite: {fileID: 0}
   ripeSprite: {fileID: 0}
   resourceTypeEnum: 2
-  baseSeedCost: 6
+  baseSeedCost: 100
   baseTimeToGrow: 10
   baseYieldAmount: 10

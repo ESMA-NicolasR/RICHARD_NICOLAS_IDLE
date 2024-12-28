@@ -16,6 +16,6 @@ MonoBehaviour:
   growingSprite: {fileID: -1176059378, guid: fefd648197b6411449d429a2813db84a, type: 3}
   ripeSprite: {fileID: 418926731, guid: fefd648197b6411449d429a2813db84a, type: 3}
   resourceTypeEnum: 2
-  baseSeedCost: 3
-  baseTimeToGrow: 2
-  baseYieldAmount: 1
+  baseSeedCost: 1
+  baseTimeToGrow: 3
+  baseYieldAmount: 2

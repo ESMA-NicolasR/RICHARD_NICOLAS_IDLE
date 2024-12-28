@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5eb83f645fe0c74fbd84fe2f33f88ae, type: 3}
-  m_Name: Main_1
+  m_Name: Main_4_Auto
   m_EditorClassIdentifier: 
-  goalFlavorText: Make friends with your neighbour by sending him seeds
-  rewardFlavorText: Unlock you first field plot
+  goalFlavorText: Feed mechanic workers from the factory
+  rewardFlavorText: Unlock a robot that gathers seeds automatically
   goalResourceDict:
     _dictionaryEntries:
     - key: 0
-      value: 5
-  upgradeReward: 0
+      value: 500
+  upgradeReward: 2
