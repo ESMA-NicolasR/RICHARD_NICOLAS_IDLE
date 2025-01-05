@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,28 @@ public class FieldPlotManager : MonoBehaviour
         // Make sure the buy button is at the end
         _upgradeWithinPool.transform.SetAsLastSibling();
     }
-    
+
+    private void Start()
+    {
+        StartCoroutine(GrowCoroutine());
+    }
+
+    private IEnumerator GrowCoroutine()
+    {
+        while (true)
+        {
+            float deltaTime = Time.deltaTime;
+            foreach (GameObject go in _pooledObjects)
+            {
+                if (go.activeInHierarchy)
+                {
+                    go.GetComponent<FieldPlot>().GrowFood(deltaTime);
+                }
+            }
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
     private GameObject GetPooledFieldPlot()
     {
         for(int i = 0; i < amountToPool; i++)

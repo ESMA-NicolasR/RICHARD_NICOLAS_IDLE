@@ -12728,7 +12728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[3].milestone
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1662520732534248626, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _majorTaskProgression.Array.data[4].milestone
