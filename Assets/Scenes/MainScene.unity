@@ -12915,6 +12915,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 67db384c6d042d846a2363c88de5e601, type: 2}
     - target: {fileID: 2177027160910221795, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: isActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177027160910221795, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _autoGatherText
       value: 
       objectReference: {fileID: 1792155230}
@@ -12922,6 +12926,10 @@ PrefabInstance:
       propertyPath: _progressionBar
       value: 
       objectReference: {fileID: 895887086}
+    - target: {fileID: 2177027160910221795, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _gatherRatePerSecond
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2195655614055822025, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: poolParent
       value: 

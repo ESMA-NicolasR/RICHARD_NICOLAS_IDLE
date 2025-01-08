@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrade: 12
   description: Increase auto gather speed
-  maxRank: 10
+  maxRank: 9
   baseCost:
     _dictionaryEntries:
     - key: 0

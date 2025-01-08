@@ -23,6 +23,7 @@ public class AutoGatherer : MonoBehaviour
     private void Start()
     {
         _progression = 0f;
+        UpdateDisplay();
     }
 
     // Update is called once per frame
@@ -57,7 +58,12 @@ public class AutoGatherer : MonoBehaviour
         if (_gatherRatePerSecond < MAX_RATE)
         {
             _gatherRatePerSecond += UPGRADE_RATE;
-            _autoGatherText.text = $"Auto gathering\n({(_gatherRatePerSecond):F2}/s)";
+            UpdateDisplay();
         }
+    }
+
+    private void UpdateDisplay()
+    {
+        _autoGatherText.text = $"Auto gathering\n({(_gatherRatePerSecond):F2}/s)";
     }
 }
