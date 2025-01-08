@@ -10,16 +10,23 @@ public class WorldHungerManager : MonoBehaviour
     public static Action<long> OnPeopleFedNbChanged;
 
     [SerializeField] private long _totalPeopleToFeed;
-    // Start is called before the first frame update
+
+    private void OnEnable()
+    {
+        SaveSystem.OnSave += OnSave;
+        SaveSystem.OnLoad += OnLoad;
+    }
+
+    private void OnDisable()
+    {
+        SaveSystem.OnSave -= OnSave;
+        SaveSystem.OnLoad -= OnLoad;
+    }
+
+
     void Start()
     {
         OnPeopleFedNbChanged?.Invoke(_peopleFedNb);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void FeedPeople(long nbPeople)
@@ -41,5 +48,16 @@ public class WorldHungerManager : MonoBehaviour
     public string GetProgressAsTextWithIcons()
     {
         return $"<sprite name=hunger>{_peopleFedNb:N0} / {_totalPeopleToFeed:N0}";
+    }
+
+    private void OnSave(SaveData save)
+    {
+        save.worldHunger = _peopleFedNb;
+    }
+
+    private void OnLoad(SaveData save)
+    {
+        _peopleFedNb = save.worldHunger;
+        OnPeopleFedNbChanged?.Invoke(_peopleFedNb);
     }
 }

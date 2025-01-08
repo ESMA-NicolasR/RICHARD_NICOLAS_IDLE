@@ -2229,7 +2229,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 389943013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1358628486}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &389943013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6690,7 +6702,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1150544680}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1358628486}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1150544680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7971,6 +7995,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2a9d45c060a9334b8bdfe243a235f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1358628486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6695922062664361617, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+  m_PrefabInstance: {fileID: 2502356195800829386}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa963d409cd44da49a5838ef1d644208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1362484858
