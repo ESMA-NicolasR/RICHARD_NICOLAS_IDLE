@@ -20,7 +20,20 @@ public class MinorTaskTemplate : AbstractTaskTemplate
 
     public override string GetGoalFlavorText()
     {
-        return "Random string";
+        string customer;  
+        if (Random.Range(0.0f, 1.0f) > 0.5f)
+        {
+            customer = $"The city {GameManager.Instance.flavorTextGenerator.GetRandomCity()}";
+        }
+        else
+        {
+            customer = $"The country {GameManager.Instance.flavorTextGenerator.GetRandomCountry()}";
+        }
+
+        string target = GameManager.Instance.flavorTextGenerator.GetRandomTarget();
+
+        string result = $"{customer} needs your help to feed their {target}.";
+        return result;
     }
 
     public override ResourceDict GetGoalResourceDict()
