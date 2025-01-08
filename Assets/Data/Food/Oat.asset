@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Oat
   m_EditorClassIdentifier: 
   foodName: Oat
-  growingSprite: {fileID: 0}
-  ripeSprite: {fileID: 0}
+  growingSprite: {fileID: 1962354046, guid: 8ed9c9067c763ac40b8297d47c9287d3, type: 3}
+  ripeSprite: {fileID: -2100385438, guid: 8ed9c9067c763ac40b8297d47c9287d3, type: 3}
   resourceTypeEnum: 1
   baseSeedCost: 10
   baseTimeToGrow: 5

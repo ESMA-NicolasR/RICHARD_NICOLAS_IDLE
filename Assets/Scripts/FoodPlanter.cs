@@ -29,9 +29,7 @@ public class FoodPlanter : MonoBehaviour
     private void Start()
     {
         _priceText.text = $"<sprite name=seed>{_food.GetSeedCost()}";
-        OnResourceAmountChanged(ResourceTypeEnum.Seed,
-            GameManager.Instance.resourceManager.GetResourceAmount(ResourceTypeEnum.Seed));
-        OnUpgradeScalingChanged();
+        UpdateDisplay();
     }
 
     public void PlantFood()
@@ -53,16 +51,23 @@ public class FoodPlanter : MonoBehaviour
         fieldPlot.GetComponent<FieldPlot>().SetFood(_food);
     }
 
-    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, long nbResource)
+    private void OnResourceAmountChanged(ResourceTypeEnum resourceType)
     {
+        // Only update if relevant resource has changed
         if(resourceType == ResourceTypeEnum.Seed)
-            _button.interactable = nbResource >= _food.GetSeedCost();
+            UpdateDisplay();
+    }
+
+    public void UpdateDisplay()
+    {
+        _button.interactable = GameManager.Instance.resourceManager.GetResourceAmount(ResourceTypeEnum.Seed) >= _food.GetSeedCost();
+        _timeText.text = $"<sprite name=timer>\n{_food.GetTimeToGrow():F2}";
+        _yieldText.text = $"{_food.GetYieldSprite()}\n{_food.GetYieldAmount()}";
     }
     
     private void OnUpgradeScalingChanged()
     {
-        _timeText.text = $"<sprite name=timer>\n{_food.GetTimeToGrow():F2}";
-        _yieldText.text = $"{_food.GetYieldSprite()}\n{_food.GetYieldAmount()}";
+        UpdateDisplay();
     }
 
 }

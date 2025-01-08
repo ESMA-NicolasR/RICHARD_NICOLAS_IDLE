@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Strawberry
   m_EditorClassIdentifier: 
   foodName: Strawberry
-  growingSprite: {fileID: 0}
-  ripeSprite: {fileID: 0}
+  growingSprite: {fileID: -1761390979, guid: 82b2e950450023540ba662c6074fb9ec, type: 3}
+  ripeSprite: {fileID: 2041633561, guid: 82b2e950450023540ba662c6074fb9ec, type: 3}
   resourceTypeEnum: 2
   baseSeedCost: 5
   baseTimeToGrow: 10

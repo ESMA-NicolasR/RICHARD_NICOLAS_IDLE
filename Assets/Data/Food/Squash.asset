@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Squash
   m_EditorClassIdentifier: 
   foodName: Squash
-  growingSprite: {fileID: 0}
-  ripeSprite: {fileID: 0}
+  growingSprite: {fileID: -207012269, guid: 57bf05516c9afda40a2b6bd0d740d933, type: 3}
+  ripeSprite: {fileID: -2094705201, guid: 57bf05516c9afda40a2b6bd0d740d933, type: 3}
   resourceTypeEnum: 3
   baseSeedCost: 1
   baseTimeToGrow: 3

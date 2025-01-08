@@ -9,7 +9,7 @@ public class ResourceManager : MonoBehaviour
     private ResourceDict _resourceStorage;
     
     // Delegates
-    public static event Action<ResourceTypeEnum, long> OnResourceAmountChanged;
+    public static event Action<ResourceTypeEnum> OnResourceAmountChanged;
     
 
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class ResourceManager : MonoBehaviour
     public void AddResource(ResourceTypeEnum resourceTypeEnum, long nbAdd)
     {
         _resourceStorage[resourceTypeEnum] += nbAdd;
-        OnResourceAmountChanged?.Invoke(resourceTypeEnum, _resourceStorage[resourceTypeEnum]);
+        OnResourceAmountChanged?.Invoke(resourceTypeEnum);
     }
     
     public void AddResource(ResourceDict resources)
@@ -61,7 +61,7 @@ public class ResourceManager : MonoBehaviour
             return false;
         }
         _resourceStorage[resourceType] -= nbSpend;
-        OnResourceAmountChanged?.Invoke(resourceType, _resourceStorage[resourceType]);
+        OnResourceAmountChanged?.Invoke(resourceType);
         return true;
     }
 

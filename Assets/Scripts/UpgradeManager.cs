@@ -56,6 +56,7 @@ public class UpgradeManager : MonoBehaviour
     public void UnlockFieldPlot()
     {
         _upgradeReferences.fieldPlotBuyer.SetActive(true);
+        _upgradeReferences.fieldPlotBuyer.GetComponent<UpgradeBuyer>().UpdateDisplay();
         AddFieldPlot();
     }
     

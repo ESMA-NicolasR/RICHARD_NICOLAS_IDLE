@@ -18,5 +18,12 @@ public class Locker : MonoBehaviour
     {
         lockImage.enabled = false;
         lockedGameObject.SetActive(true);
+        // Force update for specific mono behaviours
+        UpgradeBuyer upgradeBuyer = lockedGameObject.GetComponentInChildren<UpgradeBuyer>();
+        if(upgradeBuyer != null)
+            upgradeBuyer.UpdateDisplay();
+        FoodPlanter foodPlanter = lockedGameObject.GetComponentInChildren<FoodPlanter>();
+        if (foodPlanter != null)
+            foodPlanter.UpdateDisplay();
     }
 }

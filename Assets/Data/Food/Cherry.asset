@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cherry
   m_EditorClassIdentifier: 
   foodName: Cherry
-  growingSprite: {fileID: 1230478510, guid: d0c4fdb46e18a9648acb930943e025dc, type: 3}
-  ripeSprite: {fileID: -1284035397, guid: d0c4fdb46e18a9648acb930943e025dc, type: 3}
+  growingSprite: {fileID: 1900015680, guid: d0c4fdb46e18a9648acb930943e025dc, type: 3}
+  ripeSprite: {fileID: -31611826, guid: d0c4fdb46e18a9648acb930943e025dc, type: 3}
   resourceTypeEnum: 2
   baseSeedCost: 100
   baseTimeToGrow: 10

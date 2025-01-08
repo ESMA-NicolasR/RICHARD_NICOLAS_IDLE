@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Broccoli
   m_EditorClassIdentifier: 
   foodName: Broccoli
-  growingSprite: {fileID: 0}
-  ripeSprite: {fileID: 0}
+  growingSprite: {fileID: -408665982, guid: 3b2bd7e1c899be64092db5784d5f289f, type: 3}
+  ripeSprite: {fileID: 1588715098, guid: 3b2bd7e1c899be64092db5784d5f289f, type: 3}
   resourceTypeEnum: 3
   baseSeedCost: 10
   baseTimeToGrow: 5

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tomato
   m_EditorClassIdentifier: 
   foodName: Tomato
-  growingSprite: {fileID: -1176059378, guid: fefd648197b6411449d429a2813db84a, type: 3}
-  ripeSprite: {fileID: 418926731, guid: fefd648197b6411449d429a2813db84a, type: 3}
+  growingSprite: {fileID: 841583734, guid: 6321706a81b690b4eb8b5604a0fea566, type: 3}
+  ripeSprite: {fileID: -550756476, guid: 6321706a81b690b4eb8b5604a0fea566, type: 3}
   resourceTypeEnum: 2
   baseSeedCost: 1
   baseTimeToGrow: 3

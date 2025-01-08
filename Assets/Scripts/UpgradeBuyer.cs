@@ -35,6 +35,7 @@ public class UpgradeBuyer : MonoBehaviour
         UpdateUpgradeRank();
     }
 
+
     public void BuyUpgrade()
     {
         if (GameManager.Instance.resourceManager.SpendResource(_resourceCost))
@@ -69,8 +70,9 @@ public class UpgradeBuyer : MonoBehaviour
         }
     }
     
-    private void OnResourceAmountChanged(ResourceTypeEnum resourceType, long amount)
+    private void OnResourceAmountChanged(ResourceTypeEnum resourceType)
     {
+        // Only update if relevant resource has changed
         if(_resourceCost.CheckKey(resourceType))
             UpdateDisplay();
     }

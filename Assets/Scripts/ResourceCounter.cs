@@ -24,15 +24,20 @@ public class ResourceCounter : MonoBehaviour
     private void Start()
     {
         // Fail-safe display of the starting amount of resources
-        OnResourceAmountChanged(_resourceType, GameManager.Instance.resourceManager.GetResourceAmount(_resourceType));
+        UpdateDisplay();
     }
 
-    private void OnResourceAmountChanged(ResourceTypeEnum resourceTypeEnumChanged, long amount)
+    private void OnResourceAmountChanged(ResourceTypeEnum resourceTypeEnumChanged)
     {
         if (resourceTypeEnumChanged == _resourceType)
         {
-            _resourceText.text = amount.ToString();
-            _textAnimator.SetTrigger("Wiggle");
+            UpdateDisplay();
         }
+    }
+
+    private void UpdateDisplay()
+    {
+        _resourceText.text = GameManager.Instance.resourceManager.GetResourceAmount(_resourceType).ToString();
+        _textAnimator.SetTrigger("Wiggle");
     }
 }
