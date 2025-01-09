@@ -37,7 +37,7 @@ public enum UpgradeScalingEnum
 {
     AddCerealYield,
     AddFruitGrowSpeed,
-    ExpGlobalYield,
+    MultGlobalYield,
     ExpGlobalGrowSpeed,
     MultWorldHungerReward,
     // Add new scalings here

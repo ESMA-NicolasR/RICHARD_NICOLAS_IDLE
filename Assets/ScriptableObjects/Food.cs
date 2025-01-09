@@ -14,9 +14,9 @@ public class Food : ScriptableObject
     public int baseYieldAmount;
 
     // Tweaking
-    private const float SPEED_SCALING = 0.95f;
+    private const float SPEED_SCALING = 0.9f;
     private const float MIN_TIME_TO_GROW = 0.1f;
-    private const float YIELD_SCALING = 1.1f;
+    private const float YIELD_SCALING = 1.4f;
 
     public int GetSeedCost()
     {
@@ -25,9 +25,9 @@ public class Food : ScriptableObject
 
     public int GetYieldAmount()
     {
-        // Formula is yield = baseYield [+cerealYield] * YIELD_SCALING ^ ExpGlobalYield
+        // Formula is yield = baseYield [+cerealYield] * YIELD_SCALING * ExpGlobalYield
         int additiveYield = resourceTypeEnum == ResourceTypeEnum.Cereal ? (int)GameManager.Instance.upgradeManager.GetScalingValue(UpgradeScalingEnum.AddCerealYield) : 0;
-        float multYield = Mathf.Pow(YIELD_SCALING, GameManager.Instance.upgradeManager.GetScalingValue(UpgradeScalingEnum.ExpGlobalYield));
+        float multYield = YIELD_SCALING * GameManager.Instance.upgradeManager.GetScalingValue(UpgradeScalingEnum.MultGlobalYield);
         
         return (int)((baseYieldAmount + additiveYield) * multYield);
     }

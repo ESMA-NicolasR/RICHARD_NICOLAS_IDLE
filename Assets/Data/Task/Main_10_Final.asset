@@ -15,5 +15,13 @@ MonoBehaviour:
   goalFlavorText: END WORLD HUNGER
   rewardFlavorText: You did it ! You saved the world !
   goalResourceDict:
-    _dictionaryEntries: []
-  upgradeReward: 0
+    _dictionaryEntries:
+    - key: 0
+      value: 1000
+    - key: 1
+      value: 1000
+    - key: 2
+      value: 1000
+    - key: 3
+      value: 1000
+  upgradeReward: 11

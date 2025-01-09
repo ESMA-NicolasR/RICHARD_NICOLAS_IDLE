@@ -18,5 +18,7 @@ MonoBehaviour:
   baseCost:
     _dictionaryEntries:
     - key: 0
-      value: 1
-  exponent: 1
+      value: 1000
+    - key: 3
+      value: 10
+  exponent: 1.5

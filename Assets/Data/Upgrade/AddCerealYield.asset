@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AddCerealYield
   m_EditorClassIdentifier: 
   upgrade: 13
-  description: Cereals yield more units
+  description: Cereals yield more resource (+1)
   maxRank: 0
   baseCost:
     _dictionaryEntries:

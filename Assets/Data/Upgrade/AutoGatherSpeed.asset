@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: AutoGatherSpeed
   m_EditorClassIdentifier: 
   upgrade: 12
-  description: Increase auto gather speed
+  description: Increase auto gather speed (+0.5/s)
   maxRank: 9
   baseCost:
     _dictionaryEntries:
     - key: 0
-      value: 20
+      value: 100
     - key: 1
       value: 10
-  exponent: 0
+  exponent: 1.5

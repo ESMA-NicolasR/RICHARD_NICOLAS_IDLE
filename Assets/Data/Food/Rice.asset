@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdebb862b5cdf64492794ff4903b0f2, type: 3}
   m_Name: Rice
   m_EditorClassIdentifier: 
-  foodName: Rice
   growingSprite: {fileID: 1292226174, guid: a4068e7bccdea68478369e89527e16f5, type: 3}
   ripeSprite: {fileID: -1824759687, guid: a4068e7bccdea68478369e89527e16f5, type: 3}
   resourceTypeEnum: 1
-  baseSeedCost: 100
-  baseTimeToGrow: 10
-  baseYieldAmount: 10
+  baseSeedCost: 1000
+  baseTimeToGrow: 7
+  baseYieldAmount: 20

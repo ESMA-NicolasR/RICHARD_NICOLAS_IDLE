@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ScaleGlobalYield
   m_EditorClassIdentifier: 
   upgrade: 14
-  description: Every food yields more units
+  description: Every food yields more resource (+40%)
   maxRank: 0
   baseCost:
     _dictionaryEntries:

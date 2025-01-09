@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdebb862b5cdf64492794ff4903b0f2, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
-  foodName: Tomato
   growingSprite: {fileID: 841583734, guid: 6321706a81b690b4eb8b5604a0fea566, type: 3}
   ripeSprite: {fileID: -550756476, guid: 6321706a81b690b4eb8b5604a0fea566, type: 3}
   resourceTypeEnum: 2
-  baseSeedCost: 1
+  baseSeedCost: 200
   baseTimeToGrow: 3
   baseYieldAmount: 2

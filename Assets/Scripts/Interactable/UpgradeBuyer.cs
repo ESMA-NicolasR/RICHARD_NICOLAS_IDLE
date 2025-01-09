@@ -14,6 +14,7 @@ public class UpgradeBuyer : MonoBehaviour
     private ResourceDict _resourceCost;
     private int _currentRank;
     private int _maxRank;
+    private bool _isMaxedOut;
 
     private void OnEnable()
     {
@@ -28,6 +29,7 @@ public class UpgradeBuyer : MonoBehaviour
     private void Awake()
     {
         _currentRank = 0;
+        _isMaxedOut = false;
         _maxRank = _upgradeTemplate.GetMaxRank();
         _upgradeText.text = _upgradeTemplate.description;
         UpdateUpgradeRank();
@@ -41,22 +43,23 @@ public class UpgradeBuyer : MonoBehaviour
             GameManager.Instance.upgradeManager.UnlockUpgrade(_upgradeTemplate.upgrade);
             _currentRank++;
             UpdateUpgradeRank();
+            UpdateDisplay();
         }
     }
 
     private void UpdateUpgradeRank()
     {
-        // Update cost
         if (_maxRank == 0 || _currentRank < _maxRank)
-        {
+        {   // We can still upgrade after
             _resourceCost = _upgradeTemplate.GetCostForRank(_currentRank);
             _costText.text = _resourceCost.GetStringWithSprites();
         }
         else
-        {
+        {   // We reached max rank of upgrade
             _button.enabled = false;
             _button.image.color = Color.grey;
             _costText.enabled = false;
+            _isMaxedOut = true;
         }
         // Update rank
         if (_maxRank > 0)
@@ -72,7 +75,7 @@ public class UpgradeBuyer : MonoBehaviour
     private void OnResourceAmountChanged(ResourceTypeEnum resourceType)
     {
         // Only update if relevant resource has changed
-        if(_resourceCost.CheckKey(resourceType))
+        if(_resourceCost.CheckKey(resourceType) && !_isMaxedOut)
             UpdateDisplay();
     }
     

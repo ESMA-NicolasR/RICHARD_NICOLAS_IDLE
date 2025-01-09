@@ -23,5 +23,5 @@ MonoBehaviour:
     min: 5
     max: 10
   nbResourcesToDraw: 1
-  minReward: 10
-  maxReward: 20
+  minReward: 20
+  maxReward: 30

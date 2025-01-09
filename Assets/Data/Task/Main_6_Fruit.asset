@@ -17,7 +17,7 @@ MonoBehaviour:
   goalResourceDict:
     _dictionaryEntries:
     - key: 0
-      value: 200
+      value: 500
     - key: 1
       value: 50
   upgradeReward: 4

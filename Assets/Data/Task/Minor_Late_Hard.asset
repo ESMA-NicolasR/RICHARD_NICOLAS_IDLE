@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availableResources:
   - resourceType: 0
-    min: 1000
-    max: 2000
+    min: 2500
+    max: 5000
   - resourceType: 1
-    min: 200
-    max: 500
+    min: 500
+    max: 1000
   - resourceType: 2
+    min: 250
+    max: 500
+  - resourceType: 3
     min: 100
     max: 250
-  - resourceType: 3
-    min: 50
-    max: 100
   nbResourcesToDraw: 4
-  minReward: 2000
-  maxReward: 5000
+  minReward: 7500
+  maxReward: 15000

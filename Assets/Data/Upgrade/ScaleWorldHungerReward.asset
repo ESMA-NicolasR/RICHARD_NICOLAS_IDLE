@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: ScaleWorldHungerReward
   m_EditorClassIdentifier: 
   upgrade: 18
-  description: Fight world hunger more efficiently
+  description: Fight world hunger more efficiently (+50%)
   maxRank: 0
   baseCost:
     _dictionaryEntries:
-    - key: 0
-      value: 1000
+    - key: 3
+      value: 50
   exponent: 2

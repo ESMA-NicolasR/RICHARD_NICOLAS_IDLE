@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: ScaleGlobalGrowSpeed
   m_EditorClassIdentifier: 
   upgrade: 16
-  description: Every food grows faster
+  description: Every food grows faster (-10%)
   maxRank: 0
   baseCost:
     _dictionaryEntries:
     - key: 2
-      value: 100
+      value: 70
   exponent: 2

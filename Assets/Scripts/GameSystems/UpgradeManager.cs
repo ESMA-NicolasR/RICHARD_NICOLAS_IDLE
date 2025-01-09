@@ -13,7 +13,7 @@ public class UpgradeManager : MonoBehaviour
     // Tweaking
     private const float BONUS_CEREAL_YIELD = 1f;
     private const float BONUS_GLOBAL_YIELD = 0.2f;
-    private const float BONUS_FRUIT_SPEED = 1f;
+    private const float BONUS_FRUIT_SPEED = 0.5f;
     private const float BONUS_GLOBAL_SPEED = 0.2f;
     private const float BONUS_WORLD_HUNGER = 0.5f;
     private const long BONUS_GATHER_POWER_ONE = 1;
@@ -47,7 +47,7 @@ public class UpgradeManager : MonoBehaviour
         {
             { UpgradeScalingEnum.AddCerealYield, 0f },
             { UpgradeScalingEnum.AddFruitGrowSpeed, 0f },
-            { UpgradeScalingEnum.ExpGlobalYield, 0f },
+            { UpgradeScalingEnum.MultGlobalYield, 1f },
             { UpgradeScalingEnum.ExpGlobalGrowSpeed, 0f },
             { UpgradeScalingEnum.MultWorldHungerReward, 1f },
         };
@@ -184,7 +184,7 @@ public class UpgradeManager : MonoBehaviour
 
     private void ScaleGlobalYield()
     {
-        _upgradeScalings[UpgradeScalingEnum.ExpGlobalYield] += BONUS_GLOBAL_YIELD;
+        _upgradeScalings[UpgradeScalingEnum.MultGlobalYield] += BONUS_GLOBAL_YIELD;
         OnUpgradeScalingChanged?.Invoke();
     }
     

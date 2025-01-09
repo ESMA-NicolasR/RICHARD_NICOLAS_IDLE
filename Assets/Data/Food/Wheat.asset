@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdebb862b5cdf64492794ff4903b0f2, type: 3}
   m_Name: Wheat
   m_EditorClassIdentifier: 
-  foodName: Wheat
   growingSprite: {fileID: 2062788066, guid: 73ae44da9af86e9449137ac9b1780176, type: 3}
   ripeSprite: {fileID: -213220602, guid: 73ae44da9af86e9449137ac9b1780176, type: 3}
   resourceTypeEnum: 1
-  baseSeedCost: 1
+  baseSeedCost: 5
   baseTimeToGrow: 3
   baseYieldAmount: 2

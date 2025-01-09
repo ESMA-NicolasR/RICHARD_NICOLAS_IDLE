@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdebb862b5cdf64492794ff4903b0f2, type: 3}
   m_Name: Broccoli
   m_EditorClassIdentifier: 
-  foodName: Broccoli
   growingSprite: {fileID: -408665982, guid: 3b2bd7e1c899be64092db5784d5f289f, type: 3}
   ripeSprite: {fileID: 1588715098, guid: 3b2bd7e1c899be64092db5784d5f289f, type: 3}
   resourceTypeEnum: 3
-  baseSeedCost: 10
-  baseTimeToGrow: 5
+  baseSeedCost: 10000
+  baseTimeToGrow: 15
   baseYieldAmount: 4

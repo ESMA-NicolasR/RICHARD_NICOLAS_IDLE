@@ -18,4 +18,4 @@ MonoBehaviour:
     max: 5
   nbResourcesToDraw: 1
   minReward: 1
-  maxReward: 2
+  maxReward: 3

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: AddFruitGrowSpeed
   m_EditorClassIdentifier: 
   upgrade: 15
-  description: Fruits grow faster
-  maxRank: 0
+  description: Fruits grow faster (-0.5s)
+  maxRank: 4
   baseCost:
     _dictionaryEntries:
     - key: 0
-      value: 20
+      value: 500
     - key: 2
       value: 10
-  exponent: 1.5
+  exponent: 3
