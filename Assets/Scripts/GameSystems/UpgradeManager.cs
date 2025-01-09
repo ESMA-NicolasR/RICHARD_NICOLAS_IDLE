@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpgradeManager : MonoBehaviour
 {
     // Delegates
-    public static Action OnUpgradeScalingChanged;
+    public static event Action OnUpgradeScalingChanged;
     // Gameplay
     private Dictionary<UpgradeEnum, Action> _upgradeEnumToAction;
     [SerializeField] private UpgradeReferences _upgradeReferences;

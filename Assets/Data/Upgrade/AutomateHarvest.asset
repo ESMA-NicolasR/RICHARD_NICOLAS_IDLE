@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrade: 17
   description: Automate harvesting of a field plot
-  maxRank: 15
+  maxRank: 12
   baseCost:
     _dictionaryEntries:
     - key: 0

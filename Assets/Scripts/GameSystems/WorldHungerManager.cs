@@ -4,7 +4,7 @@ using UnityEngine;
 public class WorldHungerManager : MonoBehaviour
 {
     // Delegates
-    public static Action<long> OnPeopleFedNbChanged;
+    public static event Action<long> OnPeopleFedNbChanged;
 
     // Gameplay
     [SerializeField] private long _peopleFedNb;
