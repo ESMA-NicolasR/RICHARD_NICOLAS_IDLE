@@ -1,5 +1,6 @@
 public class MajorTask : AbstractTask
 {
+    // Gameplay
     private UpgradeEnum _upgradeReward;
     
     public MajorTask(MajorTaskTemplate template)

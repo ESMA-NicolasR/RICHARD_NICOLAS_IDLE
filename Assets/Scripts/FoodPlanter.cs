@@ -1,17 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FoodPlanter : MonoBehaviour
 {
-    [SerializeField] private Food _food;
+    // Display
     [SerializeField] private TextMeshProUGUI _priceText;
     [SerializeField] private TextMeshProUGUI _timeText;
     [SerializeField] private TextMeshProUGUI _yieldText;
     [SerializeField] private Button _button;
+    // Gameplay
+    [SerializeField] private Food _food;
 
     private void OnEnable()
     {

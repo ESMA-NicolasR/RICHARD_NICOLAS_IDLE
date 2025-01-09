@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +20,6 @@ public class FieldPlot : MonoBehaviour
     private float _targetGrowTime;
     private bool _isAutomated;
     
-    // Start is called before the first frame update
     void Start()
     {
         _floatingText.text = "";

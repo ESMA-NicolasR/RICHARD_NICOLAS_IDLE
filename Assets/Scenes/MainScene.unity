@@ -13737,6 +13737,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9859731}
     - target: {fileID: 2195655614055822025, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _poolParent
+      value: 
+      objectReference: {fileID: 9859731}
+    - target: {fileID: 2195655614055822025, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _amountToPool
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2195655614055822025, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
+      propertyPath: _objectToPool
+      value: 
+      objectReference: {fileID: 7784120153699916650, guid: d7e2780302c3fe54385a35ade360fd0b, type: 3}
+    - target: {fileID: 2195655614055822025, guid: f0b3e2564b9a87f409d732acdc0e7532, type: 3}
       propertyPath: _upgradeWithinPool
       value: 
       objectReference: {fileID: 2041686221}

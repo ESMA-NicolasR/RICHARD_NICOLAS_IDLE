@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 public class MinorTask : AbstractTask
 {
+    // Gameplay
     private long _reward;
 
     public MinorTask(MinorTaskTemplate template)

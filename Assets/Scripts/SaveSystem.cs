@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -13,8 +11,10 @@ public class SaveData
 
 public class SaveSystem : MonoBehaviour
 {
+    // Delegates
     public static Action<SaveData> OnSave;
     public static Action<SaveData> OnLoad;
+    // Tweaking
     private const string SAVE_NAME = "SaveData.json";
     private string _saveFilePath;
 

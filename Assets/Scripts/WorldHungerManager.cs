@@ -1,14 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WorldHungerManager : MonoBehaviour
 {
-    [SerializeField] private long _peopleFedNb;
-
+    // Delegates
     public static Action<long> OnPeopleFedNbChanged;
 
+    // Gameplay
+    [SerializeField] private long _peopleFedNb;
     [SerializeField] private long _totalPeopleToFeed;
 
     private void OnEnable()

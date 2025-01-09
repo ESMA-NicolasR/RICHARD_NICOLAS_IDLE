@@ -1,15 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ResourceCounter : MonoBehaviour
 {
-    [SerializeField] private ResourceTypeEnum _resourceType;
+    // Display
     [SerializeField] private TextMeshProUGUI _resourceText;
     [SerializeField] private Animator _textAnimator;
+    // Gameplay
+    [SerializeField] private ResourceTypeEnum _resourceType;
 
     private void OnEnable()
     {

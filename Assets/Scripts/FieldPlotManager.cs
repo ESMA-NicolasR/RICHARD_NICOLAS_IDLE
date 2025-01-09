@@ -1,15 +1,15 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FieldPlotManager : MonoBehaviour
 {
+    // Gameplay
     private List<GameObject> _pooledObjects;
     private int _activatedObjectsNb;
-    [SerializeField] private GameObject objectToPool;
-    [SerializeField] private int amountToPool;
-    [SerializeField] private Transform poolParent;
+    [SerializeField] private GameObject _objectToPool;
+    [SerializeField] private int _amountToPool;
+    [SerializeField] private Transform _poolParent;
     [SerializeField] private GameObject _upgradeWithinPool;
     
     void Awake()
@@ -18,9 +18,9 @@ public class FieldPlotManager : MonoBehaviour
         _activatedObjectsNb = 0;
         GameObject tmp;
         // Create every field plot needed
-        for(int i = 0; i < amountToPool; i++)
+        for(int i = 0; i < _amountToPool; i++)
         {
-            tmp = Instantiate(objectToPool, poolParent);
+            tmp = Instantiate(_objectToPool, _poolParent);
             tmp.SetActive(false);
             _pooledObjects.Add(tmp);
         }
@@ -51,7 +51,7 @@ public class FieldPlotManager : MonoBehaviour
 
     private GameObject GetPooledFieldPlot()
     {
-        for(int i = 0; i < amountToPool; i++)
+        for(int i = 0; i < _amountToPool; i++)
         {
             if(!_pooledObjects[i].activeInHierarchy)
             {
@@ -70,7 +70,7 @@ public class FieldPlotManager : MonoBehaviour
             _activatedObjectsNb++;
         }
         // Check if we bought every field plot
-        if (_activatedObjectsNb == amountToPool)
+        if (_activatedObjectsNb == _amountToPool)
         {
             _upgradeWithinPool.SetActive(false);
         }
@@ -80,7 +80,7 @@ public class FieldPlotManager : MonoBehaviour
     
     public GameObject GetIdleFieldPlot()
     {
-        for(int i = 0; i < amountToPool; i++)
+        for(int i = 0; i < _amountToPool; i++)
         {
             if(_pooledObjects[i].activeInHierarchy && _pooledObjects[i].GetComponent<FieldPlot>().IsIdle())
             {
@@ -92,7 +92,7 @@ public class FieldPlotManager : MonoBehaviour
     
     public bool AutomateFieldPlot()
     {
-        for(int i = 0; i < amountToPool; i++)
+        for(int i = 0; i < _amountToPool; i++)
         {
             if(_pooledObjects[i].activeInHierarchy && !_pooledObjects[i].GetComponent<FieldPlot>().GetIsAutomated())
             {

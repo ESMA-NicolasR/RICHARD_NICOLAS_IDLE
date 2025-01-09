@@ -1,12 +1,9 @@
-using System.Text;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewFood", menuName = "Data/Ressources/Food")]
 public class Food : ScriptableObject
 {
     // Display
-    public string foodName;
     public Sprite growingSprite;
     public Sprite ripeSprite;
     

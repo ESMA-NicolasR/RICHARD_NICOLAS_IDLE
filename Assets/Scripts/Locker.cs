@@ -1,28 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Locker : MonoBehaviour
 {
-    [SerializeField] private GameObject lockedGameObject;
-    [SerializeField] private Image lockImage;
+    // Display
+    [SerializeField] private GameObject _lockedGameObject;
+    [SerializeField] private Image _lockImage;
 
     public void Lock()
     {
-        lockImage.enabled = true;
-        lockedGameObject.SetActive(false);
+        _lockImage.enabled = true;
+        _lockedGameObject.SetActive(false);
     }
 
     public void Unlock()
     {
-        lockImage.enabled = false;
-        lockedGameObject.SetActive(true);
+        _lockImage.enabled = false;
+        _lockedGameObject.SetActive(true);
         // Force update for specific mono behaviours
-        UpgradeBuyer upgradeBuyer = lockedGameObject.GetComponentInChildren<UpgradeBuyer>();
+        UpgradeBuyer upgradeBuyer = _lockedGameObject.GetComponentInChildren<UpgradeBuyer>();
         if(upgradeBuyer != null)
             upgradeBuyer.UpdateDisplay();
-        FoodPlanter foodPlanter = lockedGameObject.GetComponentInChildren<FoodPlanter>();
+        FoodPlanter foodPlanter = _lockedGameObject.GetComponentInChildren<FoodPlanter>();
         if (foodPlanter != null)
             foodPlanter.UpdateDisplay();
     }

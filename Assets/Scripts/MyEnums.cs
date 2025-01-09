@@ -4,6 +4,7 @@ public enum ResourceTypeEnum
     Cereal,
     Fruit,
     Vegetable,
+    // Add new resources here
 }
 
 public enum UpgradeEnum
@@ -29,6 +30,7 @@ public enum UpgradeEnum
     ScaleGlobalGrowSpeed,
     AutomateHarvest,
     ScaleWorldHungerReward,
+    // Add new upgrades here
 }
 
 public enum UpgradeScalingEnum
@@ -38,4 +40,5 @@ public enum UpgradeScalingEnum
     ExpGlobalYield,
     ExpGlobalGrowSpeed,
     MultWorldHungerReward,
+    // Add new scalings here
 }

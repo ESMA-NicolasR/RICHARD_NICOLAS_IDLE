@@ -1,16 +1,16 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class UpgradeManager : MonoBehaviour
 {
+    // Delegates
     public static Action OnUpgradeScalingChanged;
+    // Gameplay
     private Dictionary<UpgradeEnum, Action> _upgradeEnumToAction;
     [SerializeField] private UpgradeReferences _upgradeReferences;
     private Dictionary<UpgradeScalingEnum, float> _upgradeScalings;
-
+    // Tweaking
     private const float BONUS_CEREAL_YIELD = 1f;
     private const float BONUS_GLOBAL_YIELD = 0.2f;
     private const float BONUS_FRUIT_SPEED = 1f;

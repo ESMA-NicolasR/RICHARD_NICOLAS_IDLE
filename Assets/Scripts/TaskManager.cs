@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,19 +7,17 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-    // UI Elements
+    // Display
     [SerializeField] private TaskCompleter _minorTaskCompleter1;
     [SerializeField] private TaskCompleter _minorTaskCompleter2;
     [SerializeField] private TaskCompleter _majorTaskCompleter;
-
+    // Gameplay
     [SerializeField] private List<MajorTaskMilestone> _majorTaskProgression;
     private Queue<MajorTaskMilestone> _majorTaskQueue;
-    // Following needs to be public or editor throws error
-    public List<MinorTaskMilestone> _minorTaskProgression;
+    [SerializeField] private List<MinorTaskMilestone> _minorTaskProgression;
     private Queue<MinorTaskMilestone> _minorTaskQueue;
     private WeightedList<MinorTaskTemplate> _minorTasksAvailable;
     
-    // Start is called before the first frame update
     void Start()
     {
         _majorTaskQueue = new Queue<MajorTaskMilestone>(_majorTaskProgression);

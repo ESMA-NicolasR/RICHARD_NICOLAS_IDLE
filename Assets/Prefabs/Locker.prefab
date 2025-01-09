@@ -133,5 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1b7b5e85ebd8c488d8b46cc8613f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockedGameObject: {fileID: 161008187778995912}
-  lockImage: {fileID: 7516950337091405109}
+  _lockedGameObject: {fileID: 161008187778995912}
+  _lockImage: {fileID: 7516950337091405109}

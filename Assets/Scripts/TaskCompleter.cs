@@ -1,18 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class TaskCompleter : MonoBehaviour
 {
-    private AbstractTask _task;
+    // Display
     [SerializeField] private TextMeshProUGUI _goalFlavorText;
     [SerializeField] private TextMeshProUGUI _costText;
     [SerializeField] private TextMeshProUGUI _rewardFlavorText;
     [SerializeField] private Button _button;
+    // Gameplay
+    private AbstractTask _task;
 
     public void AssignTask(AbstractTask task)
     {

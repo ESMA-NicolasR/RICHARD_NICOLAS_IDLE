@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class FlavorTextGenerator : MonoBehaviour
 {
+    // Text files
     [SerializeField] private TextAsset _citiesFile;
     [SerializeField] private TextAsset _countriesFile;
     [SerializeField] private TextAsset _targetsFile;
 
+    // Usable values
     private string[] _cities;
     private string[] _countries;
     private string[] _targets;

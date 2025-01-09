@@ -1,32 +1,27 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AutoGatherer : MonoBehaviour
 {
-    [SerializeField]
-    private Image _progressionBar;
+    // Display
+    [SerializeField] private Image _progressionBar;
     [SerializeField] private TextMeshProUGUI _autoGatherText;
-    
+    // Gameplay
     private float _progression;
-    [SerializeField]
-    private float _gatherRatePerSecond;
-
-    private const float MAX_RATE = 5f;
-    private const float UPGRADE_RATE = .5f;
-
+    [SerializeField] private float _gatherRatePerSecond;
     public bool isActive;
 
+    // Tweaking
+    private const float MAX_RATE = 5f;
+    private const float UPGRADE_RATE = .5f;
+    
     private void Start()
     {
         _progression = 0f;
         UpdateDisplay();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (!isActive)

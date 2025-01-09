@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -20,7 +19,8 @@ public class MinorTaskTemplate : AbstractTaskTemplate
 
     public override string GetGoalFlavorText()
     {
-        string customer;  
+        string customer;
+        // Generate random city or country name (50/50)
         if (Random.Range(0.0f, 1.0f) > 0.5f)
         {
             customer = $"The city {GameManager.Instance.flavorTextGenerator.GetRandomCity()}";
@@ -39,7 +39,7 @@ public class MinorTaskTemplate : AbstractTaskTemplate
     public override ResourceDict GetGoalResourceDict()
     {
         ResourceDict goalResourceDict = new ResourceDict();
-        // Create a weighted list to chose randomly multiple resources
+        // Create a weighted list to choose randomly multiple resources
         WeightedList<ResourceRange> drawList = new WeightedList<ResourceRange>();
         availableResources.ForEach(value => drawList.Add(value, 1));
         

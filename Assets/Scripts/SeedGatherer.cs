@@ -1,13 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class SeedGatherer : MonoBehaviour
 {
-    [SerializeField] private long _gatherPower = 1;
+    // Display
     [SerializeField] private TextMeshProUGUI _gatherText;
+    // Gameplay
+    [SerializeField] private long _gatherPower = 1;
 
     private void Start()
     {
