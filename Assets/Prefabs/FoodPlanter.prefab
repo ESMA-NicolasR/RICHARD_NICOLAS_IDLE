@@ -228,7 +228,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.6745283, g: 1, b: 0.7217341, a: 1}
     m_PressedColor: {r: 0.33917767, g: 0.6981132, b: 0.391237, a: 1}
-    m_SelectedColor: {r: 0.6745098, g: 1, b: 0.72156864, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.764151, g: 0.34963512, b: 0.34963512, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -335,11 +335,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54c277be2906ab4286b649aec6d496b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _food: {fileID: 0}
   _priceText: {fileID: 2858163528204166304}
   _timeText: {fileID: 4008561367232893261}
   _yieldText: {fileID: 962161946684634999}
   _button: {fileID: 41944130794616790}
+  _food: {fileID: 0}
 --- !u!1 &3551219972127416773
 GameObject:
   m_ObjectHideFlags: 0

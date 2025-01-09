@@ -54,7 +54,8 @@ public class UpgradeBuyer : MonoBehaviour
         }
         else
         {
-            _button.interactable = false;
+            _button.enabled = false;
+            _button.image.color = Color.grey;
             _costText.enabled = false;
         }
         // Update rank
@@ -77,6 +78,6 @@ public class UpgradeBuyer : MonoBehaviour
     
     public void UpdateDisplay()
     {
-        _button.image.color = GameManager.Instance.resourceManager.CheckCanSpendResource(_resourceCost) ? Color.white: Color.red;
+        _button.interactable = GameManager.Instance.resourceManager.CheckCanSpendResource(_resourceCost);
     }
 }
