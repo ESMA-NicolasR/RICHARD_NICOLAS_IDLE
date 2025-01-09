@@ -10,9 +10,13 @@ public class ResourceManager : MonoBehaviour
     
     // Delegates
     public static event Action<ResourceTypeEnum> OnResourceAmountChanged;
-    
 
-    // Start is called before the first frame update
+    private void OnEnable()
+    {
+        SaveSystem.OnSave += OnSave;
+        SaveSystem.OnLoad += OnLoad;
+    }
+
     void Awake()
     {
         _resourceStorage = new ResourceDict();
@@ -74,5 +78,19 @@ public class ResourceManager : MonoBehaviour
         resourceCost.ForEach((key, value) => SpendResource(key, value));
         
         return true;
+    }
+
+    private void OnSave(SaveData save)
+    {
+        save.resources = _resourceStorage;
+    }
+    
+    private void OnLoad(SaveData save)
+    {
+        _resourceStorage = save.resources;
+        foreach (ResourceTypeEnum resourceType in _resourceStorage.GetKeys())
+        {
+            OnResourceAmountChanged?.Invoke(resourceType);
+        }
     }
 }

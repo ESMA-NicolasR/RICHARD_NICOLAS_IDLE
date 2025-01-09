@@ -6,7 +6,6 @@ using UnityEngine.Serialization;
 
 public class UpgradeReferences : MonoBehaviour
 {
-    public GameObject newCerealBuyer;
     public List<Locker> cerealPlanters;
     public List<Locker> fruitPlanters;
     public List<Locker> vegetablePlanters;

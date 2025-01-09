@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+[Serializable]
 public class SaveData
 {
     public long worldHunger;
+    public ResourceDict resources;
 }
 
 public class SaveSystem : MonoBehaviour
