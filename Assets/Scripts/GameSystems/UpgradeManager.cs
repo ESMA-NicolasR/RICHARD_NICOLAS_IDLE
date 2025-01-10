@@ -68,7 +68,7 @@ public class UpgradeManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Upgrade not found");
+            Debug.LogError("Upgrade not found");
         }
     }
     
@@ -79,7 +79,7 @@ public class UpgradeManager : MonoBehaviour
             return _upgradeScalings[scaling];
         }
         
-        Debug.Log("Scaling not initialized");
+        Debug.LogError("Scaling not initialized");
         return 0f;
     }
 
@@ -87,7 +87,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (!GameManager.Instance.fieldPlotManager.ActivateFieldPlot())
         {
-            Debug.Log("No more field plot to buy");
+            Debug.LogError("No more field plot to buy");
         }
         
     }
@@ -107,7 +107,7 @@ public class UpgradeManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No more cereal to unlock");
+            Debug.LogError("No more cereal to unlock");
         }
     }
     
@@ -121,7 +121,7 @@ public class UpgradeManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No more fruit to unlock");
+            Debug.LogError("No more fruit to unlock");
         }
     }
     
@@ -135,7 +135,7 @@ public class UpgradeManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No more vegetable to unlock");
+            Debug.LogError("No more vegetable to unlock");
         }
     }
 
@@ -204,7 +204,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (!GameManager.Instance.fieldPlotManager.AutomateFieldPlot())
         {
-            Debug.Log("No more field plot to automate");
+            Debug.LogError("No more field plot to automate");
         }
     }
     

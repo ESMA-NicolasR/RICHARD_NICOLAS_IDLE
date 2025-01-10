@@ -7,18 +7,20 @@ public class FlavorTextGenerator : MonoBehaviour
     [SerializeField] private TextAsset _citiesFile;
     [SerializeField] private TextAsset _countriesFile;
     [SerializeField] private TextAsset _targetsFile;
+    [SerializeField] private TextAsset _announcersFile;
 
     // Usable values
     private string[] _cities;
     private string[] _countries;
     private string[] _targets;
+    private string[] _announcers;
 
     // REGEX IS THE ROOT OF ALL EVIL
     // https://stackoverflow.com/questions/20056306/match-linebreaks-n-or-r-n
     private const string REGEX_SEPARATOR = "\\r?\\n";
 
 
-    private void Start()
+    private void Awake()
     {
         Init();
     }
@@ -31,6 +33,8 @@ public class FlavorTextGenerator : MonoBehaviour
         _countries = x;
         x = Regex.Split(_targetsFile.text, REGEX_SEPARATOR);
         _targets = x;
+        x = Regex.Split(_announcersFile.text, REGEX_SEPARATOR);
+        _announcers = x;
     }
     
     public string GetRandomCity()
@@ -46,5 +50,10 @@ public class FlavorTextGenerator : MonoBehaviour
     public string GetRandomTarget()
     {
         return _targets[Random.Range(0, _targets.Length)];
+    }
+    
+    public string GetRandomAnnouncer()
+    {
+        return _announcers[Random.Range(0, _announcers.Length)];
     }
 }

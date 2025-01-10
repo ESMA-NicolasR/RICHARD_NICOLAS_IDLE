@@ -78,9 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4496567170a9a1d429358eb238110c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 7784120153699916650, guid: d7e2780302c3fe54385a35ade360fd0b, type: 3}
-  amountToPool: 12
-  poolParent: {fileID: 0}
+  _objectToPool: {fileID: 0}
+  _amountToPool: 0
+  _poolParent: {fileID: 0}
   _upgradeWithinPool: {fileID: 0}
 --- !u!114 &1662520732534248626
 MonoBehaviour:
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a9d45c060a9334b8bdfe243a235f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gatherPower: 1
   _gatherText: {fileID: 0}
+  _gatherPower: 1
 --- !u!114 &7652395507004952145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   _citiesFile: {fileID: 4900000, guid: 887418940cfc65f408bd175cb1e5e206, type: 3}
   _countriesFile: {fileID: 4900000, guid: 6f90b4400b4b98c4cb5c35d79b5a1954, type: 3}
   _targetsFile: {fileID: 4900000, guid: cce1bba0675de6142ae4873cf597539e, type: 3}
+  _announcersFile: {fileID: 4900000, guid: f82b0a43d56092d468ceac68635f9e75, type: 3}
 --- !u!114 &3826220392529980169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf08d20482adb0438ff79b2049be02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCerealBuyer: {fileID: 0}
   cerealPlanters: []
   fruitPlanters: []
   vegetablePlanters: []
